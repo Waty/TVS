@@ -49,14 +49,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="In en uit rijden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="In en uit rijden.Designer.cs">
+      <DependentUpon>In en uit rijden.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Onderhoud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Onderhoud.Designer.cs">
+      <DependentUpon>Onderhoud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schoonmaken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schoonmaken.Designer.cs">
+      <DependentUpon>Schoonmaken.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -69,6 +87,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Schoonmaken.resx">
+      <DependentUpon>Schoonmaken.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
