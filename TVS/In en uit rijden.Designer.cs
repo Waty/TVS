@@ -1,6 +1,6 @@
 ﻿namespace TVS
 {
-    partial class DriverForm
+    partial class In_en_uit_rijden
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 263);
-            this.Name = "DriverForm";
-            this.Text = "BestuurderForm";
+            this.Name = "In_en_uit_rijden";
+            this.Text = "In_en_uit_rijden";
             this.ResumeLayout(false);
 
         }

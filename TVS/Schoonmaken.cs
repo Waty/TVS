@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace TVS
 {
-    public partial class CleaningForm : Form
+    public partial class Schoonmaken : Form
     {
         /// <summary>
         /// 
         /// </summary>
-        public CleaningForm()
+        public Schoonmaken()
         {
             InitializeComponent();
         }

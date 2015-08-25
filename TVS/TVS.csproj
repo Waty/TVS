@@ -54,11 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
-    <Compile Include="DriverForm.cs">
+    <Compile Include="In en uit rijden.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DriverForm.Designer.cs">
-      <DependentUpon>DriverForm.cs</DependentUpon>
+    <Compile Include="In en uit rijden.Designer.cs">
+      <DependentUpon>In en uit rijden.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginDialog.cs">
       <SubType>Form</SubType>
@@ -73,23 +73,22 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaintenanceForm.cs">
+    <Compile Include="Onderhoud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaintenanceForm.Designer.cs">
-      <DependentUpon>MaintenanceForm.cs</DependentUpon>
+    <Compile Include="Onderhoud.Designer.cs">
+      <DependentUpon>Onderhoud.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CleaningForm.cs">
+    <Compile Include="Schoonmaken.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CleaningForm.Designer.cs">
-      <DependentUpon>CleaningForm.cs</DependentUpon>
+    <Compile Include="Schoonmaken.Designer.cs">
+      <DependentUpon>Schoonmaken.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DriverForm.resx">
-      <DependentUpon>DriverForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="In en uit rijden.resx">
+      <DependentUpon>In en uit rijden.cs</DependentUpon>
     <EmbeddedResource Include="LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,8 +104,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CleaningForm.resx">
-      <DependentUpon>CleaningForm.cs</DependentUpon>
+    <EmbeddedResource Include="Schoonmaken.resx">
+      <DependentUpon>Schoonmaken.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
