@@ -66,6 +66,7 @@
             this.btnSchoonmaakLijst.TabIndex = 2;
             this.btnSchoonmaakLijst.Text = "Haal lijst op";
             this.btnSchoonmaakLijst.UseVisualStyleBackColor = true;
+            this.btnSchoonmaakLijst.Click += new System.EventHandler(this.btnSchoonmaakLijst_Click);
             // 
             // dtSchoonmaak
             // 
@@ -108,7 +109,7 @@
             this.lbSchoonmaker.TabIndex = 7;
             this.lbSchoonmaker.Text = "Schoonmaker:";
             // 
-            // Schoonmaak
+            // CleanupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +122,7 @@
             this.Controls.Add(this.btnSchoonmaakLijst);
             this.Controls.Add(this.lbSchoonmaak);
             this.Controls.Add(this.btnLoguit);
-            this.Name = "Schoonmaak";
+            this.Name = "CleanupForm";
             this.Text = "Schoonmaak";
             this.Load += new System.EventHandler(this.Schoonmaak_Load);
             this.ResumeLayout(false);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace TVS
 {
@@ -15,5 +16,10 @@ namespace TVS
         }
 
         private void Schoonmaak_Load(object sender, EventArgs e) {}
+
+        private void btnSchoonmaakLijst_Click(object sender, EventArgs e)
+        {
+            lbSchoonmaak.DataSource = Database.GetVervuild().ToList();
+        }
     }
 }

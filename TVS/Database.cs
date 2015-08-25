@@ -132,5 +132,25 @@ namespace TVS
                 Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"])
             });
         }
+        /// <summary>
+        /// Retrrieves all the dirty trams from the database
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<Tram> GetVervuild()
+        {
+            return ExecuteReader("SELECT * FROM tram where \"Vervuild\" = '1'", reader => new Tram
+            {
+                ID = Convert.ToInt32(reader["ID"]),
+                RemiseId = Convert.ToInt32(reader["Remise_ID_Standplaats"]),
+                TramTypeID = Convert.ToInt32(reader["Tramtype_ID"]),
+                Nummer = Convert.ToInt32(reader["Nummer"]),
+                Lengte = Convert.ToInt32(reader["Lengte"]),
+                //TODO: Status
+                Vervuild = Convert.ToBoolean(reader["Vervuild"]),
+                Defect = Convert.ToBoolean(reader["Defect"]),
+                ConductGeschikt = Convert.ToBoolean(reader["ConducteurGeschikt"]),
+                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"])
+            });
+        }
     }
 }
