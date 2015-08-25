@@ -22,7 +22,7 @@ namespace TVS
         public event EventHandler<LoginEventArgs> Login;
 
         /// <summary>
-        /// Raises the <see cref="Login"/> event, if the event isn't cancelled the dialog gets closed
+        ///     Raises the <see cref="Login" /> event, if the event isn't cancelled the dialog gets closed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
