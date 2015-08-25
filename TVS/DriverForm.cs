@@ -4,12 +4,12 @@ namespace TVS
 {/// <summary>
 /// 
 /// </summary>
-    public partial class In_en_uit_rijden : Form
+    public partial class DriverForm : Form
     {
         /// <summary>
         /// 
         /// </summary>
-        public In_en_uit_rijden()
+        public DriverForm()
         {
             InitializeComponent();
         }

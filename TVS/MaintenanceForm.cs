@@ -5,12 +5,12 @@ namespace TVS
     /// <summary>
     /// 
     /// </summary>
-    public partial class Onderhoud : Form
+    public partial class MaintenanceForm : Form
     {
         /// <summary>
         /// 
         /// </summary>
-        public Onderhoud()
+        public MaintenanceForm()
         {
             InitializeComponent();
         }

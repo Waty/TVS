@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    partial class Onderhoud
+    partial class MaintenanceForm
     {
         /// <summary>
         /// Required designer variable.
