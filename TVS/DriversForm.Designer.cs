@@ -77,7 +77,6 @@
             this.lbTramNummer.TabIndex = 17;
             this.lbTramNummer.Text = "806";
             this.lbTramNummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTramNummer.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbTram
             // 
