@@ -89,6 +89,7 @@
     </Compile>
     <EmbeddedResource Include="In en uit rijden.resx">
       <DependentUpon>In en uit rijden.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
