@@ -18,7 +18,8 @@ namespace TVS
         /// </returns>
         private static OracleConnection GetConnection()
         {
-            return new OracleConnection("User Id=SYSTEM;Password=Chocomel;Data Source=PTS38-DBServer");
+            const string str = "User Id=dbi326436;Password=UR5Q9cjwLZ;Data Source=fhictora01.fhict.local:1521/fhictora";
+            return new OracleConnection(str);
         }
 
         /// <summary>
