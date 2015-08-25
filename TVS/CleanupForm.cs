@@ -19,7 +19,7 @@ namespace TVS
 
         private void btnSchoonmaakLijst_Click(object sender, EventArgs e)
         {
-            lbSchoonmaak.DataSource = Database.GetVervuild().ToList();
+            lbSchoonmaak.DataSource = Database.GetAllTrams().Where(tram=>tram.Vervuild).ToList();
         }
     }
 }
