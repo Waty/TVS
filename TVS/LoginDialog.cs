@@ -17,25 +17,32 @@ namespace TVS
         }
 
         /// <summary>
-        ///     The event that gets fired when the user click 'login'
+        ///     Attempts to login at the database and shows the appropriate form when login is successfull
         /// </summary>
-        public event EventHandler<LoginEventArgs> Login;
-
-        /// <summary>
-        ///     Raises the <see cref="Login" /> event, if the event isn't cancelled the dialog gets closed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void bLogin_Click(object sender, EventArgs e)
         {
-            if (Login != null)
+            string func = Database.Login(tbUsername.Text, tbPassword.Text);
+            switch (func)
             {
-                var args = new LoginEventArgs(tbUsername.Text, tbPassword.Text);
-                Login.Invoke(this, args);
-                if (!args.Cancel)
-                {
-                    DialogResult = DialogResult.OK;
-                }
+                case "Schoonmaker":
+                    new CleanupForm().ShowDialog();
+                    break;
+
+                case "Technicus":
+                    new MaintenanceForm().ShowDialog();
+                    break;
+
+                case "Bestuurder":
+                    new DriversForm().ShowDialog();
+                    break;
+
+                case "Wagenparkbeheerder":
+                    new MainForm().ShowDialog();
+                    break;
+
+                default:
+                    MessageBox.Show("Failet to login!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
             }
         }
     }
