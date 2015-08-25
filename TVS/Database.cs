@@ -112,9 +112,25 @@ namespace TVS
             return ExecuteReader(query, reader => Convert.ToString(reader["Naam"])).SingleOrDefault();
         }
 
-
-
-
-
+        /// <summary>
+        ///     Retrieves all the trams from the database
+        /// </summary>
+        /// <returns>All trams</returns>
+        public static IEnumerable<Tram> GetAllTrams()
+        {
+            return ExecuteReader("SELECT * FROM tram", reader => new Tram
+            {
+                ID = Convert.ToInt32(reader["ID"]),
+                RemiseId = Convert.ToInt32(reader["Remise_ID_Standplaats"]),
+                TramTypeID = Convert.ToInt32(reader["Tramtype_ID"]),
+                Nummer = Convert.ToInt32(reader["Nummer"]),
+                Lengte = Convert.ToInt32(reader["Lengte"]),
+                //TODO: Status
+                Vervuild = Convert.ToBoolean(reader["Vervuild"]),
+                Defect = Convert.ToBoolean(reader["Defect"]),
+                ConductGeschikt = Convert.ToBoolean(reader["ConducteurGeschikt"]),
+                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"])
+            });
+        }
     }
 }
