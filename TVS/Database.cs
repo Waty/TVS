@@ -25,10 +25,10 @@ namespace TVS
         /// <summary>
         ///     Executes an query and parses the resul table with a custom function
         /// </summary>
-        /// <typeparam name="TResult"></typeparam>
+        /// <typeparam name="TResult">The type of the data that is read by the given func</typeparam>
         /// <param name="query">The query that will be executed on the database server</param>
         /// <param name="func">The function that will be called for every row in the returned table</param>
-        /// <returns>An IEnumerable of type <see cref="TResult" /></returns>
+        /// <returns>An IEnumerable of type TResult/></returns>
         private static IEnumerable<TResult> ExecuteReader<TResult>(string query, Func<OracleDataReader, TResult> func)
         {
             var s = new Stopwatch();
