@@ -1,21 +1,20 @@
 ﻿using System.Windows.Forms;
 
 namespace TVS
-{
-    /// <summary>
-    /// 
-    /// </summary>
-    public partial class Schoonmaak : Form
+{/// <summary>
+/// 
+/// </summary>
+    public partial class DriversForm : Form
     {
         /// <summary>
         /// 
         /// </summary>
-        public Schoonmaak()
+        public DriversForm()
         {
             InitializeComponent();
         }
 
-        private void Schoonmaak_Load(object sender, System.EventArgs e)
+        private void label1_Click(object sender, System.EventArgs e)
         {
 
         }

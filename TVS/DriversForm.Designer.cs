@@ -1,6 +1,6 @@
 ﻿namespace TVS
 {
-    partial class In_en_uit_rijden
+    partial class DriversForm
     {
         /// <summary>
         /// Required designer variable.
@@ -158,7 +158,7 @@
             this.Controls.Add(this.lbSpoor);
             this.Controls.Add(this.tbSpoor);
             this.Controls.Add(this.btnLoguit);
-            this.Name = "In_en_uit_rijden";
+            this.Name = "DriversForm";
             this.Text = "In_en_uit_rijden";
             this.ResumeLayout(false);
             this.PerformLayout();

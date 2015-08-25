@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    partial class Schoonmaak
+    partial class CleanupForm
     {
         /// <summary>
         /// Required designer variable.
