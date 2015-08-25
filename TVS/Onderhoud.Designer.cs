@@ -1,5 +1,8 @@
 ﻿namespace TVS
 {
+    /// <summary>
+    /// 
+    /// </summary>
     partial class Onderhoud
     {
         /// <summary>
