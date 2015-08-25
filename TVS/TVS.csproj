@@ -86,6 +86,8 @@
     <Compile Include="MaintenanceForm.Designer.cs">
       <DependentUpon>MaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Status.cs" />
+    <Compile Include="Tram.cs" />
     <EmbeddedResource Include="DriversForm.resx">
       <DependentUpon>DriversForm.cs</DependentUpon>
     </EmbeddedResource>
