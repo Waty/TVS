@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace TVS
 {
@@ -19,7 +19,7 @@ namespace TVS
 
         private void btnSchoonmaakLijst_Click(object sender, EventArgs e)
         {
-            lbSchoonmaak.DataSource = Database.GetAllTrams().Where(tram=>tram.Vervuild).ToList();
+            lbSchoonmaak.DataSource = Database.GetAllTrams().Where(tram => tram.Vervuild).ToList();
         }
     }
 }
