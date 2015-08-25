@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Oracle.ManagedDataAccess.Client;
 
 namespace TVS
@@ -41,7 +42,7 @@ namespace TVS
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine("Oracle sucks!: {0}", e.Message);
+                    Debug.WriteLine("Failed to open the database connection!\n" + e);
                     yield break;
                 }
 
@@ -93,6 +94,22 @@ namespace TVS
                 Debug.WriteLine("Failed to execute query '{0}':\n{1}", query, e.Message);
             }
             return result;
+        }
+
+        /// <summary>
+        ///     Finds the Employee with the matching username/password combo
+        /// </summary>
+        /// <param name="username">The username to login</param>
+        /// <param name="password">The password to login</param>
+        /// <returns>The function of the employee or null if the login attempt failed</returns>
+        public static string Login(string username, string password)
+        {
+            string query =
+                "SELECT f.\"Naam\" FROM Medewerker m " +
+                "JOIN Functie f ON f.Id = m.\"Functie_ID\" " +
+                $"WHERE m.\"Naam\" = '{username}' AND m.\"Wachtwoord\" = '{password}'";
+
+            return ExecuteReader(query, reader => Convert.ToString(reader["Naam"])).SingleOrDefault();
         }
     }
 }

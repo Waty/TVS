@@ -14,6 +14,23 @@ namespace TVS
         public MainForm()
         {
             InitializeComponent();
+
+            var ld = new LoginDialog();
+            ld.Login += (sender, args) =>
+            {
+                string functie = Database.Login(args.Username, args.Password);
+                switch (functie)
+                {
+                    case null:
+                        args.Cancel = true;
+                        break;
+
+                    default:
+                        MessageBox.Show("Ingelogd als " + functie);
+                        break;
+                }
+            };
+            ld.ShowDialog();
         }
 
         /// <summary>

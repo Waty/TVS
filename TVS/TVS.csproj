@@ -60,6 +60,13 @@
     <Compile Include="In en uit rijden.Designer.cs">
       <DependentUpon>In en uit rijden.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDialog.Designer.cs">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginEventArgs.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +89,9 @@
     </Compile>
     <EmbeddedResource Include="In en uit rijden.resx">
       <DependentUpon>In en uit rijden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginDialog.resx">
+      <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
