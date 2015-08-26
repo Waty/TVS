@@ -24,6 +24,9 @@ namespace TVS
         private void LoadCleanupData(object sender, EventArgs e)
         {
             lbCleanupTasks.DataSource = Database.GetAllTrams().Where(tram => tram.Vervuild).ToList();
+            ddbEmployees.DataSource = Database.GetAllMedewerkers()
+                .Where(medewerker => medewerker.Functie == Medewerker.FunctieType.Schoonmaker)
+                .ToList();
         }
 
         /// <summary>
@@ -31,8 +34,20 @@ namespace TVS
         /// </summary>
         private void btnRegisterCleanup_Click(object sender, EventArgs e)
         {
-            Database.SaveCleanup(new Schoonmaak(null, dtpCleanupDate.Value, (Tram) lbCleanupTasks.SelectedItem));
-            
+            if (!(ddbEmployees.SelectedItem is Medewerker))
+            {
+                MessageBox.Show("Please select a valid employee!");
+                return;
+            }
+
+            if (!(lbCleanupTasks.SelectedItem is Tram))
+            {
+                MessageBox.Show("Please select a valid Tram!");
+            }
+
+            Database.SaveCleanup(new Schoonmaak((Medewerker) ddbEmployees.SelectedItem, dtpCleanupDate.Value,
+                (Tram) lbCleanupTasks.SelectedItem));
+
             LoadCleanupData(sender, e);
         }
     }

@@ -35,9 +35,9 @@
             this.btnRefreshCleanupList = new System.Windows.Forms.Button();
             this.dtpCleanupDate = new System.Windows.Forms.DateTimePicker();
             this.btnRegisterCleanup = new System.Windows.Forms.Button();
-            this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.lCleanupDate = new System.Windows.Forms.Label();
             this.lEmployeeName = new System.Windows.Forms.Label();
+            this.ddbEmployees = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbCleanupTasks
@@ -81,15 +81,7 @@
             this.btnRegisterCleanup.UseVisualStyleBackColor = true;
             this.btnRegisterCleanup.Click += new System.EventHandler(this.btnRegisterCleanup_Click);
             // 
-            // tbSchoonmaak
-            // 
-            this.tbEmployeeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmployeeName.Location = new System.Drawing.Point(419, 38);
-            this.tbEmployeeName.Name = "tbEmployeeName";
-            this.tbEmployeeName.Size = new System.Drawing.Size(200, 20);
-            this.tbEmployeeName.TabIndex = 5;
-            // 
-            // lbDatum
+            // lCleanupDate
             // 
             this.lCleanupDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lCleanupDate.AutoSize = true;
@@ -99,7 +91,7 @@
             this.lCleanupDate.TabIndex = 6;
             this.lCleanupDate.Text = "Datum en tijd: ";
             // 
-            // lbSchoonmaker
+            // lEmployeeName
             // 
             this.lEmployeeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lEmployeeName.AutoSize = true;
@@ -109,14 +101,23 @@
             this.lEmployeeName.TabIndex = 7;
             this.lEmployeeName.Text = "Schoonmaker:";
             // 
+            // ddbEmployees
+            // 
+            this.ddbEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddbEmployees.FormattingEnabled = true;
+            this.ddbEmployees.Location = new System.Drawing.Point(419, 37);
+            this.ddbEmployees.Name = "ddbEmployees";
+            this.ddbEmployees.Size = new System.Drawing.Size(200, 21);
+            this.ddbEmployees.TabIndex = 8;
+            // 
             // CleanupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 312);
+            this.Controls.Add(this.ddbEmployees);
             this.Controls.Add(this.lEmployeeName);
             this.Controls.Add(this.lCleanupDate);
-            this.Controls.Add(this.tbEmployeeName);
             this.Controls.Add(this.btnRegisterCleanup);
             this.Controls.Add(this.dtpCleanupDate);
             this.Controls.Add(this.btnRefreshCleanupList);
@@ -134,8 +135,8 @@
         private System.Windows.Forms.Button btnRefreshCleanupList;
         private System.Windows.Forms.DateTimePicker dtpCleanupDate;
         private System.Windows.Forms.Button btnRegisterCleanup;
-        private System.Windows.Forms.TextBox tbEmployeeName;
         private System.Windows.Forms.Label lCleanupDate;
         private System.Windows.Forms.Label lEmployeeName;
+        private System.Windows.Forms.ComboBox ddbEmployees;
     }
 }

@@ -151,6 +151,7 @@ namespace TVS
             query = "UPDATE TRAM SET \"Vervuild\" = 0 WHERE ID = " + s.Tram.Id;
             ExecuteNonQuery(query);
         }
+
         /// <summary>
         ///     Sets the "Vervuild" to true
         /// </summary>
@@ -159,6 +160,19 @@ namespace TVS
             string query = "UPDATE Tram SET \"Vervuild\" = 1 WHERE \"Nummer\" = " + nummer + "";
 
             ExecuteNonQuery(query);
+        }
+
+        /// <summary>
+        ///     Retrieves the ID, name and functie of all medewerkers
+        /// </summary>
+        public static IEnumerable<Medewerker> GetAllMedewerkers()
+        {
+            return ExecuteReader("SELECT Id, \"Functie_ID\", \"Naam\" FROM Medewerker", reader => new Medewerker
+            {
+                Id = Convert.ToInt32(reader["Id"]),
+                Naam = Convert.ToString(reader["Naam"]),
+                Functie = (Medewerker.FunctieType) Convert.ToInt32(reader["Functie_Id"])
+            });
         }
     }
 }

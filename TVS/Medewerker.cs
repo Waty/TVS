@@ -46,5 +46,16 @@ namespace TVS
         ///     The Functie of the <see cref="Medewerker" />
         /// </summary>
         public FunctieType Functie { get; set; }
+
+        /// <summary>
+        ///     Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>
+        ///     A string that represents the current object.
+        /// </returns>
+        public override string ToString()
+        {
+            return Naam;
+        }
     }
 }
