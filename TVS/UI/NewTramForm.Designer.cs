@@ -40,6 +40,8 @@
             this.lbNummer = new System.Windows.Forms.Label();
             this.lbType = new System.Windows.Forms.Label();
             this.btnNieuw = new System.Windows.Forms.Button();
+            this.tbLengte = new System.Windows.Forms.TextBox();
+            this.lbLengte = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbRemiseId
@@ -52,7 +54,7 @@
             // cbConducteur
             // 
             this.cbConducteur.AutoSize = true;
-            this.cbConducteur.Location = new System.Drawing.Point(20, 90);
+            this.cbConducteur.Location = new System.Drawing.Point(20, 122);
             this.cbConducteur.Name = "cbConducteur";
             this.cbConducteur.Size = new System.Drawing.Size(124, 17);
             this.cbConducteur.TabIndex = 5;
@@ -62,7 +64,7 @@
             // cbBeschikbaar
             // 
             this.cbBeschikbaar.AutoSize = true;
-            this.cbBeschikbaar.Location = new System.Drawing.Point(20, 113);
+            this.cbBeschikbaar.Location = new System.Drawing.Point(20, 145);
             this.cbBeschikbaar.Name = "cbBeschikbaar";
             this.cbBeschikbaar.Size = new System.Drawing.Size(85, 17);
             this.cbBeschikbaar.TabIndex = 6;
@@ -113,7 +115,7 @@
             // 
             // btnNieuw
             // 
-            this.btnNieuw.Location = new System.Drawing.Point(91, 136);
+            this.btnNieuw.Location = new System.Drawing.Point(91, 168);
             this.btnNieuw.Name = "btnNieuw";
             this.btnNieuw.Size = new System.Drawing.Size(86, 23);
             this.btnNieuw.TabIndex = 12;
@@ -121,11 +123,29 @@
             this.btnNieuw.UseVisualStyleBackColor = true;
             this.btnNieuw.Click += new System.EventHandler(this.btnNieuw_Click);
             // 
+            // tbLengte
+            // 
+            this.tbLengte.Location = new System.Drawing.Point(77, 90);
+            this.tbLengte.Name = "tbLengte";
+            this.tbLengte.Size = new System.Drawing.Size(100, 20);
+            this.tbLengte.TabIndex = 13;
+            // 
+            // lbLengte
+            // 
+            this.lbLengte.AutoSize = true;
+            this.lbLengte.Location = new System.Drawing.Point(17, 93);
+            this.lbLengte.Name = "lbLengte";
+            this.lbLengte.Size = new System.Drawing.Size(43, 13);
+            this.lbLengte.TabIndex = 14;
+            this.lbLengte.Text = "Lengte:";
+            // 
             // NewTramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(191, 178);
+            this.ClientSize = new System.Drawing.Size(191, 201);
+            this.Controls.Add(this.lbLengte);
+            this.Controls.Add(this.tbLengte);
             this.Controls.Add(this.btnNieuw);
             this.Controls.Add(this.lbType);
             this.Controls.Add(this.lbNummer);
@@ -153,5 +173,7 @@
         private System.Windows.Forms.Label lbNummer;
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.Button btnNieuw;
+        private System.Windows.Forms.TextBox tbLengte;
+        private System.Windows.Forms.Label lbLengte;
     }
 }

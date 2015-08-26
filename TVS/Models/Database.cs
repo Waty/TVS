@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using Oracle.ManagedDataAccess.Client;
 
 namespace TVS.Models
@@ -215,8 +216,16 @@ namespace TVS.Models
                 Id = Convert.ToInt32(reader["ID"]),
                 Omschrijving = Convert.ToString(reader["Omschrijving"])
             });
+        }
+        /// <summary>
+        ///     Adds a new tram to the database
+        /// </summary>
+        public static void NewTram(int remiseid, int typeid, int nummer, int lengte, int geschikt, int beschikbaar)
+        {
+            string query = "INSERT INTO Tram values ('0', " + remiseid + ", " + typeid + ", " + nummer + ", " + lengte +
+                           ",null,'0','0'," + geschikt + "," + beschikbaar + ")";
 
-  
+            ExecuteNonQuery(query);
         }
     }
 }
