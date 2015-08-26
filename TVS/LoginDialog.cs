@@ -22,6 +22,7 @@ namespace TVS
         private void bLogin_Click(object sender, EventArgs e)
         {
             string func = Database.Login(tbUsername.Text, tbPassword.Text);
+            Hide();
             switch (func)
             {
                 case "Schoonmaker":
@@ -44,6 +45,7 @@ namespace TVS
                     MessageBox.Show("Failet to login!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+            Show();
         }
     }
 }
