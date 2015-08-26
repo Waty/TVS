@@ -42,7 +42,7 @@ namespace TVS
                     break;
 
                 default:
-                    MessageBox.Show("Failet to login!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to login!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
             Show();
