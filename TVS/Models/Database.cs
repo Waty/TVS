@@ -190,28 +190,19 @@ namespace TVS.Models
         /// <param name="number"></param>
         public static bool IsRailBlocked(int number)
         {
-            string query = "SELECT \"Geblokkeerd\" FROM Spoor Where \"Nummer\" = " + number;
+            string query = "SELECT Geblokkeerd FROM Spoor Where \"Nummer\" = " + number;
             return ExecuteReader(query, reader => Convert.ToBoolean(reader["Geblokkeerd"])).SingleOrDefault();
         }
 
         /// <summary>
-        ///     Blocks a railway
+        ///     Blocks or Unblocks a railway
         /// </summary>
-        /// <param name="number"></param>
-        public static void BlockRail(int number)
+        /// <param name="railNumber">The number of the rails that gets toggled</param>
+        /// <param name="enabled">The status the rails gets toggle to</param>
+        public static int ToggleRailBlock(int railNumber, bool enabled)
         {
-            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 1 WHERE \"Nummer\" = " + number;
-            ExecuteNonQuery(query);
-        }
-
-        /// <summary>
-        ///     Releases a railway
-        /// </summary>
-        /// <param name="number"></param>
-        public static void ReleaseRail(int number)
-        {
-            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 0 WHERE \"Nummer\" = " + number;
-            ExecuteNonQuery(query);
+            string query = $"UPDATE Spoor SET Geblokkeerd = {Convert.ToInt32(enabled)} WHERE \"Nummer\" = {railNumber}";
+            return ExecuteNonQuery(query);
         }
         /// <summary>
         ///     Returns a list of tramtypes

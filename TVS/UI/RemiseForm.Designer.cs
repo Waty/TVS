@@ -119,7 +119,7 @@
             this.btnStatus = new System.Windows.Forms.Button();
             this.btnInvoer = new System.Windows.Forms.Button();
             this.btnSchoonmaak = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSpoorNr = new System.Windows.Forms.TextBox();
             this.lbSpoor = new System.Windows.Forms.Label();
             this.btnBlokkeer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -989,12 +989,12 @@
             this.btnSchoonmaak.UseVisualStyleBackColor = true;
             this.btnSchoonmaak.Click += new System.EventHandler(this.btnSchoonmaak_Click);
             // 
-            // textBox1
+            // tbSpoorNr
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 20);
-            this.textBox1.TabIndex = 88;
+            this.tbSpoorNr.Location = new System.Drawing.Point(50, 15);
+            this.tbSpoorNr.Name = "tbSpoorNr";
+            this.tbSpoorNr.Size = new System.Drawing.Size(127, 20);
+            this.tbSpoorNr.TabIndex = 88;
             // 
             // lbSpoor
             // 
@@ -1019,7 +1019,7 @@
             // 
             this.panel1.Controls.Add(this.lbSpoor);
             this.panel1.Controls.Add(this.btnBlokkeer);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tbSpoorNr);
             this.panel1.Location = new System.Drawing.Point(1015, 715);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 83);
@@ -1233,7 +1233,7 @@
         private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.Button btnInvoer;
         private System.Windows.Forms.Button btnSchoonmaak;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSpoorNr;
         private System.Windows.Forms.Label lbSpoor;
         private System.Windows.Forms.Button btnBlokkeer;
         private System.Windows.Forms.Panel panel1;
