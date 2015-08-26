@@ -1013,6 +1013,7 @@
             this.btnBlokkeer.TabIndex = 90;
             this.btnBlokkeer.Text = "Blokkeer/Deblokkeer";
             this.btnBlokkeer.UseVisualStyleBackColor = true;
+            this.btnBlokkeer.Click += new System.EventHandler(this.btnBlokkeer_Click);
             // 
             // panel1
             // 

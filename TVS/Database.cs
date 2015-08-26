@@ -185,5 +185,36 @@ namespace TVS
                 Functie = (Medewerker.FunctieType) Convert.ToInt32(reader["Functie_Id"])
             });
         }
+
+        /// <summary>
+        /// Retrieves whether chosen railway is blocked
+        /// </summary>
+        /// <param name="number"></param>
+        public static bool IsRailBlocked(int number)
+        {
+            return ExecuteReader($"SELECT \"Geblokkeerd\" FROM Spoor Where \"Nummer\" = {number}", reader => Convert.ToBoolean(reader["Geblokkeerd"])).SingleOrDefault();
+        }
+
+        /// <summary>
+        ///     Blocks a railway
+        /// </summary>
+        /// <param name="number"></param>
+        public static void BlockRail(int number)
+        {
+            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 1 WHERE \"Nummer\" = " + number + "";
+
+            ExecuteNonQuery(query);
+        }
+
+        /// <summary>
+        ///     Releases a railway
+        /// </summary>
+        /// <param name="number"></param>
+        public static void ReleaseRail(int number)
+        {
+            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 0 WHERE \"Nummer\" = " + number + "";
+
+            ExecuteNonQuery(query);
+        }
     }
 }

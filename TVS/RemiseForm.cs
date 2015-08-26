@@ -20,5 +20,20 @@ namespace TVS
         {
             Database.SetVervuild(Convert.ToInt32(tbTramNummer.Text));
         }
+
+        private void btnBlokkeer_Click(object sender, EventArgs e)
+        {
+            int number = Convert.ToInt32(lbSpoor.Text);
+            bool blocked = Database.IsRailBlocked(number);
+
+            if(!blocked)
+            {
+                Database.BlockRail(number);
+            }
+            else
+            {
+                Database.ReleaseRail(number);
+            }
+        }
     }
 }
