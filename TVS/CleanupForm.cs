@@ -15,6 +15,7 @@ namespace TVS
         public CleanupForm()
         {
             InitializeComponent();
+            ddbCleanupType.DataSource = Enum.GetValues(typeof (Schoonmaak.SchoonmaakType));
         }
 
 
@@ -43,10 +44,15 @@ namespace TVS
             if (!(lbCleanupTasks.SelectedItem is Tram))
             {
                 MessageBox.Show("Please select a valid Tram!");
+                return;
             }
 
-            Database.SaveCleanup(new Schoonmaak((Medewerker) ddbEmployees.SelectedItem, dtpCleanupDate.Value,
-                (Tram) lbCleanupTasks.SelectedItem));
+            var c = new Schoonmaak((Medewerker) ddbEmployees.SelectedItem,
+                dtpCleanupDate.Value,
+                (Tram) lbCleanupTasks.SelectedItem,
+                (Schoonmaak.SchoonmaakType) ddbCleanupType.SelectedItem);
+
+            Database.SaveCleanup(c);
 
             LoadCleanupData(sender, e);
         }

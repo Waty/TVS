@@ -38,6 +38,8 @@
             this.lCleanupDate = new System.Windows.Forms.Label();
             this.lEmployeeName = new System.Windows.Forms.Label();
             this.ddbEmployees = new System.Windows.Forms.ComboBox();
+            this.lType = new System.Windows.Forms.Label();
+            this.ddbCleanupType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbCleanupTasks
@@ -73,7 +75,7 @@
             // btnRegisterCleanup
             // 
             this.btnRegisterCleanup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegisterCleanup.Location = new System.Drawing.Point(419, 64);
+            this.btnRegisterCleanup.Location = new System.Drawing.Point(419, 91);
             this.btnRegisterCleanup.Name = "btnRegisterCleanup";
             this.btnRegisterCleanup.Size = new System.Drawing.Size(200, 23);
             this.btnRegisterCleanup.TabIndex = 4;
@@ -110,11 +112,31 @@
             this.ddbEmployees.Size = new System.Drawing.Size(200, 21);
             this.ddbEmployees.TabIndex = 8;
             // 
+            // lType
+            // 
+            this.lType.AutoSize = true;
+            this.lType.Location = new System.Drawing.Point(338, 67);
+            this.lType.Name = "lType";
+            this.lType.Size = new System.Drawing.Size(34, 13);
+            this.lType.TabIndex = 9;
+            this.lType.Text = "Type:";
+            // 
+            // ddbCleanupType
+            // 
+            this.ddbCleanupType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddbCleanupType.FormattingEnabled = true;
+            this.ddbCleanupType.Location = new System.Drawing.Point(419, 64);
+            this.ddbCleanupType.Name = "ddbCleanupType";
+            this.ddbCleanupType.Size = new System.Drawing.Size(200, 21);
+            this.ddbCleanupType.TabIndex = 10;
+            // 
             // CleanupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 312);
+            this.Controls.Add(this.ddbCleanupType);
+            this.Controls.Add(this.lType);
             this.Controls.Add(this.ddbEmployees);
             this.Controls.Add(this.lEmployeeName);
             this.Controls.Add(this.lCleanupDate);
@@ -138,5 +160,7 @@
         private System.Windows.Forms.Label lCleanupDate;
         private System.Windows.Forms.Label lEmployeeName;
         private System.Windows.Forms.ComboBox ddbEmployees;
+        private System.Windows.Forms.Label lType;
+        private System.Windows.Forms.ComboBox ddbCleanupType;
     }
 }
