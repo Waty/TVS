@@ -14,7 +14,7 @@ namespace TVS
             InitializeComponent();
         }
 
-        private void btnVerzend_Click(object sender, System.EventArgs e)
+        private void btnVerzend_Click(object sender, EventArgs e)
         {
             if (cbVervuild.Checked)
             {
@@ -22,7 +22,7 @@ namespace TVS
             }
             if (cbDefect.Checked)
             {
-               Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
+                Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
             }
         }
     }

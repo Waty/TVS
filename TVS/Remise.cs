@@ -1,16 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TVS
+﻿namespace TVS
 {
     /// <summary>
     ///     Class for a Remise
     /// </summary>
     public class Remise
     {
+        /// <summary>
+        ///     Constructor
+        /// </summary>
+        public Remise(int id, string naam, int groteSc, int kleineSc, int groteSe, int kleineSe)
+        {
+            Id = id;
+            Naam = naam;
+            GroteSchoonmaakbeurt = groteSc;
+            KleineSchoonmaakbeurt = kleineSc;
+            GroteServicebeurt = groteSe;
+            KleineServicebeurt = kleineSe;
+        }
+
+        /// <summary>
+        ///     Empty Constructor
+        /// </summary>
+        public Remise() {}
+
         /// <summary>
         ///     ID of the remise
         /// </summary>
@@ -40,25 +52,5 @@ namespace TVS
         ///     Small sevice
         /// </summary>
         public int KleineServicebeurt { get; set; }
-
-        /// <summary>
-        ///     Constructor
-        /// </summary>
-        public Remise(int id, string naam, int groteSc, int kleineSc, int groteSe, int kleineSe)
-        {
-            Id = id;
-            Naam = naam;
-            GroteSchoonmaakbeurt = groteSc;
-            KleineSchoonmaakbeurt = kleineSc;
-            GroteServicebeurt = groteSe;
-            KleineServicebeurt = kleineSe;
-        }
-        /// <summary>
-        ///     Empty Constructor
-        /// </summary>
-        public Remise()
-        {
-            
-        }
     }
 }

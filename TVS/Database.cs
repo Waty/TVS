@@ -157,8 +157,7 @@ namespace TVS
         /// </summary>
         public static void SetVervuild(int nummer)
         {
-            string query = "UPDATE Tram SET \"Vervuild\" = 1 WHERE \"Nummer\" = " + nummer + "";
-
+            string query = "UPDATE Tram SET \"Vervuild\" = 1 WHERE \"Nummer\" = " + nummer;
             ExecuteNonQuery(query);
         }
 
@@ -168,8 +167,7 @@ namespace TVS
         /// <param name="number"></param>
         public static void SetBroken(int number)
         {
-            string query = "UPDATE Tram SET \"Defect\" = 1 WHERE \"Nummer\" = " + number + "";
-
+            string query = "UPDATE Tram SET \"Defect\" = 1 WHERE \"Nummer\" = " + number;
             ExecuteNonQuery(query);
         }
 
@@ -187,12 +185,13 @@ namespace TVS
         }
 
         /// <summary>
-        /// Retrieves whether chosen railway is blocked
+        ///     Retrieves whether chosen railway is blocked
         /// </summary>
         /// <param name="number"></param>
         public static bool IsRailBlocked(int number)
         {
-            return ExecuteReader($"SELECT \"Geblokkeerd\" FROM Spoor Where \"Nummer\" = {number}", reader => Convert.ToBoolean(reader["Geblokkeerd"])).SingleOrDefault();
+            string query = "SELECT \"Geblokkeerd\" FROM Spoor Where \"Nummer\" = " + number;
+            return ExecuteReader(query, reader => Convert.ToBoolean(reader["Geblokkeerd"])).SingleOrDefault();
         }
 
         /// <summary>
@@ -201,8 +200,7 @@ namespace TVS
         /// <param name="number"></param>
         public static void BlockRail(int number)
         {
-            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 1 WHERE \"Nummer\" = " + number + "";
-
+            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 1 WHERE \"Nummer\" = " + number;
             ExecuteNonQuery(query);
         }
 
@@ -212,8 +210,7 @@ namespace TVS
         /// <param name="number"></param>
         public static void ReleaseRail(int number)
         {
-            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 0 WHERE \"Nummer\" = " + number + "";
-
+            string query = "UPDATE Spoor SET \"Geblokkeerd\" = 0 WHERE \"Nummer\" = " + number;
             ExecuteNonQuery(query);
         }
     }

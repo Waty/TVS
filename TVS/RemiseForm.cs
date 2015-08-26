@@ -26,7 +26,7 @@ namespace TVS
             int number = Convert.ToInt32(lbSpoor.Text);
             bool blocked = Database.IsRailBlocked(number);
 
-            if(!blocked)
+            if (!blocked)
             {
                 Database.BlockRail(number);
             }

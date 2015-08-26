@@ -1,38 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TVS
+﻿namespace TVS
 {
     /// <summary>
     ///     Class to control a sector
     /// </summary>
     public class Sector
     {
-        /// <summary>
-        /// ID of the track
-        /// </summary>
-        public int SpoorId { get; set; }
-        /// <summary>
-        ///     Id of the Tram
-        /// </summary>
-        public int TramId { get; set; }
-        /// <summary>
-        ///     Number of the sector
-        /// </summary>
-        public int Nummer { get; set; }
-
-        /// <summary>
-        ///     Checks of the sector is available
-        /// </summary>
-        public bool Beschikbaar { get; set; }
-        /// <summary>
-        ///     Checks of the sector is blocked
-        /// </summary>
-        public bool Blokkade { get; set; }
-
         /// <summary>
         ///     Constructor
         /// </summary>
@@ -44,12 +16,35 @@ namespace TVS
             Beschikbaar = beschikbaar;
             Blokkade = blokkade;
         }
+
         /// <summary>
         ///     Empty constructor
         /// </summary>
-        public Sector()
-        {
-            
-        }
+        public Sector() {}
+
+        /// <summary>
+        ///     ID of the track
+        /// </summary>
+        public int SpoorId { get; set; }
+
+        /// <summary>
+        ///     Id of the Tram
+        /// </summary>
+        public int TramId { get; set; }
+
+        /// <summary>
+        ///     Number of the sector
+        /// </summary>
+        public int Nummer { get; set; }
+
+        /// <summary>
+        ///     Checks of the sector is available
+        /// </summary>
+        public bool Beschikbaar { get; set; }
+
+        /// <summary>
+        ///     Checks of the sector is blocked
+        /// </summary>
+        public bool Blokkade { get; set; }
     }
 }

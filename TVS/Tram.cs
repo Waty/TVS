@@ -1,12 +1,32 @@
-﻿using Microsoft.SqlServer.Server;
-
-namespace TVS
+﻿namespace TVS
 {
     /// <summary>
     ///     Class to create or keep track of a Tram
     /// </summary>
     public class Tram
     {
+        /// <summary>
+        ///     Constructor
+        /// </summary>
+        public Tram(int id, int nummer, int lengte, bool vervuild, bool defect, bool conductGeschikt, bool beschikbaar,
+            int tramtypeid, int remiseid)
+        {
+            Id = id;
+            Nummer = nummer;
+            Lengte = lengte;
+            Vervuild = vervuild;
+            Defect = defect;
+            ConductGeschikt = conductGeschikt;
+            Beschikbaar = beschikbaar;
+            TramTypeID = tramtypeid;
+            RemiseId = remiseid;
+        }
+
+        /// <summary>
+        ///     Empty constructor
+        /// </summary>
+        public Tram() {}
+
         /// <summary>
         ///     Tram ID
         /// </summary>
@@ -51,29 +71,6 @@ namespace TVS
         ///     Shows the ID of the "Remise" it belongs to.
         /// </summary>
         public int RemiseId { get; set; }
-
-        /// <summary>
-        ///     Constructor
-        /// </summary>
-        public Tram(int id, int nummer, int lengte, bool vervuild, bool defect, bool conductGeschikt, bool beschikbaar, int tramtypeid, int remiseid)
-        {
-            Id = id;
-            Nummer = nummer;
-            Lengte = lengte;
-            Vervuild = vervuild;
-            Defect = defect;
-            ConductGeschikt = conductGeschikt;
-            Beschikbaar = beschikbaar;
-            TramTypeID = tramtypeid;
-            RemiseId = remiseid;
-        }
-        /// <summary>
-        ///     Empty constructor
-        /// </summary>
-        public Tram()
-        {
-            
-        }
 
         /// <summary>
         ///     ToString function of the class.

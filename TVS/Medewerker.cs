@@ -10,7 +10,6 @@ namespace TVS
         /// </summary>
         public enum FunctieType
         {
-            
             /// <summary>
             ///     Main controller
             /// </summary>
@@ -38,6 +37,21 @@ namespace TVS
         }
 
         /// <summary>
+        ///     Constructor
+        /// </summary>
+        public Medewerker(int id, string naam, FunctieType functie)
+        {
+            Id = id;
+            Naam = naam;
+            Functie = functie;
+        }
+
+        /// <summary>
+        ///     Empty constructor
+        /// </summary>
+        public Medewerker() {}
+
+        /// <summary>
         ///     The unique identification number for <see cref="Medewerker" />s
         /// </summary>
         public int Id { get; set; }
@@ -51,23 +65,6 @@ namespace TVS
         ///     The Functie of the <see cref="Medewerker" />
         /// </summary>
         public FunctieType Functie { get; set; }
-
-        /// <summary>
-        ///     Constructor
-        /// </summary>
-        public Medewerker(int id, string naam, FunctieType functie)
-        {
-            Id = id;
-            Naam = naam;
-            Functie = functie;
-        }
-        /// <summary>
-        ///     Empty constructor
-        /// </summary>
-        public Medewerker()
-        {
-            
-        }
 
         /// <summary>
         ///     Returns a string that represents the current object.

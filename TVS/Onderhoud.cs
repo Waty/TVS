@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TVS
 {
     /// <summary>
     ///     Maintenance and/or repairs
     /// </summary>
-        public class Onderhoud
+    public class Onderhoud
     {
         /// <summary>
         ///     Enum for the type of maintenance
@@ -20,31 +16,17 @@ namespace TVS
             ///     Large service
             /// </summary>
             GroteServicebeurt,
+
             /// <summary>
             ///     Small service
             /// </summary>
             KleineServicebeurt,
+
             /// <summary>
             ///     Repair
             /// </summary>
             Reparatie
         }
-       /// <summary>
-       ///     Timeindication of repairs
-       /// </summary>
-        public DateTime Tijd { get; set; }
-       /// <summary>
-       ///      ID of the Tram being repaired
-       /// </summary>
-        public int TramId { get; set; }
-        /// <summary>
-        ///     The technician 
-        /// </summary>
-        public Medewerker Medewerker { get; set; }
-        /// <summary>
-        ///     Type of Maintenance
-        /// </summary>
-        public TypeOnderhoud Type { get; set; }
 
         /// <summary>
         ///     constructor
@@ -53,13 +35,32 @@ namespace TVS
         /// <param name="date"> the indicated time when this is finished</param>
         /// <param name="tramid">ID of the Tram</param>
         /// <param name="type">Type of maintenance</param>
-        public Onderhoud(Medewerker medewerker, DateTime date, int tramid, TypeOnderhoud type )
+        public Onderhoud(Medewerker medewerker, DateTime date, int tramid, TypeOnderhoud type)
         {
             Medewerker = medewerker;
             Tijd = date;
             TramId = tramid;
             Type = type;
         }
+
+        /// <summary>
+        ///     Timeindication of repairs
+        /// </summary>
+        public DateTime Tijd { get; set; }
+
+        /// <summary>
+        ///     ID of the Tram being repaired
+        /// </summary>
+        public int TramId { get; set; }
+
+        /// <summary>
+        ///     The technician
+        /// </summary>
+        public Medewerker Medewerker { get; set; }
+
+        /// <summary>
+        ///     Type of Maintenance
+        /// </summary>
+        public TypeOnderhoud Type { get; set; }
     }
-    
 }
