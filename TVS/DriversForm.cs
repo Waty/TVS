@@ -20,6 +20,10 @@ namespace TVS
             {
                 Database.SetVervuild(Convert.ToInt32(tbTramNummer.Text));
             }
+            if (cbDefect.Checked)
+            {
+               Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
+            }
         }
     }
 }

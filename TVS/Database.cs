@@ -163,6 +163,17 @@ namespace TVS
         }
 
         /// <summary>
+        ///     Sets "Defect" to true
+        /// </summary>
+        /// <param name="number"></param>
+        public static void SetBroken(int number)
+        {
+            string query = "UPDATE Tram SET \"Defect\" = 1 WHERE \"Nummer\" = " + number + "";
+
+            ExecuteNonQuery(query);
+        }
+
+        /// <summary>
         ///     Retrieves the ID, name and functie of all medewerkers
         /// </summary>
         public static IEnumerable<Medewerker> GetAllMedewerkers()
