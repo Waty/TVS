@@ -136,5 +136,20 @@ namespace TVS
                 Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"])
             });
         }
+
+        /// <summary>
+        ///     Stores the <see cref="Schoonmaak" /> in the database
+        /// </summary>
+        /// <param name="s">the cleanup to be stored</param>
+        public static void SaveCleanup(Schoonmaak s)
+        {
+            string query = "INSERT INTO schoonmaak (ID, MEDEWERKERID, TRAMID, DATUM) " +
+                           $"VALUES (NULL, {s.Medewerker.Id}, {s.Tram.Id}, '{s.Date:dd-MM-yy}')";
+
+            ExecuteNonQuery(query);
+
+            query = "UPDATE TRAM SET \"Vervuild\" = 0 WHERE ID = " + s.Tram.Id;
+            ExecuteNonQuery(query);
+        }
     }
 }
