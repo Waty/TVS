@@ -102,14 +102,18 @@ namespace TVS
         /// <param name="username">The username to login</param>
         /// <param name="password">The password to login</param>
         /// <returns>The function of the employee or null if the login attempt failed</returns>
-        public static string Login(string username, string password)
+        public static Medewerker Login(string username, string password)
         {
             string query =
-                "SELECT f.\"Naam\" FROM Medewerker m " +
-                "JOIN Functie f ON f.Id = m.\"Functie_ID\" " +
-                $"WHERE m.\"Naam\" = '{username}' AND m.\"Wachtwoord\" = '{password}'";
+                "SELECT Id, \"Functie_ID\", \"Naam\" FROM Medewerker " +
+                $"WHERE \"Naam\" = '{username}' AND \"Wachtwoord\" = '{password}'";
 
-            return ExecuteReader(query, reader => Convert.ToString(reader["Naam"])).SingleOrDefault();
+            return ExecuteReader(query, reader => new Medewerker
+            {
+                Id = Convert.ToInt32(reader["Id"]),
+                Naam = Convert.ToString(reader["Naam"]),
+                Functie = (Medewerker.FunctieType) Convert.ToInt32(reader["Functie_Id"])
+            }).SingleOrDefault();
         }
 
         /// <summary>
