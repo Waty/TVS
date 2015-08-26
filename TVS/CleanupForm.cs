@@ -31,7 +31,8 @@ namespace TVS
         /// </summary>
         private void btnRegisterCleanup_Click(object sender, EventArgs e)
         {
-            //TODO: save the cleanup in the database
+            Database.SaveCleanup(new Schoonmaak(null, dtpCleanupDate.Value, (Tram) lbCleanupTasks.SelectedItem));
+            
             LoadCleanupData(sender, e);
         }
     }

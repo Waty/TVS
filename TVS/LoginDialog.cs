@@ -21,24 +21,28 @@ namespace TVS
         /// </summary>
         private void bLogin_Click(object sender, EventArgs e)
         {
-            string func = Database.Login(tbUsername.Text, tbPassword.Text);
+            Medewerker medewerker = Database.Login(tbUsername.Text, tbPassword.Text);
             Hide();
-            switch (func)
+            switch (medewerker?.Functie)
             {
-                case "Schoonmaker":
+                case Medewerker.FunctieType.Schoonmaker:
                     new CleanupForm().ShowDialog();
                     break;
 
-                case "Technicus":
+                case Medewerker.FunctieType.Technicus:
                     new MaintenanceForm().ShowDialog();
                     break;
 
-                case "Bestuurder":
+                case Medewerker.FunctieType.Bestuurder:
                     new DriversForm().ShowDialog();
                     break;
 
-                case "Wagenparkbeheerder":
+                case Medewerker.FunctieType.Wagenparkbeheerder:
                     new RemiseForm().ShowDialog();
+                    break;
+
+                case Medewerker.FunctieType.Beheerder:
+                    MessageBox.Show("Beheerders zijn voor nu nog niet geïmplementeerd!");
                     break;
 
                 default:
