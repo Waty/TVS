@@ -10,11 +10,15 @@ namespace TVS.Tests
     public class DatabaseTests
     {
         [TestMethod]
-        public void DataLoginTest()
+        public void SjaakLoginTest()
         {
-            Assert.AreEqual("Schoonmaker", Database.Login("Sjaak_Schoonmaker", "TestTest1"));
+            Assert.AreEqual(Medewerker.FunctieType.Schoonmaker, Database.Login("Sjaak_Schoonmaker", "TestTest1").Functie);
+        }
 
-            Assert.AreEqual(null, Database.Login("Invalid", "Login"));
+        [TestMethod]
+        public void InvalidLoginTest()
+        {
+            Assert.IsNull(Database.Login("Invalid", "password"));
         }
     }
 }
