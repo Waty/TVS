@@ -119,6 +119,7 @@
             this.btnStatus.TabIndex = 15;
             this.btnStatus.Text = "Status aanpassen";
             this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
             // 
             // cbStatus
             // 
@@ -126,7 +127,8 @@
             this.cbStatus.Items.AddRange(new object[] {
             "Onderhoud",
             "Technische problemen",
-            "Schoonmaak"});
+            "Schoonmaak",
+            "Beschikbaar"});
             this.cbStatus.Location = new System.Drawing.Point(233, 102);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(157, 21);
