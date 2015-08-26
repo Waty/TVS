@@ -1,51 +1,52 @@
 ﻿namespace TVS
 {
     /// <summary>
-    ///     Klasse om een Tram aan te maken.
+    ///     Class to create or keep track of a Tram
     /// </summary>
     public class Tram
     {
         /// <summary>
-        /// ID van de Tram
+        /// Tram ID
         /// </summary>
         public int ID { get; set; }
 
         /// <summary>
-        /// Nummer van de Tram
+        /// Tram number
         /// </summary>
         public int Nummer { get; set; }
 
         /// <summary>
-        /// Lengte van de Tram
+        /// Tram lenght
         /// </summary>
         public int Lengte { get; set; }
 
         /// <summary>
-        /// Geeft aan of the Tram moet worden schoongemaakt.
+        /// Shows whether the Tram needs to be cleaned.
         /// </summary>
         public bool Vervuild { get; set; }
 
         /// <summary>
-        /// Geeft aan of de trein moet worden gerepareerd.
+        /// Shows whether the Tram needs to be repaired.
         /// </summary>
         public bool Defect { get; set; }
 
         /// <summary>
-        /// Geeft aan of de Tram geschikt is om een conducteur bij te hebben.
+        /// Shows whether the Tram is suited fo have a "Conducteur"
         /// </summary>
         public bool ConductGeschikt { get; set; }
 
         /// <summary>
-        /// Geeft aan of dat de Tram beschikbaar is
+        /// Shows whether the Tram is available
         /// </summary>
         public bool Beschikbaar { get; set; }
 
         /// <summary>
+        /// Shows the ID of the Tram type
         /// </summary>
         public int TramTypeID { get; set; }
 
         /// <summary>
-        /// Geeft het TypeID van de Tram aan.
+        /// Shows the ID of the "Remise" it belongs to.
         /// </summary>
         public int RemiseId { get; set; }
 
@@ -55,9 +56,9 @@
         public Status Status { get; set; }
 
         /// <summary>
-        /// De ToString van de Tram
+        /// ToString function of the class.
         /// </summary>
-        /// <returns>Geeft een string met de data van de Tram</returns>
+        /// <returns>Returns the data in a string</returns>
         public override string ToString()
         {
             return "ID: " + ID + ", Nummer: " + Nummer + "";
