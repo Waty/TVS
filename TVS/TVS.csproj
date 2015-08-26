@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DriversForm.cs">
       <SubType>Form</SubType>
@@ -66,6 +67,8 @@
     <Compile Include="LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Onderhoud.cs" />
+    <Compile Include="Remise.cs" />
     <Compile Include="RemiseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +91,11 @@
       <DependentUpon>MaintenanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Schoonmaak.cs" />
+    <Compile Include="Sector.cs" />
+    <Compile Include="Spoor.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="Tram.cs" />
+    <Compile Include="TramType.cs" />
     <EmbeddedResource Include="DriversForm.resx">
       <DependentUpon>DriversForm.cs</DependentUpon>
     </EmbeddedResource>

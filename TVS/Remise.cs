@@ -42,7 +42,7 @@ namespace TVS
         public int KleineServicebeurt { get; set; }
 
         /// <summary>
-        /// Constructor
+        ///     Constructor
         /// </summary>
         public Remise(int id, string naam, int groteSc, int kleineSc, int groteSe, int kleineSe)
         {

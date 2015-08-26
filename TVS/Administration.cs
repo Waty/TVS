@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TVS
 {
-    class Administration
+    /// <summary>
+    /// Class that sends through all information and methods.
+    /// </summary>
+    public class Administration
     {
+         
     }
 }
