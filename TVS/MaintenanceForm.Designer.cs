@@ -109,6 +109,7 @@
             this.btnOnderhoudLijst.TabIndex = 14;
             this.btnOnderhoudLijst.Text = "Haal lijst op";
             this.btnOnderhoudLijst.UseVisualStyleBackColor = true;
+            this.btnOnderhoudLijst.Click += new System.EventHandler(this.btnOnderhoudLijst_Click);
             // 
             // btnStatus
             // 
@@ -131,7 +132,7 @@
             this.cbStatus.Size = new System.Drawing.Size(157, 21);
             this.cbStatus.TabIndex = 16;
             // 
-            // Onderhoud
+            // MaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,7 +147,7 @@
             this.Controls.Add(this.btnOnderhoud);
             this.Controls.Add(this.dtOnderhoud);
             this.Controls.Add(this.lbOnderhoud);
-            this.Name = "Onderhoud";
+            this.Name = "MaintenanceForm";
             this.Text = "Onderhoud";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -11,7 +11,9 @@ namespace TVS
         {
             InitializeComponent();
         }
+        private void btnOnderhoudLijst_Click(object sender, EventArgs e)
+        {
 
-        private void btnTerug_Click(object sender, EventArgs e) {}
+        }
     }
 }
