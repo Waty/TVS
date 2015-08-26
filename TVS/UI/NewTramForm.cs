@@ -12,12 +12,21 @@ namespace TVS.UI
 {
     public partial class NewTramForm : Form
     {
+        Administration admin = new Administration();
         /// <summary>
         ///     Form for a new tram
         /// </summary>
         public NewTramForm()
         {
             InitializeComponent();
+            cbType.DataSource = admin.GeTramTypes().Select(t => t.Omschrijving).ToList();
+          
+            
+        }
+
+        private void btnNieuw_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

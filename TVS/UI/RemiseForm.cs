@@ -43,5 +43,11 @@ namespace TVS.UI
                 track.Enabled = blocked;
             }
         }
+
+        private void btnNieuw_Click(object sender, EventArgs e)
+        {
+            NewTramForm newTramForm = new NewTramForm();
+            newTramForm.Visible = true;
+        }
     }
 }

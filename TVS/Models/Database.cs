@@ -205,21 +205,18 @@ namespace TVS.Models
             return ExecuteNonQuery(query);
         }
         /// <summary>
-        ///     Returns a list of tramtypes
+        ///     Retrieves all the tramtypes from the database
         /// </summary>
-        /// <returns></returns>
-        public static List<TramType> GetTramtypes()
+        public static IEnumerable<TramType> GetTramtypes()
         {
-            List<TramType> types = new List<TramType>();
-
-            string query = "SELECT * FROM Tramtype";
-            ExecuteReader(query, reader => new TramType
+            const string query = "SELECT * FROM Tramtype";
+            return  ExecuteReader(query, reader => new TramType
             {
                 Id = Convert.ToInt32(reader["ID"]),
                 Omschrijving = Convert.ToString(reader["Omschrijving"])
             });
 
-            return types;
+  
         }
     }
 }

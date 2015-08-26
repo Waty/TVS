@@ -108,6 +108,9 @@
     <EmbeddedResource Include="UI\LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewTramForm.resx">
+      <DependentUpon>NewTramForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\RemiseForm.resx">
       <DependentUpon>RemiseForm.cs</DependentUpon>
     </EmbeddedResource>

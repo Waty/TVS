@@ -124,6 +124,7 @@
             this.btnBlokkeer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNieuw = new System.Windows.Forms.Button();
             this.pn12.SuspendLayout();
             this.pn13.SuspendLayout();
             this.pn14.SuspendLayout();
@@ -1027,6 +1028,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnNieuw);
             this.panel2.Controls.Add(this.lbNummer);
             this.panel2.Controls.Add(this.tbTramNummer);
             this.panel2.Controls.Add(this.btnSchoonmaak);
@@ -1034,8 +1036,18 @@
             this.panel2.Controls.Add(this.btnInvoer);
             this.panel2.Location = new System.Drawing.Point(1015, 532);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 130);
+            this.panel2.Size = new System.Drawing.Size(200, 168);
             this.panel2.TabIndex = 92;
+            // 
+            // btnNieuw
+            // 
+            this.btnNieuw.Location = new System.Drawing.Point(84, 126);
+            this.btnNieuw.Name = "btnNieuw";
+            this.btnNieuw.Size = new System.Drawing.Size(111, 23);
+            this.btnNieuw.TabIndex = 88;
+            this.btnNieuw.Text = "Nieuwe Tram";
+            this.btnNieuw.UseVisualStyleBackColor = true;
+            this.btnNieuw.Click += new System.EventHandler(this.btnNieuw_Click);
             // 
             // RemiseForm
             // 
@@ -1238,6 +1250,7 @@
         private System.Windows.Forms.Button btnBlokkeer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnNieuw;
     }
 }
 

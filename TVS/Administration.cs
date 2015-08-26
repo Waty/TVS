@@ -38,5 +38,14 @@ namespace TVS
         {
             Database.SetVervuild(nummer);
         }
+
+        /// <summary>
+        ///     Gets all the tramtypes
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TramType> GeTramTypes()
+        {
+            return Database.GetTramtypes();
+        }
     }
 }
