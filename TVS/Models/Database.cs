@@ -227,5 +227,24 @@ namespace TVS.Models
 
             ExecuteNonQuery(query);
         }
+
+        /// <summary>
+        ///     Retrieves targeted tram
+        /// </summary>
+        public static Tram GetTram(int number)
+        {
+            return ExecuteReader($"SELECT * FROM Tram WHERE \"Nummer\" = {number}", reader => new Tram
+            {
+                Id = Convert.ToInt32(reader["Id"]),
+                Nummer = Convert.ToInt32(reader["Id"]),
+                Lengte = Convert.ToInt32(reader["Id"]),
+                Vervuild = Convert.ToBoolean(reader["Id"]),
+                Defect = Convert.ToBoolean(reader["Id"]),
+                ConductGeschikt = Convert.ToBoolean(reader["Id"]),
+                Beschikbaar = Convert.ToBoolean(reader["Id"]),
+                TramTypeID = Convert.ToInt32(reader["Id"]),
+                RemiseId = Convert.ToInt32(reader["Id"])
+            }).SingleOrDefault();
+        }
     }
 }

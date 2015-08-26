@@ -125,8 +125,6 @@
             // 
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
-            "Onderhoud",
-            "Technische problemen",
             "Schoonmaak",
             "Beschikbaar"});
             this.cbStatus.Location = new System.Drawing.Point(233, 102);
