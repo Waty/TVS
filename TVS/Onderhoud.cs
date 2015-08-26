@@ -9,15 +9,24 @@ namespace TVS
     /// <summary>
     ///     Maintenance and/or repairs
     /// </summary>
-    class Onderhoud
+        public class Onderhoud
     {
         /// <summary>
         ///     Enum for the type of maintenance
         /// </summary>
         public enum TypeOnderhoud
         {
+            /// <summary>
+            ///     Large service
+            /// </summary>
             GroteServicebeurt,
+            /// <summary>
+            ///     Small service
+            /// </summary>
             KleineServicebeurt,
+            /// <summary>
+            ///     Repair
+            /// </summary>
             Reparatie
         }
        /// <summary>

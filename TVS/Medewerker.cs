@@ -10,24 +10,29 @@ namespace TVS
         /// </summary>
         public enum FunctieType
         {
-            //TODO: add proper comments
+            
             /// <summary>
+            ///     Main controller
             /// </summary>
             Beheerder = 1,
 
             /// <summary>
+            ///     Tram controller
             /// </summary>
             Wagenparkbeheerder = 2,
 
             /// <summary>
+            ///     Driver
             /// </summary>
             Bestuurder = 3,
 
             /// <summary>
+            ///     Technician
             /// </summary>
             Technicus = 4,
 
             /// <summary>
+            ///     Cleaner
             /// </summary>
             Schoonmaker = 5
         }
@@ -46,6 +51,23 @@ namespace TVS
         ///     The Functie of the <see cref="Medewerker" />
         /// </summary>
         public FunctieType Functie { get; set; }
+
+        /// <summary>
+        ///     Constructor
+        /// </summary>
+        public Medewerker(int id, string naam, FunctieType functie)
+        {
+            Id = id;
+            Naam = naam;
+            Functie = functie;
+        }
+        /// <summary>
+        ///     Empty constructor
+        /// </summary>
+        public Medewerker()
+        {
+            
+        }
 
         /// <summary>
         ///     Returns a string that represents the current object.
