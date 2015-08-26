@@ -38,7 +38,7 @@ namespace TVS
                     break;
 
                 case "Wagenparkbeheerder":
-                    new MainForm().ShowDialog();
+                    new RemiseForm().ShowDialog();
                     break;
 
                 default:

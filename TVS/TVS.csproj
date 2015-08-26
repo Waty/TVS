@@ -66,11 +66,11 @@
     <Compile Include="LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="RemiseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="RemiseForm.Designer.cs">
+      <DependentUpon>RemiseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CleanupForm.cs">
       <SubType>Form</SubType>
@@ -94,8 +94,8 @@
     <EmbeddedResource Include="LoginDialog.resx">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="RemiseForm.resx">
+      <DependentUpon>RemiseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CleanupForm.resx">
       <DependentUpon>CleanupForm.cs</DependentUpon>
