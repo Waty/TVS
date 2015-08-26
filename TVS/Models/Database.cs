@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
 using Oracle.ManagedDataAccess.Client;
 
 namespace TVS.Models
@@ -156,10 +155,10 @@ namespace TVS.Models
         /// <summary>
         ///     Sets the "Vervuild" to true
         /// </summary>
-        public static void SetVervuild(int nummer)
+        public static int SetVervuild(int nummer)
         {
             string query = "UPDATE Tram SET \"Vervuild\" = 1 WHERE \"Nummer\" = " + nummer;
-            ExecuteNonQuery(query);
+            return ExecuteNonQuery(query);
         }
 
         /// <summary>
@@ -205,18 +204,20 @@ namespace TVS.Models
             string query = $"UPDATE Spoor SET Geblokkeerd = {Convert.ToInt32(enabled)} WHERE \"Nummer\" = {railNumber}";
             return ExecuteNonQuery(query);
         }
+
         /// <summary>
         ///     Retrieves all the tramtypes from the database
         /// </summary>
         public static IEnumerable<TramType> GetTramtypes()
         {
             const string query = "SELECT * FROM Tramtype";
-            return  ExecuteReader(query, reader => new TramType
+            return ExecuteReader(query, reader => new TramType
             {
                 Id = Convert.ToInt32(reader["ID"]),
                 Omschrijving = Convert.ToString(reader["Omschrijving"])
             });
         }
+
         /// <summary>
         ///     Adds a new tram to the database
         /// </summary>
