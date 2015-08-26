@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="Models\Onderhoud.cs" />
     <Compile Include="Models\Remise.cs" />
+    <Compile Include="UI\NewTramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NewTramForm.Designer.cs">
+      <DependentUpon>NewTramForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\RemiseForm.cs">
       <SubType>Form</SubType>
     </Compile>

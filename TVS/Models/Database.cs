@@ -213,5 +213,22 @@ namespace TVS.Models
             string query = "UPDATE Spoor SET \"Geblokkeerd\" = 0 WHERE \"Nummer\" = " + number;
             ExecuteNonQuery(query);
         }
+        /// <summary>
+        ///     Returns a list of tramtypes
+        /// </summary>
+        /// <returns></returns>
+        public static List<TramType> GetTramtypes()
+        {
+            List<TramType> types = new List<TramType>();
+
+            string query = "SELECT * FROM Tramtype";
+            ExecuteReader(query, reader => new TramType
+            {
+                Id = Convert.ToInt32(reader["ID"]),
+                Omschrijving = Convert.ToString(reader["Omschrijving"])
+            });
+
+            return types;
+        }
     }
 }
