@@ -1,6 +1,6 @@
 using System;
 
-namespace TVS
+namespace TVS.Models
 {
     /// <summary>
     ///     Contains all the information about a cleanup

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using TVS.Models;
 
-namespace TVS
+namespace TVS.UI
 {
     /// <summary>
     ///     The form for the people that need to clean the tram

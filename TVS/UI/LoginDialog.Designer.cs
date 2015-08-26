@@ -1,4 +1,4 @@
-﻿namespace TVS
+﻿namespace TVS.UI
 {
     partial class LoginDialog
     {

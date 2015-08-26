@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace TVS
+namespace TVS.UI
 {
     public partial class MaintenanceForm : Form
     {

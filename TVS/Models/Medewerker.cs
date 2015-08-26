@@ -1,4 +1,4 @@
-namespace TVS
+namespace TVS.Models
 {
     /// <summary>
     ///     Contains all the info about the medewerker

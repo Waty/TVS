@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using TVS.UI;
 
-namespace TVS
+namespace TVS.Models
 {
     internal static class Program
     {

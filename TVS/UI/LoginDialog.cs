@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using TVS.Models;
 
-namespace TVS
+namespace TVS.UI
 {
     /// <summary>
     ///     A simple dialog containing a username and a password box and a button to login

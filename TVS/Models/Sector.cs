@@ -1,4 +1,4 @@
-﻿namespace TVS
+﻿namespace TVS.Models
 {
     /// <summary>
     ///     Class to control a sector

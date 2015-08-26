@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using Oracle.ManagedDataAccess.Client;
 
-namespace TVS
+namespace TVS.Models
 {
     /// <summary>
     ///     A static class to that provides acces to the database hosted on athena

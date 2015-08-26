@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TVS
+namespace TVS.Models
 {
     /// <summary>
     ///     Maintenance and/or repairs
