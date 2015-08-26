@@ -124,7 +124,7 @@ namespace TVS
         {
             return ExecuteReader("SELECT * FROM tram", reader => new Tram
             {
-                ID = Convert.ToInt32(reader["ID"]),
+                Id = Convert.ToInt32(reader["ID"]),
                 RemiseId = Convert.ToInt32(reader["Remise_ID_Standplaats"]),
                 TramTypeID = Convert.ToInt32(reader["Tramtype_ID"]),
                 Nummer = Convert.ToInt32(reader["Nummer"]),

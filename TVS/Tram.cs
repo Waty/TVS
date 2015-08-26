@@ -8,7 +8,7 @@
         /// <summary>
         /// Tram ID
         /// </summary>
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Tram number
@@ -61,7 +61,7 @@
         /// <returns>Returns the data in a string</returns>
         public override string ToString()
         {
-            return "ID: " + ID + ", Nummer: " + Nummer + "";
+            return "ID: " + Id + ", Nummer: " + Nummer + "";
         }
     }
 }
