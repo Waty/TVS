@@ -987,6 +987,7 @@
             this.btnSchoonmaak.TabIndex = 87;
             this.btnSchoonmaak.Text = "Naar schoonmaak";
             this.btnSchoonmaak.UseVisualStyleBackColor = true;
+            this.btnSchoonmaak.Click += new System.EventHandler(this.btnSchoonmaak_Click);
             // 
             // textBox1
             // 

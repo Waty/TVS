@@ -16,5 +16,9 @@ namespace TVS
             InitializeComponent();
         }
 
+        private void btnSchoonmaak_Click(object sender, EventArgs e)
+        {
+            Database.SetVervuild(Convert.ToInt32(tbTramNummer.Text));
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace TVS
 {
@@ -11,6 +12,14 @@ namespace TVS
         public DriversForm()
         {
             InitializeComponent();
+        }
+
+        private void btnVerzend_Click(object sender, System.EventArgs e)
+        {
+            if (cbVervuild.Checked)
+            {
+                Database.SetVervuild(Convert.ToInt32(tbTramNummer.Text));
+            }
         }
     }
 }

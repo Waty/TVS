@@ -28,27 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLoguit = new System.Windows.Forms.Button();
             this.tbSpoor = new System.Windows.Forms.TextBox();
             this.lbSpoor = new System.Windows.Forms.Label();
             this.lbTramNummer = new System.Windows.Forms.Label();
             this.lbTram = new System.Windows.Forms.Label();
             this.btnWijzigSpoor = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTramNummer = new System.Windows.Forms.TextBox();
             this.lbWagenNummer = new System.Windows.Forms.Label();
             this.cbVervuild = new System.Windows.Forms.CheckBox();
             this.cbDefect = new System.Windows.Forms.CheckBox();
             this.btnVerzend = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnLoguit
-            // 
-            this.btnLoguit.Location = new System.Drawing.Point(362, 12);
-            this.btnLoguit.Name = "btnLoguit";
-            this.btnLoguit.Size = new System.Drawing.Size(75, 23);
-            this.btnLoguit.TabIndex = 14;
-            this.btnLoguit.Text = "Log uit";
-            this.btnLoguit.UseVisualStyleBackColor = true;
             // 
             // tbSpoor
             // 
@@ -96,12 +86,12 @@
             this.btnWijzigSpoor.Text = "Wijzig spoor";
             this.btnWijzigSpoor.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbTramNummer
             // 
-            this.textBox1.Location = new System.Drawing.Point(337, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
+            this.tbTramNummer.Location = new System.Drawing.Point(337, 95);
+            this.tbTramNummer.Name = "tbTramNummer";
+            this.tbTramNummer.Size = new System.Drawing.Size(100, 20);
+            this.tbTramNummer.TabIndex = 20;
             // 
             // lbWagenNummer
             // 
@@ -140,8 +130,9 @@
             this.btnVerzend.TabIndex = 24;
             this.btnVerzend.Text = "Verzend";
             this.btnVerzend.UseVisualStyleBackColor = true;
+            this.btnVerzend.Click += new System.EventHandler(this.btnVerzend_Click);
             // 
-            // In_en_uit_rijden
+            // DriversForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,13 +141,12 @@
             this.Controls.Add(this.cbDefect);
             this.Controls.Add(this.cbVervuild);
             this.Controls.Add(this.lbWagenNummer);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbTramNummer);
             this.Controls.Add(this.btnWijzigSpoor);
             this.Controls.Add(this.lbTram);
             this.Controls.Add(this.lbTramNummer);
             this.Controls.Add(this.lbSpoor);
             this.Controls.Add(this.tbSpoor);
-            this.Controls.Add(this.btnLoguit);
             this.Name = "DriversForm";
             this.Text = "In_en_uit_rijden";
             this.ResumeLayout(false);
@@ -165,14 +155,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLoguit;
         private System.Windows.Forms.TextBox tbSpoor;
         private System.Windows.Forms.Label lbSpoor;
         private System.Windows.Forms.Label lbTramNummer;
         private System.Windows.Forms.Label lbTram;
         private System.Windows.Forms.Button btnWijzigSpoor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTramNummer;
         private System.Windows.Forms.Label lbWagenNummer;
         private System.Windows.Forms.CheckBox cbVervuild;
         private System.Windows.Forms.CheckBox cbDefect;

@@ -151,5 +151,14 @@ namespace TVS
             query = "UPDATE TRAM SET \"Vervuild\" = 0 WHERE ID = " + s.Tram.Id;
             ExecuteNonQuery(query);
         }
+        /// <summary>
+        ///     Sets the "Vervuild" to true
+        /// </summary>
+        public static void SetVervuild(int nummer)
+        {
+            string query = "UPDATE Tram SET \"Vervuild\" = 1 WHERE \"Nummer\" = " + nummer + "";
+
+            ExecuteNonQuery(query);
+        }
     }
 }
