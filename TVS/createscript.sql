@@ -7,12 +7,9 @@ Added:
 --Disables the parsing of commands to replace substitution variables with their values
 set define off;
 
-DROP TABLE "FUNCTIE" CASCADE CONSTRAINTS;
-DROP TABLE "FUNCTIE_RECHT" CASCADE CONSTRAINTS;
 DROP TABLE "LIJN" CASCADE CONSTRAINTS;
 DROP TABLE "MEDEWERKER" CASCADE CONSTRAINTS;
 DROP TABLE "ONDERHOUD" CASCADE CONSTRAINTS;
-DROP TABLE "RECHT" CASCADE CONSTRAINTS;
 DROP TABLE "REMISE" CASCADE CONSTRAINTS;
 DROP TABLE "RESERVERING" CASCADE CONSTRAINTS;
 DROP TABLE "SECTOR" CASCADE CONSTRAINTS;
@@ -25,10 +22,8 @@ DROP TABLE "TRANSFER" CASCADE CONSTRAINTS;
 DROP TABLE "VERBINDING" CASCADE CONSTRAINTS;
 DROP TABLE Schoonmaak CASCADE CONSTRAINTS;
 
-DROP SEQUENCE "FUNCTIE_FCSEQ";
 DROP SEQUENCE "LIJN_FCSEQ";
 DROP SEQUENCE "MEDEWERKER_FCSEQ";
-DROP SEQUENCE "RECHT_FCSEQ";
 DROP SEQUENCE "REMISE_FCSEQ";
 DROP SEQUENCE "RESERVERING_FCSEQ";
 DROP SEQUENCE "SECTOR_FCSEQ";
@@ -44,11 +39,6 @@ DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 --  File created - donderdag-oktober-23-2014   
 --------------------------------------------------------
 --------------------------------------------------------
---  DDL for Sequence FUNCTIE_FCSEQ
---------------------------------------------------------
-
-   CREATE SEQUENCE  "FUNCTIE_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 6 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
 --  DDL for Sequence LIJN_FCSEQ
 --------------------------------------------------------
 
@@ -58,11 +48,6 @@ DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 --------------------------------------------------------
 
    CREATE SEQUENCE  "MEDEWERKER_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 6 CACHE 20 NOORDER  NOCYCLE ;
---------------------------------------------------------
---  DDL for Sequence RECHT_FCSEQ
---------------------------------------------------------
-
-   CREATE SEQUENCE  "RECHT_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 8 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence REMISE_FCSEQ
 --------------------------------------------------------
@@ -109,22 +94,9 @@ DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 
    CREATE SEQUENCE  "VERBINDING_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
---  DDL for Table FUNCTIE
---------------------------------------------------------
-
-  CREATE TABLE "FUNCTIE" 
-   (	"ID" NUMBER(10,0), 
-	"Naam" NVARCHAR2(255)
-   ) ;
---------------------------------------------------------
---  DDL for Table FUNCTIE_RECHT
 --  DDL for Sequence SCHOONMAAK_FCSEQ
 --------------------------------------------------------
 
-  CREATE TABLE "FUNCTIE_RECHT" 
-   (	"Functie_ID" NUMBER(10,0), 
-	"Recht_ID" NUMBER(10,0)
-   ) ;
    CREATE SEQUENCE  "SCHOONMAAK_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table LIJN
@@ -155,14 +127,6 @@ DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 	"KleineServiceBeurtenPerJaar" NUMBER(10,0) DEFAULT (0), 
 	"GroteSchoonmaakBeurtenPerJaar" NUMBER(10,0) DEFAULT (0), 
 	"KleineSchoonmaakBeurtenPerJaar" NUMBER(10,0) DEFAULT (0)
-   ) ;
---------------------------------------------------------
---  DDL for Table RECHT
---------------------------------------------------------
-
-  CREATE TABLE "RECHT" 
-   (	"ID" NUMBER(10,0), 
-	"Omschrijving" NVARCHAR2(255)
    ) ;
 --------------------------------------------------------
 --  DDL for Table REMISE
@@ -273,33 +237,6 @@ DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 	"Sector_ID_Van" NUMBER(10,0) DEFAULT (0), 
 	"Sector_ID_Naar" NUMBER(10,0) DEFAULT (0)
    ) ;
-REM INSERTING into FUNCTIE
-SET DEFINE OFF;
-Insert into FUNCTIE (ID,"Naam") values (1,'	Beheerder');
-Insert into FUNCTIE (ID,"Naam") values (2,'	Wagenparkbeheerder');
-Insert into FUNCTIE (ID,"Naam") values (3,'	Bestuurder');
-Insert into FUNCTIE (ID,"Naam") values (4,'	Technicus');
-Insert into FUNCTIE (ID,"Naam") values (5,'	Schoonmaker');
-REM INSERTING into FUNCTIE_RECHT
-SET DEFINE OFF;
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (1,1);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (1,2);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (1,3);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (1,4);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (1,5);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (1,6);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (1,7);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (2,1);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (2,2);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (2,3);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (2,4);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (3,1);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (3,2);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (3,4);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (4,2);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (4,5);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (5,6);
-Insert into FUNCTIE_RECHT ("Functie_ID","Recht_ID") values (5,7);
 REM INSERTING into LIJN
 SET DEFINE OFF;
 Insert into LIJN (ID,"Remise_ID","Nummer","ConducteurRijdtMee") values (1,1,1,1);
@@ -326,15 +263,6 @@ Insert into MEDEWERKER (ID,"Functie_ID","Naam","Wachtwoord") values (5,5,'Sjaak_
 REM INSERTING into ONDERHOUD
 SET DEFINE OFF;
 Insert into ONDERHOUD ("GroteServiceBeurtenPerJaar","KleineServiceBeurtenPerJaar","GroteSchoonmaakBeurtenPerJaar","KleineSchoonmaakBeurtenPerJaar") values (2,4,4,12);
-REM INSERTING into RECHT
-SET DEFINE OFF;
-Insert into RECHT (ID,"Omschrijving") values (1,'Wagens invoeren');
-Insert into RECHT (ID,"Omschrijving") values (2,'Status veranderen');
-Insert into RECHT (ID,"Omschrijving") values (3,'Sporen blokkeren');
-Insert into RECHT (ID,"Omschrijving") values (4,'Wagens naar de schoonmaak sturen');
-Insert into RECHT (ID,"Omschrijving") values (5,'Tijdsindicatie reparatie geven');
-Insert into RECHT (ID,"Omschrijving") values (6,'Schoonmaak lijst opvragen');
-Insert into RECHT (ID,"Omschrijving") values (7,'Datum/tijd schoonmaak invoeren');
 REM INSERTING into REMISE
 SET DEFINE OFF;
 Insert into REMISE (ID,"Naam","GroteServiceBeurtenPerDag","KleineServiceBeurtenPerDag","GroteSchoonmaakBeurtenPerDag","KleineSchoonmaakBeurtenPerDag") values (1,'Remise Havenstraat',1,4,2,3);
@@ -829,12 +757,6 @@ SET DEFINE OFF;
   CREATE UNIQUE INDEX "PrimaryKey5" ON "RESERVERING" ("Reservering_ID") 
   ;
 --------------------------------------------------------
---  DDL for Index Recht_ID
---------------------------------------------------------
-
-  CREATE INDEX "Recht_ID" ON "FUNCTIE_RECHT" ("Recht_ID") 
-  ;
---------------------------------------------------------
 --  DDL for Index PrimaryKey10
 --------------------------------------------------------
 
@@ -883,18 +805,6 @@ SET DEFINE OFF;
   CREATE INDEX "Medewerker_ID" ON "TRAM_ONDERHOUD" ("Medewerker_ID") 
   ;
 --------------------------------------------------------
---  DDL for Index PrimaryKey3
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "PrimaryKey3" ON "FUNCTIE" ("ID") 
-  ;
---------------------------------------------------------
---  DDL for Index FUNCTIEFUNCTIE_RECHT
---------------------------------------------------------
-
-  CREATE INDEX "FUNCTIEFUNCTIE_RECHT" ON "FUNCTIE_RECHT" ("Functie_ID") 
-  ;
---------------------------------------------------------
 --  DDL for Index Functie_ID
 --------------------------------------------------------
 
@@ -905,18 +815,6 @@ SET DEFINE OFF;
 --------------------------------------------------------
 
   CREATE INDEX "Spoor_ID" ON "RESERVERING" ("Spoor_ID") 
-  ;
---------------------------------------------------------
---  DDL for Index PrimaryKey6
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "PrimaryKey6" ON "FUNCTIE_RECHT" ("Functie_ID", "Recht_ID") 
-  ;
---------------------------------------------------------
---  DDL for Index PrimaryKey2
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "PrimaryKey2" ON "RECHT" ("ID") 
   ;
 --------------------------------------------------------
 --  DDL for Index PrimaryKey4
@@ -993,15 +891,6 @@ SET DEFINE OFF;
  
   ALTER TABLE "RESERVERING" MODIFY ("Reservering_ID" NOT NULL ENABLE);
 --------------------------------------------------------
---  Constraints for Table FUNCTIE_RECHT
---------------------------------------------------------
-
-  ALTER TABLE "FUNCTIE_RECHT" ADD CONSTRAINT "PrimaryKey6" PRIMARY KEY ("Functie_ID", "Recht_ID") ENABLE;
- 
-  ALTER TABLE "FUNCTIE_RECHT" MODIFY ("Functie_ID" NOT NULL ENABLE);
- 
-  ALTER TABLE "FUNCTIE_RECHT" MODIFY ("Recht_ID" NOT NULL ENABLE);
---------------------------------------------------------
 --  Constraints for Table TRAMTYPE
 --------------------------------------------------------
 
@@ -1051,13 +940,6 @@ SET DEFINE OFF;
  
   ALTER TABLE "TRAM" MODIFY ("Beschikbaar" NOT NULL ENABLE);
 --------------------------------------------------------
---  Constraints for Table RECHT
---------------------------------------------------------
-
-  ALTER TABLE "RECHT" ADD CONSTRAINT "PrimaryKey2" PRIMARY KEY ("ID") ENABLE;
- 
-  ALTER TABLE "RECHT" MODIFY ("ID" NOT NULL ENABLE);
---------------------------------------------------------
 --  Constraints for Table TRAM_ONDERHOUD
 --------------------------------------------------------
 
@@ -1083,13 +965,6 @@ SET DEFINE OFF;
  
   ALTER TABLE "SPOOR" MODIFY ("InUitRijspoor" NOT NULL ENABLE);
 --------------------------------------------------------
---  Constraints for Table FUNCTIE
---------------------------------------------------------
-
-  ALTER TABLE "FUNCTIE" ADD CONSTRAINT "PrimaryKey3" PRIMARY KEY ("ID") ENABLE;
- 
-  ALTER TABLE "FUNCTIE" MODIFY ("ID" NOT NULL ENABLE);
---------------------------------------------------------
 --  Constraints for Table TRANSFER
 --------------------------------------------------------
 
@@ -1110,26 +985,11 @@ SET DEFINE OFF;
  
   ALTER TABLE "SECTOR" MODIFY ("Blokkade" NOT NULL ENABLE);
 --------------------------------------------------------
---  Ref Constraints for Table FUNCTIE_RECHT
---------------------------------------------------------
-
-  ALTER TABLE "FUNCTIE_RECHT" ADD CONSTRAINT "FUNCTIEFUNCTIE_RECHT" FOREIGN KEY ("Functie_ID")
-	  REFERENCES "FUNCTIE" ("ID") ENABLE;
- 
-  ALTER TABLE "FUNCTIE_RECHT" ADD CONSTRAINT "RECHTFUNCTIE_RECHT" FOREIGN KEY ("Recht_ID")
-	  REFERENCES "RECHT" ("ID") ENABLE;
---------------------------------------------------------
 --  Ref Constraints for Table LIJN
 --------------------------------------------------------
 
   ALTER TABLE "LIJN" ADD CONSTRAINT "REMISELIJN" FOREIGN KEY ("Remise_ID")
 	  REFERENCES "REMISE" ("ID") ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table MEDEWERKER
---------------------------------------------------------
-
-  ALTER TABLE "MEDEWERKER" ADD CONSTRAINT "FUNCTIEMEDEWERKER" FOREIGN KEY ("Functie_ID")
-	  REFERENCES "FUNCTIE" ("ID") ENABLE;
 --------------------------------------------------------
 --  Ref Constraints for Table RESERVERING
 --------------------------------------------------------
@@ -1197,17 +1057,6 @@ SET DEFINE OFF;
   ALTER TABLE "VERBINDING" ADD CONSTRAINT "SECTORVERBINDING1" FOREIGN KEY ("Sector_ID_Naar")
 	  REFERENCES "SECTOR" ("ID") ENABLE;
 --------------------------------------------------------
---  DDL for Trigger FUNCTIE_FCTG_BI
---------------------------------------------------------
-
-  CREATE OR REPLACE TRIGGER "FUNCTIE_FCTG_BI" BEFORE INSERT ON "FUNCTIE"
-FOR EACH ROW
- WHEN (new."ID" IS NULL) BEGIN
-  SELECT FUNCTIE_FCSEQ.NEXTVAL INTO :new."ID" FROM dual;
-END;
-/
-ALTER TRIGGER "FUNCTIE_FCTG_BI" ENABLE;
---------------------------------------------------------
 --  DDL for Trigger LIJN_FCTG_BI
 --------------------------------------------------------
 
@@ -1229,17 +1078,6 @@ FOR EACH ROW
 END;
 /
 ALTER TRIGGER "MEDEWERKER_FCTG_BI" ENABLE;
---------------------------------------------------------
---  DDL for Trigger RECHT_FCTG_BI
---------------------------------------------------------
-
-  CREATE OR REPLACE TRIGGER "RECHT_FCTG_BI" BEFORE INSERT ON "RECHT"
-FOR EACH ROW
- WHEN (new."ID" IS NULL) BEGIN
-  SELECT RECHT_FCSEQ.NEXTVAL INTO :new."ID" FROM dual;
-END;
-/
-ALTER TRIGGER "RECHT_FCTG_BI" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger REMISE_FCTG_BI
 --------------------------------------------------------
@@ -1339,7 +1177,7 @@ FOR EACH ROW
   SELECT VERBINDING_FCSEQ.NEXTVAL INTO :new."ID" FROM dual;
 END;
 /
-ALTER TRIGGER "VERBINDING_FCTG_BI" ENABLE;ALTER TRIGGER "VERBINDING_FCTG_BI" ENABLE;
+ALTER TRIGGER "VERBINDING_FCTG_BI" ENABLE;
 
 CREATE TABLE Schoonmaak (
   Id           number(10) NOT NULL, 
