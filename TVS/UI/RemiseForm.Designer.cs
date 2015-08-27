@@ -55,13 +55,11 @@
             this.lb29 = new System.Windows.Forms.Label();
             this.lb28 = new System.Windows.Forms.Label();
             this.lb27 = new System.Windows.Forms.Label();
-            this.lb26 = new System.Windows.Forms.Label();
             this.lb25 = new System.Windows.Forms.Label();
             this.lb24 = new System.Windows.Forms.Label();
             this.lb23 = new System.Windows.Forms.Label();
             this.lb22 = new System.Windows.Forms.Label();
             this.lb36 = new System.Windows.Forms.Label();
-            this.lb35 = new System.Windows.Forms.Label();
             this.lb34 = new System.Windows.Forms.Label();
             this.lb33 = new System.Windows.Forms.Label();
             this.lb39 = new System.Windows.Forms.Label();
@@ -96,7 +94,6 @@
             this.pn43 = new System.Windows.Forms.Panel();
             this.pn44 = new System.Windows.Forms.Panel();
             this.pn45 = new System.Windows.Forms.Panel();
-            this.pn46 = new System.Windows.Forms.Panel();
             this.pn51 = new System.Windows.Forms.Panel();
             this.pn52 = new System.Windows.Forms.Panel();
             this.pn53 = new System.Windows.Forms.Panel();
@@ -105,7 +102,6 @@
             this.pn56 = new System.Windows.Forms.Panel();
             this.pn57 = new System.Windows.Forms.Panel();
             this.pn58 = new System.Windows.Forms.Panel();
-            this.pn60 = new System.Windows.Forms.Panel();
             this.pn61 = new System.Windows.Forms.Panel();
             this.pn62 = new System.Windows.Forms.Panel();
             this.pn63 = new System.Windows.Forms.Panel();
@@ -150,7 +146,6 @@
             this.pn43.SuspendLayout();
             this.pn44.SuspendLayout();
             this.pn45.SuspendLayout();
-            this.pn46.SuspendLayout();
             this.pn51.SuspendLayout();
             this.pn52.SuspendLayout();
             this.pn53.SuspendLayout();
@@ -159,7 +154,6 @@
             this.pn56.SuspendLayout();
             this.pn57.SuspendLayout();
             this.pn58.SuspendLayout();
-            this.pn60.SuspendLayout();
             this.pn61.SuspendLayout();
             this.pn62.SuspendLayout();
             this.pn63.SuspendLayout();
@@ -442,16 +436,6 @@
             this.lb27.Text = "51";
             this.lb27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lb26
-            // 
-            this.lb26.BackColor = System.Drawing.SystemColors.Window;
-            this.lb26.Location = new System.Drawing.Point(6, 5);
-            this.lb26.Name = "lb26";
-            this.lb26.Size = new System.Drawing.Size(51, 35);
-            this.lb26.TabIndex = 27;
-            this.lb26.Text = "46";
-            this.lb26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lb25
             // 
             this.lb25.BackColor = System.Drawing.SystemColors.Window;
@@ -501,16 +485,6 @@
             this.lb36.TabIndex = 32;
             this.lb36.Text = "61";
             this.lb36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lb35
-            // 
-            this.lb35.BackColor = System.Drawing.SystemColors.Window;
-            this.lb35.Location = new System.Drawing.Point(5, 5);
-            this.lb35.Name = "lb35";
-            this.lb35.Size = new System.Drawing.Size(51, 35);
-            this.lb35.TabIndex = 33;
-            this.lb35.Text = "60";
-            this.lb35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb34
             // 
@@ -802,14 +776,6 @@
             this.pn45.Size = new System.Drawing.Size(62, 387);
             this.pn45.TabIndex = 68;
             // 
-            // pn46
-            // 
-            this.pn46.Controls.Add(this.lb26);
-            this.pn46.Location = new System.Drawing.Point(890, 532);
-            this.pn46.Name = "pn46";
-            this.pn46.Size = new System.Drawing.Size(62, 223);
-            this.pn46.TabIndex = 69;
-            // 
             // pn51
             // 
             this.pn51.Controls.Add(this.lb27);
@@ -874,18 +840,10 @@
             this.pn58.Size = new System.Drawing.Size(62, 495);
             this.pn58.TabIndex = 76;
             // 
-            // pn60
-            // 
-            this.pn60.Controls.Add(this.lb35);
-            this.pn60.Location = new System.Drawing.Point(22, 532);
-            this.pn60.Name = "pn60";
-            this.pn60.Size = new System.Drawing.Size(62, 223);
-            this.pn60.TabIndex = 77;
-            // 
             // pn61
             // 
             this.pn61.Controls.Add(this.lb36);
-            this.pn61.Location = new System.Drawing.Point(85, 532);
+            this.pn61.Location = new System.Drawing.Point(22, 532);
             this.pn61.Name = "pn61";
             this.pn61.Size = new System.Drawing.Size(62, 223);
             this.pn61.TabIndex = 78;
@@ -893,7 +851,7 @@
             // pn62
             // 
             this.pn62.Controls.Add(this.lb37);
-            this.pn62.Location = new System.Drawing.Point(148, 532);
+            this.pn62.Location = new System.Drawing.Point(85, 532);
             this.pn62.Name = "pn62";
             this.pn62.Size = new System.Drawing.Size(62, 223);
             this.pn62.TabIndex = 79;
@@ -901,7 +859,7 @@
             // pn63
             // 
             this.pn63.Controls.Add(this.lb38);
-            this.pn63.Location = new System.Drawing.Point(211, 532);
+            this.pn63.Location = new System.Drawing.Point(148, 532);
             this.pn63.Name = "pn63";
             this.pn63.Size = new System.Drawing.Size(62, 223);
             this.pn63.TabIndex = 80;
@@ -909,7 +867,7 @@
             // pn64
             // 
             this.pn64.Controls.Add(this.lb39);
-            this.pn64.Location = new System.Drawing.Point(273, 532);
+            this.pn64.Location = new System.Drawing.Point(210, 532);
             this.pn64.Name = "pn64";
             this.pn64.Size = new System.Drawing.Size(62, 223);
             this.pn64.TabIndex = 81;
@@ -917,7 +875,7 @@
             // pn74
             // 
             this.pn74.Controls.Add(this.lb40);
-            this.pn74.Location = new System.Drawing.Point(366, 532);
+            this.pn74.Location = new System.Drawing.Point(335, 532);
             this.pn74.Name = "pn74";
             this.pn74.Size = new System.Drawing.Size(62, 266);
             this.pn74.TabIndex = 82;
@@ -925,7 +883,7 @@
             // pn75
             // 
             this.pn75.Controls.Add(this.lb41);
-            this.pn75.Location = new System.Drawing.Point(428, 532);
+            this.pn75.Location = new System.Drawing.Point(397, 532);
             this.pn75.Name = "pn75";
             this.pn75.Size = new System.Drawing.Size(62, 266);
             this.pn75.TabIndex = 64;
@@ -933,7 +891,7 @@
             // pn76
             // 
             this.pn76.Controls.Add(this.lb42);
-            this.pn76.Location = new System.Drawing.Point(491, 532);
+            this.pn76.Location = new System.Drawing.Point(460, 532);
             this.pn76.Name = "pn76";
             this.pn76.Size = new System.Drawing.Size(62, 266);
             this.pn76.TabIndex = 64;
@@ -941,7 +899,7 @@
             // pn77
             // 
             this.pn77.Controls.Add(this.lb43);
-            this.pn77.Location = new System.Drawing.Point(554, 532);
+            this.pn77.Location = new System.Drawing.Point(523, 532);
             this.pn77.Name = "pn77";
             this.pn77.Size = new System.Drawing.Size(62, 266);
             this.pn77.TabIndex = 64;
@@ -1064,7 +1022,6 @@
             this.Controls.Add(this.pn63);
             this.Controls.Add(this.pn62);
             this.Controls.Add(this.pn61);
-            this.Controls.Add(this.pn60);
             this.Controls.Add(this.pn58);
             this.Controls.Add(this.pn57);
             this.Controls.Add(this.pn56);
@@ -1073,7 +1030,6 @@
             this.Controls.Add(this.pn53);
             this.Controls.Add(this.pn52);
             this.Controls.Add(this.pn51);
-            this.Controls.Add(this.pn46);
             this.Controls.Add(this.pn45);
             this.Controls.Add(this.pn44);
             this.Controls.Add(this.pn43);
@@ -1126,7 +1082,6 @@
             this.pn43.ResumeLayout(false);
             this.pn44.ResumeLayout(false);
             this.pn45.ResumeLayout(false);
-            this.pn46.ResumeLayout(false);
             this.pn51.ResumeLayout(false);
             this.pn52.ResumeLayout(false);
             this.pn53.ResumeLayout(false);
@@ -1135,7 +1090,6 @@
             this.pn56.ResumeLayout(false);
             this.pn57.ResumeLayout(false);
             this.pn58.ResumeLayout(false);
-            this.pn60.ResumeLayout(false);
             this.pn61.ResumeLayout(false);
             this.pn62.ResumeLayout(false);
             this.pn63.ResumeLayout(false);
@@ -1181,13 +1135,11 @@
         private System.Windows.Forms.Label lb29;
         private System.Windows.Forms.Label lb28;
         private System.Windows.Forms.Label lb27;
-        private System.Windows.Forms.Label lb26;
         private System.Windows.Forms.Label lb25;
         private System.Windows.Forms.Label lb24;
         private System.Windows.Forms.Label lb23;
         private System.Windows.Forms.Label lb22;
         private System.Windows.Forms.Label lb36;
-        private System.Windows.Forms.Label lb35;
         private System.Windows.Forms.Label lb34;
         private System.Windows.Forms.Label lb33;
         private System.Windows.Forms.Label lb39;
@@ -1222,7 +1174,6 @@
         private System.Windows.Forms.Panel pn43;
         private System.Windows.Forms.Panel pn44;
         private System.Windows.Forms.Panel pn45;
-        private System.Windows.Forms.Panel pn46;
         private System.Windows.Forms.Panel pn51;
         private System.Windows.Forms.Panel pn52;
         private System.Windows.Forms.Panel pn53;
@@ -1231,7 +1182,6 @@
         private System.Windows.Forms.Panel pn56;
         private System.Windows.Forms.Panel pn57;
         private System.Windows.Forms.Panel pn58;
-        private System.Windows.Forms.Panel pn60;
         private System.Windows.Forms.Panel pn61;
         private System.Windows.Forms.Panel pn62;
         private System.Windows.Forms.Panel pn63;
