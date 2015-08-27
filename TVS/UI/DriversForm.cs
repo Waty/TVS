@@ -88,7 +88,16 @@ namespace TVS.UI
             }
             else
             {
-                int lijn = Database.GetLine(tram.Id);
+                for (var i = 0; i < 1337; i++)
+                {
+                    List<Spoor> sporen = Database.GetSelectedTracks(i).ToList();
+                    if (sporen.Count != 0)
+                    {
+                        Spoor spoor = sporen.First();
+                        Database.CreateSector(spoor.Id, tram.Id);
+                        break;
+                    }
+                }
             }
         }
     }

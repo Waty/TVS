@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Sockets;
 using Oracle.ManagedDataAccess.Client;
 
 namespace TVS.Models
@@ -391,5 +392,25 @@ namespace TVS.Models
             string query = "SELECT MAX(\"Lijn_ID\") FROM TRAM_LIJN WHERE \"Tram_ID\" = " + tram;
             return Convert.ToInt32(ExecuteScalar(query));
         }
+        
+        /// <summary>
+        ///     Retrieves the empty tracks
+        /// </summary>
+        public static IEnumerable<Spoor> GetSelectedTracks(int number)
+        {
+            string query =
+                "SELECT * FROM spoor WHERE (SELECT count(*) FROM sector WHERE  sector\"Spoor_ID\" = spoor.ID)= " + number;
+            return ExecuteReader(query, reader => new Spoor
+            {
+                Id = Convert.ToInt32(reader["ID"]),
+                Remise_Id = Convert.ToInt32(reader["Remise_ID"]),
+                Nummer = Convert.ToInt32(reader["Nummer"]),
+                Lengte = Convert.ToInt32(reader["Lengte"]),
+                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
+                InUitRijspoor = Convert.ToBoolean(reader["InUitRijspoor"]),
+                Geblokkeerd = Convert.ToBoolean(reader["Geblokkeerd"])
+            });
+
+        } 
     }
 }
