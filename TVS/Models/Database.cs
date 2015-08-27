@@ -311,7 +311,7 @@ namespace TVS.Models
         /// <param name="number"></param>
         public static bool IsRailAvailable(int number)
         {
-            string query = "SELECT Beschikbaar FROM Spoor Where \"Nummer\" = " + number;
+            string query = "SELECT \"Beschikbaar\" FROM Spoor Where \"Nummer\" = " + number;
             return ExecuteReader(query, reader => Convert.ToBoolean(reader["Beschikbaar"])).SingleOrDefault();
         }
 
