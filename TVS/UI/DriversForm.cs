@@ -37,6 +37,59 @@ namespace TVS.UI
             {
                 Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
             }
+
+            Tram tram = Database.GetAllTrams().First(t => t.Nummer == Convert.ToInt32(tbTramNummer.Text));
+
+            if (tram.Vervuild)
+            {
+                if (Database.IsRailAvailable(41))
+                {
+                    Database.CreateSector(41, tram.Id);
+                }
+
+                else if (Database.IsRailAvailable(42))
+                {
+                    // stuur tram naar 42
+                }
+                else if (Database.IsRailAvailable(43))
+                {
+                    // stuur tram naar 43
+                }
+                else if (Database.IsRailAvailable(44))
+                {
+                    // stuur tram naar 44
+                }
+            }
+            if (tram.Defect)
+            {
+                if (Database.IsRailAvailable(74))
+                {
+                    // stuur tram naar 74
+                }
+                else if (Database.IsRailAvailable(75))
+                {
+                    // stuur tram naar 75
+                }
+                else if (Database.IsRailAvailable(76))
+                {
+                    // stuur tram naar 76
+                }
+                else if (Database.IsRailAvailable(77))
+                {
+                    // stuur tram naar 77
+                }
+            }
+            if (tram.TramTypeId == 1)
+            {
+                if (Database.IsRailAvailable(58))
+                {
+                    // stuur naar 58
+                }
+            }
+            else
+            {
+                int lijn = Database.GetLine(tram.Id);
+            }
         }
     }
 }
