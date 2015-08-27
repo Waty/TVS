@@ -41,6 +41,7 @@
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(152, 20);
             this.tbUsername.TabIndex = 0;
+            this.tbUsername.Text = "Jan_Beheerder";
             // 
             // lUsername
             // 
@@ -67,6 +68,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 3;
+            this.tbPassword.Text = "TestTest1";
             // 
             // bLogin
             // 
