@@ -236,10 +236,10 @@ namespace TVS.Models
         public static int UpdateTram(Tram tram)
         {
             string query =
-                $"UPDATE Tram SET Nummer = {tram.Nummer}, Lengte = {tram.Lengte}, " +
-                $"Vervuild = {Convert.ToInt32(tram.Vervuild)}, Defect = {Convert.ToInt32(tram.Defect)}, " +
-                $"ConducteurGeschikt = {Convert.ToInt32(tram.ConducteurGeschikt)}, Bechikbaar = {Convert.ToInt32(tram.Beschikbaar)}, " +
-                $"TramTypeId = {tram.TramTypeId}, RemiseId = {tram.RemiseId} WHERE Id = {tram.Id}";
+                $"UPDATE Tram SET \"Nummer\" = {tram.Nummer}, \"Lengte\" = {tram.Lengte}, " +
+                $"\"Vervuild\" = {Convert.ToInt32(tram.Vervuild)}, \"Defect\" = {Convert.ToInt32(tram.Defect)}, " +
+                $"\"ConducteurGeschikt\" = {Convert.ToInt32(tram.ConducteurGeschikt)}, \"Beschikbaar\" = {Convert.ToInt32(tram.Beschikbaar)}, " +
+                $"\"Tramtype_ID\" = {tram.TramTypeId}, \"Remise_ID_Standplaats\" = {tram.RemiseId} WHERE Id = {tram.Id}";
 
             return ExecuteNonQuery(query);
         }
