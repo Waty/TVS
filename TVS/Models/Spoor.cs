@@ -1,4 +1,7 @@
-﻿namespace TVS.Models
+﻿using System;
+using Oracle.ManagedDataAccess.Client;
+
+namespace TVS.Models
 {
     /// <summary>
     ///     Class for the tracks
@@ -16,6 +19,21 @@
             Lengte = lengte;
             Beschikbaar = beschikbaar;
             InUitRijspoor = inuitrijspoor;
+        }
+
+        /// <summary>
+        ///     Constructs from the datareader
+        /// </summary>
+        /// <param name="reader"></param>
+        public Spoor(OracleDataReader reader)
+        {
+            Id = Convert.ToInt32(reader["ID"]);
+            Remise_Id = Convert.ToInt32(reader["Remise_ID"]);
+            Nummer = Convert.ToInt32(reader["Nummer"]);
+            Lengte = Convert.ToInt32(reader["Lengte"]);
+            Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]);
+            InUitRijspoor = Convert.ToBoolean(reader["InUitRijspoor"]);
+            Geblokkeerd = Convert.ToBoolean(reader["Geblokkeerd"]);
         }
 
         /// <summary>
