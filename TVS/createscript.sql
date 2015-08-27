@@ -191,7 +191,6 @@ DROP SEQUENCE "MAINTENANCE_FCSEQ";
 	"Tramtype_ID" NUMBER(10,0), 
 	"Nummer" NUMBER(10,0) DEFAULT (0), 
 	"Lengte" NUMBER(10,0) DEFAULT (1), 
-	"Status" NVARCHAR2(255), 
 	"Vervuild" NUMBER(1,0) DEFAULT (0), 
 	"Defect" NUMBER(1,0) DEFAULT (0), 
 	"ConducteurGeschikt" NUMBER(1,0) DEFAULT (0), 
@@ -328,15 +327,15 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (2,1,1,2002,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (3,1,1,2003,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (4,1,1,2004,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (5,1,1,2005,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (5,1,1,2005,1,1,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (6,1,1,2006,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (7,1,1,2007,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (8,1,1,2008,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (9,1,1,2009,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (10,1,1,2010,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (10,1,1,2010,1,1,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (11,1,1,2011,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (12,1,1,2012,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (13,1,1,2013,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (13,1,1,2013,1,0,1,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (14,1,1,2014,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (15,1,1,2015,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (16,1,1,2016,1,0,0,1,0);
@@ -352,7 +351,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (26,1,1,2026,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (27,1,1,2027,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (28,1,1,2028,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (29,1,1,2029,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (29,1,1,2029,1,0,1,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (30,1,1,2030,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (31,1,1,2031,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (32,1,1,2032,1,0,0,1,0);
@@ -363,7 +362,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (37,1,1,2037,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (38,1,1,2038,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (39,1,1,2039,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (40,1,1,2040,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (40,1,1,2040,1,1,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (41,1,1,2041,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (42,1,1,2042,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (43,1,1,2043,1,0,0,1,0);
@@ -373,7 +372,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (47,1,1,2047,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (48,1,1,2048,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (49,1,1,2049,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (50,1,1,2050,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (50,1,1,2050,1,0,1,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (51,1,1,2051,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (52,1,1,2052,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (53,1,1,2053,1,0,0,1,0);
@@ -388,7 +387,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (62,1,1,2062,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (63,1,1,2063,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (64,1,1,2064,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (65,1,1,2065,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (65,1,1,2065,1,1,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (66,1,1,2066,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (67,1,1,2067,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (68,1,1,2068,1,0,0,1,0);
@@ -398,7 +397,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (72,1,1,2072,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (73,1,2,901,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (74,1,2,902,1,0,0,0,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (75,1,2,903,1,0,0,0,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (75,1,2,903,1,0,1,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (76,1,2,904,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (77,1,2,905,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (78,1,2,906,1,0,0,0,0);
@@ -411,7 +410,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (85,1,2,913,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (86,1,2,914,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (87,1,2,915,1,0,0,0,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (88,1,2,916,1,0,0,0,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (88,1,2,916,1,0,1,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (89,1,2,917,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (90,1,2,918,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (91,1,2,919,1,0,0,0,0);
@@ -424,7 +423,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (98,1,4,818,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (99,1,4,819,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (100,1,4,820,1,0,0,0,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (101,1,4,821,1,0,0,0,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (101,1,4,821,1,0,1,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (102,1,4,822,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (103,1,4,823,1,0,0,0,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (104,1,4,824,1,0,0,0,0);
@@ -456,7 +455,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (130,2,6,787,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (131,2,6,797,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (132,2,7,804,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (133,2,7,810,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (133,2,7,810,1,1,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (134,2,7,813,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (135,2,7,815,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (136,2,1,2073,1,0,0,1,0);
@@ -474,7 +473,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Ve
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (148,2,1,2085,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (149,2,1,2086,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (150,2,1,2087,1,0,0,1,0);
-Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (151,2,1,2088,1,0,0,1,0);
+Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (151,2,1,2088,1,0,1,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (152,2,1,2089,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (153,2,1,2090,1,0,0,1,0);
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (154,2,1,2091,1,0,0,1,0);
