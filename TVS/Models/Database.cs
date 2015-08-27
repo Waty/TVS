@@ -101,7 +101,7 @@ namespace TVS.Models
         /// </summary>
         /// <param name="query">The query to execute</param>
         /// <returns>The first collumn of th first row of the results</returns>
-        private static T ExecuteScalar<T>(string query)
+        private static object ExecuteScalar(string query)
         {
             try
             {
@@ -110,15 +110,16 @@ namespace TVS.Models
                     con.Open();
                     using (var cmd = new OracleCommand(query, con))
                     {
-                        return (T) cmd.ExecuteScalar();
+                        return cmd.ExecuteScalar();
                     }
                 }
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Failed to execute query '{0}':\n{1}", query, e.Message);
+                Debug.WriteLine($"Failed to execute query '{query}':");
+                Debug.WriteLine(e);
             }
-            return default(T);
+            return null;
         }
 
         /// <summary>
@@ -154,7 +155,6 @@ namespace TVS.Models
                 TramTypeId = Convert.ToInt32(reader["Tramtype_ID"]),
                 Nummer = Convert.ToInt32(reader["Nummer"]),
                 Lengte = Convert.ToInt32(reader["Lengte"]),
-                //TODO: Status
                 Vervuild = Convert.ToBoolean(reader["Vervuild"]),
                 Defect = Convert.ToBoolean(reader["Defect"]),
                 ConducteurGeschikt = Convert.ToBoolean(reader["ConducteurGeschikt"]),
@@ -216,7 +216,7 @@ namespace TVS.Models
         public static bool IsRailBlocked(int number)
         {
             string query = "SELECT Geblokkeerd FROM Spoor Where \"Nummer\" = " + number;
-            return ExecuteScalar<bool>(query);
+            return Convert.ToBoolean(ExecuteScalar(query));
         }
 
         /// <summary>
@@ -248,7 +248,8 @@ namespace TVS.Models
         /// </summary>
         public static void NewTram(int remiseid, int typeid, int nummer, int lengte, int geschikt, int beschikbaar)
         {
-            string query = "INSERT INTO Tram values ('null', " + remiseid + ", " + typeid + ", " + nummer + ", " + lengte +
+            string query = "INSERT INTO Tram values ('null', " + remiseid + ", " + typeid + ", " + nummer + ", " +
+                           lengte +
                            ",'0','0'," + geschikt + "," + beschikbaar + ")";
 
             ExecuteNonQuery(query);
@@ -337,7 +338,7 @@ namespace TVS.Models
         public static bool IsRailAvailable(int number)
         {
             string query = "SELECT \"Beschikbaar\" FROM Spoor Where \"Nummer\" = " + number;
-            return Convert.ToBoolean(ExecuteScalar<int>(query));
+            return Convert.ToBoolean(ExecuteScalar(query));
         }
 
         /// <summary>
@@ -346,7 +347,7 @@ namespace TVS.Models
         public static int CreateSector(int spoor, int tram)
         {
             string query = "Select COUNT(*) FROM Sector WHERE \"Spoor_ID\" = " + spoor;
-            int nummer = ExecuteScalar<int>(query) + 1;
+            int nummer = Convert.ToInt32(ExecuteScalar(query)) + 1;
             query =
                 "INSERT INTO Sector( \"ID\", \"Spoor_ID\", \"Tram_ID\", \"Nummer\", \"Beschikbaar\", \"Blokkade\") " +
                 $"values(null, {spoor}, {tram}, {nummer}, 0, 0 )";
@@ -360,7 +361,7 @@ namespace TVS.Models
         public static int CountSector(int number)
         {
             string query = "SELECT COUNT(*) FROM SECTOR WHERE \"Spoor_ID\" = " + number;
-            return ExecuteScalar<int>(query);
+            return Convert.ToInt32(ExecuteScalar(query));
         }
 
         /// <summary>
@@ -388,7 +389,7 @@ namespace TVS.Models
         public static int GetLine(int tram)
         {
             string query = "SELECT MAX(\"Lijn_ID\") FROM TRAM_LIJN WHERE \"Tram_ID\" = " + tram;
-            return ExecuteScalar<int>(query);
+            return Convert.ToInt32(ExecuteScalar(query));
         }
     }
 }
