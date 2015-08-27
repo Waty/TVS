@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using TVS.Models;
 
@@ -6,46 +7,68 @@ namespace TVS.UI
 {
     public partial class MaintenanceForm : Form
     {
-        Tram _tram = new Tram();
         /// <summary>
+        ///     Constructs the form with all of its controls and loads the trams from the db
         /// </summary>
         public MaintenanceForm()
         {
             InitializeComponent();
+            RefreshDatasource();
+            cbStatus.DataSource = Enum.GetValues(typeof (Maintenance.MaintenanceType));
         }
 
-        private void btnOnderhoudLijst_Click(object sender, EventArgs e)
+        /// <summary>
+        ///     Retrieves a fresh copy of all the trams and stores it in the listbox
+        /// </summary>
+        private void RefreshDatasource()
         {
-
+            lbDefectTrams.DataSource = Database.GetAllTrams().Where(t => t.Defect).ToList();
+            ddbEmployees.DataSource = Database.GetAllMedewerkers()
+                .Where(m => m.Functie == Medewerker.FunctieType.Technicus).
+                ToList();
         }
 
-        private void btnStatus_Click(object sender, EventArgs e)
+        /// <summary>
+        ///     Updates the selected tram and adds the maintenance to the history
+        /// </summary>
+        private void btnOnderhoud_Click(object sender, EventArgs e)
         {
-            if (lbOnderhoud.SelectedItem != null)
+            var medewerker = ddbEmployees.SelectedItem as Medewerker;
+            var tram = lbDefectTrams.SelectedItem as Tram;
+            var mode = (Maintenance.MaintenanceType) cbStatus.SelectedItem;
+
+            if (medewerker == null)
             {
-                string tram = lbOnderhoud.SelectedItem.ToString();
-                _tram = Database.GetTram(Convert.ToInt32(tram));
-                if (cbStatus.SelectedIndex == 0)
-                {
-                    _tram.Vervuild = true;
-                    _tram.Beschikbaar = false;
-                    _tram.Defect = false;
-                }
-                else if (cbStatus.SelectedIndex == 1)
-                {
-                    _tram.Vervuild = false;
-                    _tram.Beschikbaar = true;
-                    _tram.Defect = false;
-                }
-                else
-                {
-                    MessageBox.Show("Selecteer een status");
-                }
+                MessageBox.Show("Please select a valid employee!");
+                return;
             }
-            else
+
+            if (tram == null)
             {
-                MessageBox.Show("Selecteer eerst een tram");
+                MessageBox.Show("Please select a valid Tram!");
+                return;
             }
+
+
+            switch (mode)
+            {
+                case Maintenance.MaintenanceType.Vervuild:
+                    tram.Vervuild = true;
+                    tram.Defect = false;
+                    break;
+
+                case Maintenance.MaintenanceType.Onderhouden:
+                    tram.Defect = false;
+                    break;
+            }
+
+            Database.UpdateTram(tram);
+            RefreshDatasource();
+
+            var c = new Maintenance(medewerker, dtpOnderhoud.Value, tram, mode);
+            Database.SaveMaintenance(c);
+
+            RefreshDatasource();
         }
     }
 }

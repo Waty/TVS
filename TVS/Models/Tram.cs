@@ -8,7 +8,8 @@
         /// <summary>
         ///     Constructor
         /// </summary>
-        public Tram(int id, int nummer, int lengte, bool vervuild, bool defect, bool conductGeschikt, bool beschikbaar,
+        public Tram(int id, int nummer, int lengte, bool vervuild, bool defect, bool conducteurGeschikt,
+            bool beschikbaar,
             int tramtypeid, int remiseid)
         {
             Id = id;
@@ -16,9 +17,9 @@
             Lengte = lengte;
             Vervuild = vervuild;
             Defect = defect;
-            ConductGeschikt = conductGeschikt;
+            ConducteurGeschikt = conducteurGeschikt;
             Beschikbaar = beschikbaar;
-            TramTypeID = tramtypeid;
+            TramTypeId = tramtypeid;
             RemiseId = remiseid;
         }
 
@@ -55,7 +56,7 @@
         /// <summary>
         ///     Shows whether the Tram is suited fo have a "Conducteur"
         /// </summary>
-        public bool ConductGeschikt { get; set; }
+        public bool ConducteurGeschikt { get; set; }
 
         /// <summary>
         ///     Shows whether the Tram is available
@@ -65,7 +66,7 @@
         /// <summary>
         ///     Shows the ID of the Tram type
         /// </summary>
-        public int TramTypeID { get; set; }
+        public int TramTypeId { get; set; }
 
         /// <summary>
         ///     Shows the ID of the "Remise" it belongs to.

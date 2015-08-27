@@ -46,7 +46,7 @@ namespace TVS.UI
 
         private void btnNieuw_Click(object sender, EventArgs e)
         {
-            NewTramForm newTramForm = new NewTramForm();
+            var newTramForm = new NewTramForm();
             newTramForm.Visible = true;
         }
     }

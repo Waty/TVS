@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TVS.Models;
@@ -42,7 +41,7 @@ namespace TVS.Tests
         {
             Assert.AreEqual(1, Database.SetVervuild(2001));
 
-            var tram = Database.GetAllTrams().First(t => t.Nummer == 2001);
+            Tram tram = Database.GetAllTrams().First(t => t.Nummer == 2001);
             Assert.AreEqual(true, tram.Vervuild);
         }
     }

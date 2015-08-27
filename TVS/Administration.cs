@@ -53,7 +53,7 @@ namespace TVS
         /// </summary>
         public void NewTram(int remiseid, int typeid, int nummer, int lengte, int geschikt, int beschikbaar)
         {
-            Database.NewTram(remiseid, typeid,nummer,lengte,geschikt,beschikbaar);
+            Database.NewTram(remiseid, typeid, nummer, lengte, geschikt, beschikbaar);
         }
     }
 }

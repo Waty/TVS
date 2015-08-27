@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Models\Onderhoud.cs" />
     <Compile Include="Models\Remise.cs" />
+    <Compile Include="Models\Maintenance.cs" />
     <Compile Include="UI\NewTramForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -126,13 +126,13 @@ namespace TVS.Models
             {
                 Id = Convert.ToInt32(reader["ID"]),
                 RemiseId = Convert.ToInt32(reader["Remise_ID_Standplaats"]),
-                TramTypeID = Convert.ToInt32(reader["Tramtype_ID"]),
+                TramTypeId = Convert.ToInt32(reader["Tramtype_ID"]),
                 Nummer = Convert.ToInt32(reader["Nummer"]),
                 Lengte = Convert.ToInt32(reader["Lengte"]),
                 //TODO: Status
                 Vervuild = Convert.ToBoolean(reader["Vervuild"]),
                 Defect = Convert.ToBoolean(reader["Defect"]),
-                ConductGeschikt = Convert.ToBoolean(reader["ConducteurGeschikt"]),
+                ConducteurGeschikt = Convert.ToBoolean(reader["ConducteurGeschikt"]),
                 Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"])
             });
         }
@@ -230,22 +230,31 @@ namespace TVS.Models
         }
 
         /// <summary>
-        ///     Retrieves targeted tram
+        ///     Updates the tram with the provided info
         /// </summary>
-        public static Tram GetTram(int number)
+        /// <param name="tram"></param>
+        public static int UpdateTram(Tram tram)
         {
-            return ExecuteReader($"SELECT * FROM Tram WHERE \"Nummer\" = {number}", reader => new Tram
-            {
-                Id = Convert.ToInt32(reader["Id"]),
-                Nummer = Convert.ToInt32(reader["Id"]),
-                Lengte = Convert.ToInt32(reader["Id"]),
-                Vervuild = Convert.ToBoolean(reader["Id"]),
-                Defect = Convert.ToBoolean(reader["Id"]),
-                ConductGeschikt = Convert.ToBoolean(reader["Id"]),
-                Beschikbaar = Convert.ToBoolean(reader["Id"]),
-                TramTypeID = Convert.ToInt32(reader["Id"]),
-                RemiseId = Convert.ToInt32(reader["Id"])
-            }).SingleOrDefault();
+            string query =
+                $"UPDATE Tram SET Nummer = {tram.Nummer}, Lengte = {tram.Lengte}, " +
+                $"Vervuild = {Convert.ToInt32(tram.Vervuild)}, Defect = {Convert.ToInt32(tram.Defect)}, " +
+                $"ConducteurGeschikt = {Convert.ToInt32(tram.ConducteurGeschikt)}, Bechikbaar = {Convert.ToInt32(tram.Beschikbaar)}, " +
+                $"TramTypeId = {tram.TramTypeId}, RemiseId = {tram.RemiseId} WHERE Id = {tram.Id}";
+
+            return ExecuteNonQuery(query);
+        }
+
+        /// <summary>
+        ///     Stores the maintenance in the database
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public static int SaveMaintenance(Maintenance m)
+        {
+            string query = "INSERT INTO Maintenance (Id, Datum,Type,TramId,MedewerkerId)" +
+                           $"VALUES(NULL, '{m.Date:dd-MM-yy}',{Convert.ToInt32(m.Type)},{m.Tram.Id},{m.Medewerker.Id})";
+
+            return ExecuteNonQuery(query);
         }
     }
 }
