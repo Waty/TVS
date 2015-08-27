@@ -21,6 +21,7 @@ DROP TABLE "TRAM_ONDERHOUD" CASCADE CONSTRAINTS;
 DROP TABLE "TRANSFER" CASCADE CONSTRAINTS;
 DROP TABLE "VERBINDING" CASCADE CONSTRAINTS;
 DROP TABLE Schoonmaak CASCADE CONSTRAINTS;
+DROP TABLE MAINTENANCE CASCADE CONSTRAINTS;
 
 DROP SEQUENCE "LIJN_FCSEQ";
 DROP SEQUENCE "MEDEWERKER_FCSEQ";
@@ -33,7 +34,8 @@ DROP SEQUENCE "TRAM_FCSEQ";
 DROP SEQUENCE "TRAM_LIJN_FCSEQ";
 DROP SEQUENCE "TRAM_ONDERHOUD_FCSEQ";
 DROP SEQUENCE "VERBINDING_FCSEQ";
-DROP SEQUEnce "SCHOONMAAK_FCSEQ";
+DROP SEQUENCE "SCHOONMAAK_FCSEQ";
+DROP SEQUENCE "MAINTENANCE_FCSEQ";
 
 --------------------------------------------------------
 --  File created - donderdag-oktober-23-2014   
@@ -98,6 +100,11 @@ DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 --------------------------------------------------------
 
    CREATE SEQUENCE  "SCHOONMAAK_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence MAINTENANCE_FCSEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "MAINTENANCE_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table LIJN
 --------------------------------------------------------
@@ -171,6 +178,7 @@ DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 	"Nummer" NUMBER(10,0) DEFAULT (0), 
 	"Lengte" NUMBER(10,0) DEFAULT (0), 
 	"Beschikbaar" NUMBER(1,0) DEFAULT (0), 
+	GEBLOKKEERD NUMBER(1,0) DEFAULT (0),
 	"InUitRijspoor" NUMBER(1,0) DEFAULT (0)
    ) ;
 --------------------------------------------------------
@@ -534,7 +542,7 @@ Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","St
 Insert into TRAM (ID,"Remise_ID_Standplaats","Tramtype_ID","Nummer","Lengte","Status","Vervuild","Defect","ConducteurGeschikt","Beschikbaar") values (214,2,1,2151,1,null,0,0,1,0);
 REM INSERTING into TRAMTYPE
 SET DEFINE OFF;
-Insert into TRAMTYPE (ID,"Omschrijving") values (1,'	Combino');
+Insert into TRAMTYPE (ID,"Omschrijving") values (1,'Combino');
 Insert into TRAMTYPE (ID,"Omschrijving") values (2,'11G');
 Insert into TRAMTYPE (ID,"Omschrijving") values (3,'Dubbel kop Combino');
 Insert into TRAMTYPE (ID,"Omschrijving") values (4,'12G');
@@ -1189,6 +1197,17 @@ CREATE TABLE Schoonmaak (
 ALTER TABLE Schoonmaak ADD CONSTRAINT FKSchoonmaak768598 FOREIGN KEY (TramId) REFERENCES Tram (Id);
 ALTER TABLE Schoonmaak ADD CONSTRAINT FKSchoonmaak903252 FOREIGN KEY (MedewerkerId) REFERENCES Medewerker (Id);
 
+CREATE TABLE MAINTENANCE (
+  Id           number(10) NOT NULL, 
+  Datum        date NOT NULL, 
+  Type         number(10) NOT NULL, 
+  TramId       number(10) NOT NULL, 
+  MedewerkerId number(10) NOT NULL, 
+  PRIMARY KEY (Id));
+ALTER TABLE MAINTENANCE ADD CONSTRAINT FKMaintenanc295627 FOREIGN KEY (TramId) REFERENCES Tram (Id);
+ALTER TABLE MAINTENANCE ADD CONSTRAINT FKMaintenanc376224 FOREIGN KEY (MedewerkerId) REFERENCES Medewerker (Id);
+
+
 --------------------------------------------------------
 --  DDL for Trigger SCHOONMAAK_FCTG_BI
 --------------------------------------------------------
@@ -1200,3 +1219,15 @@ FOR EACH ROW
 END;
 /
 ALTER TRIGGER "SCHOONMAAK_FCTG_BI" ENABLE;
+
+--------------------------------------------------------
+--  DDL for Trigger MAINTENANCE_FCTG_BI
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "MAINTENANCE_FCTG_BI" BEFORE INSERT ON "MAINTENANCE"
+FOR EACH ROW
+ WHEN (new."ID" IS NULL) BEGIN
+  SELECT MAINTENANCE_FCSEQ.NEXTVAL INTO :new."ID" FROM dual;
+END;
+/
+ALTER TRIGGER "MAINTENANCE_FCTG_BI" ENABLE;
