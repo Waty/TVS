@@ -51,11 +51,15 @@ namespace TVS.UI
 
         private void btnInvoer_Click(object sender, EventArgs e)
         {
-            Tram tram = Database.GetAllTrams().First(t => t.Id == Convert.ToInt32(tbTramNummer.Text));
+            Tram tram = Database.GetAllTrams().First(t => t.Nummer == Convert.ToInt32(tbTramNummer.Text));
 
             if (tram.Vervuild)
             {
-                if (Database.IsRailAvailable(41)) {}
+                if (Database.IsRailAvailable(41))
+                {
+                    Database.CreateSector(41, tram.Id);
+                }
+
                 else if (Database.IsRailAvailable(42))
                 {
                     // stuur tram naar 42
