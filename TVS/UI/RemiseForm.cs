@@ -46,8 +46,7 @@ namespace TVS.UI
 
         private void btnNieuw_Click(object sender, EventArgs e)
         {
-            var newTramForm = new NewTramForm();
-            newTramForm.Visible = true;
+            new NewTramForm().ShowDialog();
         }
 
         private void btnInvoer_Click(object sender, EventArgs e)
