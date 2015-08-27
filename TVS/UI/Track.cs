@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using TVS.Models;
@@ -26,6 +27,7 @@ namespace TVS.UI
         /// <summary>
         ///     The sectors for the current track
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public IReadOnlyCollection<Sector> Sectors
         {
             get { return _sectors; }

@@ -31,7 +31,7 @@
             this.lbNumber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lbId
+            // lbNumber
             // 
             this.lbNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -40,7 +40,6 @@
             this.lbNumber.Name = "lbNumber";
             this.lbNumber.Size = new System.Drawing.Size(118, 100);
             this.lbNumber.TabIndex = 26;
-            this.lbNumber.Text = "51";
             this.lbNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Track
