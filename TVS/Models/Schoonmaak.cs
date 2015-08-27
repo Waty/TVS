@@ -20,7 +20,7 @@ namespace TVS.Models
             /// <summary>
             ///     Should be done every month
             /// </summary>
-            KleineBeurt= 2
+            KleineBeurt = 2
         }
 
         /// <summary>
@@ -33,6 +33,11 @@ namespace TVS.Models
             Tram = tram;
             Type = type;
         }
+
+        /// <summary>
+        ///     Empty constructor
+        /// </summary>
+        public Schoonmaak() {}
 
         /// <summary>
         ///     The type of cleanup
@@ -55,18 +60,10 @@ namespace TVS.Models
         public Tram Tram { get; set; }
 
         /// <summary>
-        ///     Empty constructor
-        /// </summary>
-        public Schoonmaak()
-        {
-            
-        }
-
-        /// <summary>
-        /// Returns a string that represents the current object.
+        ///     Returns a string that represents the current object.
         /// </summary>
         /// <returns>
-        /// A string that represents the current object.
+        ///     A string that represents the current object.
         /// </returns>
         public override string ToString()
         {
