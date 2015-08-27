@@ -256,19 +256,20 @@ namespace TVS.Models
 
             return ExecuteNonQuery(query);
         }
+
         /// <summary>
         ///     Retrieves the maintenance history
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<Maintenance> GetMaintenanceHistory()
         {
-            string query = "SELECT * FROM Maintenance";
-            var mederwerkers = GetAllMedewerkers().ToList();
-            var trams = GetAllTrams().ToList();
+            var query = "SELECT * FROM Maintenance";
+            List<Medewerker> mederwerkers = GetAllMedewerkers().ToList();
+            List<Tram> trams = GetAllTrams().ToList();
             return ExecuteReader(query, reader => new Maintenance
             {
-                Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Medewerkerid"])),              
-                Type = (Maintenance.MaintenanceType) Convert.ToInt32(reader["Type"]),         
+                Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Medewerkerid"])),
+                Type = (Maintenance.MaintenanceType) Convert.ToInt32(reader["Type"]),
                 Date = Convert.ToDateTime(reader["Datum"]),
                 Tram = trams.FirstOrDefault(t => t.Id == Convert.ToInt32(reader["Tramid"]))
             });
@@ -280,9 +281,9 @@ namespace TVS.Models
         /// <returns></returns>
         public static IEnumerable<Schoonmaak> GetCleaningHistory()
         {
-            string query = "SELECT * FROM Schoonmaak";
-            var mederwerkers = GetAllMedewerkers().ToList();
-            var trams = GetAllTrams().ToList();
+            var query = "SELECT * FROM Schoonmaak";
+            List<Medewerker> mederwerkers = GetAllMedewerkers().ToList();
+            List<Tram> trams = GetAllTrams().ToList();
             return ExecuteReader(query, reader => new Schoonmaak
             {
                 Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Medewerkerid"])),
@@ -292,8 +293,8 @@ namespace TVS.Models
             });
         }
 
+
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -301,6 +302,47 @@ namespace TVS.Models
         {
             string query = "SELECT \"ID\" FROM Sector Where \"Tram_ID\" = " + id;
             return ExecuteReader(query, reader => reader).Any();
+        }
+
+        /// <summary>
+        ///     Retrieves whether chosen railway is available
+        /// </summary>
+        /// <param name="number"></param>
+        public static bool IsRailAvailable(int number)
+        {
+            string query = "SELECT Beschikbaar FROM Spoor Where \"Nummer\" = " + number;
+            return ExecuteReader(query, reader => Convert.ToBoolean(reader["Beschikbaar"])).SingleOrDefault();
+        }
+
+        /// <summary>
+        ///     Creates a new sector
+        /// </summary>
+        public static void CreateSector(int spoor, int tram) {}
+
+        /// <summary>
+        ///     Counts the sectors on a track
+        /// </summary>
+        /// <returns></returns>
+        public static int CountSector(int number)
+        {
+            string query = "SELECT COUNT(*) AS Count FROM SECTOR WHERE \"Spoor_ID\" = " + number;
+            return ExecuteReader(query, reader => Convert.ToInt32(reader["Count"])).SingleOrDefault();
+        }
+
+        /// <summary>
+        ///     Retrieves all tracks
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<Spoor> GetAllTracks()
+        {
+            return ExecuteReader("SELECT * FROM tram", reader => new Spoor
+            {
+                Id = Convert.ToInt32(reader["ID"]),
+                Remise_Id = Convert.ToInt32(reader["Remise_ID_Standplaats"]),
+                Nummer = Convert.ToInt32(reader["Nummer"]),
+                Lengte = Convert.ToInt32(reader["Lengte"]),
+                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"])
+            });
         }
     }
 }

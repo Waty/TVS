@@ -937,6 +937,7 @@
             this.btnInvoer.TabIndex = 86;
             this.btnInvoer.Text = "Invoeren";
             this.btnInvoer.UseVisualStyleBackColor = true;
+            this.btnInvoer.Click += new System.EventHandler(this.btnInvoer_Click);
             // 
             // btnSchoonmaak
             // 

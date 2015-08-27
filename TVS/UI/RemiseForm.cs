@@ -49,5 +49,51 @@ namespace TVS.UI
             var newTramForm = new NewTramForm();
             newTramForm.Visible = true;
         }
+
+        private void btnInvoer_Click(object sender, EventArgs e)
+        {
+            Tram tram = Database.GetAllTrams().First(t => t.Id == Convert.ToInt32(tbTramNummer.Text));
+
+            if (tram.Vervuild)
+            {
+                if (Database.IsRailAvailable(41))
+                {
+                    
+                }
+                else if (Database.IsRailAvailable(42))
+                {
+                    // stuur tram naar 42
+                }
+                else if (Database.IsRailAvailable(43))
+                {
+                    // stuur tram naar 43
+                }
+                else if (Database.IsRailAvailable(44))
+                {
+                    // stuur tram naar 44
+                }
+            }
+            if (tram.Defect)
+            {
+                if (Database.IsRailAvailable(74))
+                {
+                    // stuur tram naar 74
+                }
+                else if (Database.IsRailAvailable(75))
+                {
+                    // stuur tram naar 75
+                }
+                else if (Database.IsRailAvailable(76))
+                {
+                    // stuur tram naar 76
+                }
+                else if (Database.IsRailAvailable(77))
+                {
+                    // stuur tram naar 77
+                }
+            }
+
+        
+        }
     }
 }
