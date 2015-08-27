@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using TVS.Models;
 
@@ -22,8 +24,7 @@ namespace TVS.UI
             {
                 tramId = r.Next(1, tramList.Count);
             }
-            lbTramNummer.Text = tramList.First(t => t.Id == tramId).Nummer.ToString();
-            tbTramNummer.Text = tramList.First(t => t.Id == tramId).Nummer.ToString();
+            tbTramNummer.Text = lbTramNummer.Text = tramList.First(t => t.Id == tramId).Nummer.ToString();
         }
 
         private void btnVerzend_Click(object sender, EventArgs e)
