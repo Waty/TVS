@@ -256,19 +256,20 @@ namespace TVS.Models
 
             return ExecuteNonQuery(query);
         }
+
         /// <summary>
         ///     Retrieves the cleaning history
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<Maintenance> GetMaintenanceHistory()
         {
-            string query = "SELECT * FROM Maintenance";
-            var mederwerkers = GetAllMedewerkers().ToList();
-            var trams = GetAllTrams().ToList();
+            var query = "SELECT * FROM Maintenance";
+            List<Medewerker> mederwerkers = GetAllMedewerkers().ToList();
+            List<Tram> trams = GetAllTrams().ToList();
             return ExecuteReader(query, reader => new Maintenance
             {
-                Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Medewerkerid"])),              
-                Type = (Maintenance.MaintenanceType) Convert.ToInt32(reader["Type"]),         
+                Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Medewerkerid"])),
+                Type = (Maintenance.MaintenanceType) Convert.ToInt32(reader["Type"]),
                 Date = Convert.ToDateTime(reader["Datum"]),
                 Tram = trams.FirstOrDefault(t => t.Id == Convert.ToInt32(reader["Tramid"]))
             });

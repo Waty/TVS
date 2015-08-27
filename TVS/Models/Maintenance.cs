@@ -33,13 +33,11 @@ namespace TVS.Models
             Tram = tram;
             Type = type;
         }
+
         /// <summary>
         ///     Empty constructor
         /// </summary>
-        public Maintenance()
-        {
-            
-        }
+        public Maintenance() {}
 
         /// <summary>
         ///     The <see cref="Medewerker" /> that executed the mainenance
@@ -69,7 +67,7 @@ namespace TVS.Models
         /// </returns>
         public override string ToString()
         {
-            return Tram.Nummer + ", " + Medewerker.Naam+ ", " + Date + ", " + Type;
+            return Tram.Nummer + ", " + Medewerker.Naam + ", " + Date + ", " + Type;
         }
     }
 }

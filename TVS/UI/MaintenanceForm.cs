@@ -15,7 +15,6 @@ namespace TVS.UI
             InitializeComponent();
             RefreshDatasource();
             cbStatus.DataSource = Enum.GetValues(typeof (Maintenance.MaintenanceType));
-
         }
 
         /// <summary>

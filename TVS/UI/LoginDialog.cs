@@ -43,7 +43,7 @@ namespace TVS.UI
                     break;
 
                 case Medewerker.FunctieType.Beheerder:
-                    MessageBox.Show("Beheerders zijn voor nu nog niet geïmplementeerd!");
+                    new ManagerForm().ShowDialog();
                     break;
 
                 default:
