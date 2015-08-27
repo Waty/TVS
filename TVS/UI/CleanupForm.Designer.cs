@@ -31,6 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbCleanupTasks = new System.Windows.Forms.ListBox();
             this.btnRefreshCleanupList = new System.Windows.Forms.Button();
             this.dtpCleanupDate = new System.Windows.Forms.DateTimePicker();
@@ -40,6 +41,7 @@
             this.ddbEmployees = new System.Windows.Forms.ComboBox();
             this.lType = new System.Windows.Forms.Label();
             this.ddbCleanupType = new System.Windows.Forms.ComboBox();
+            this.tRefreshData = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lbCleanupTasks
@@ -130,6 +132,12 @@
             this.ddbCleanupType.Size = new System.Drawing.Size(200, 21);
             this.ddbCleanupType.TabIndex = 10;
             // 
+            // tRefreshData
+            // 
+            this.tRefreshData.Enabled = true;
+            this.tRefreshData.Interval = 2500;
+            this.tRefreshData.Tick += new System.EventHandler(this.LoadCleanupData);
+            // 
             // CleanupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,5 +170,6 @@
         private System.Windows.Forms.ComboBox ddbEmployees;
         private System.Windows.Forms.Label lType;
         private System.Windows.Forms.ComboBox ddbCleanupType;
+        private System.Windows.Forms.Timer tRefreshData;
     }
 }
