@@ -57,6 +57,5 @@
         ///     Is the track blocked or not.
         /// </summary>
         public bool Geblokkeerd { get; set; }
-
     }
 }

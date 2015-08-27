@@ -322,8 +322,9 @@ namespace TVS.Models
         {
             string query = "Select MAX(\"Nummer\") FROM Sector WHERE \"Spoor_ID\" = " + spoor;
             int nummer = ExecuteReader(query, reader => Convert.ToInt32(reader["Nummer"])).First();
-            query = "INSERT INTO Sector( \"ID\", \"Spoor_ID\", \"Tram_ID\", \"Nummer\", \"Beschikbaar\", \"Blokkade\") " +
-                        $"values(null, {spoor}, {tram}, {nummer}, 0, 0 )";
+            query =
+                "INSERT INTO Sector( \"ID\", \"Spoor_ID\", \"Tram_ID\", \"Nummer\", \"Beschikbaar\", \"Blokkade\") " +
+                $"values(null, {spoor}, {tram}, {nummer}, 0, 0 )";
             return ExecuteNonQuery(query);
         }
 

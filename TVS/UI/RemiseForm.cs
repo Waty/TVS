@@ -55,10 +55,7 @@ namespace TVS.UI
 
             if (tram.Vervuild)
             {
-                if (Database.IsRailAvailable(41))
-                {
-                    
-                }
+                if (Database.IsRailAvailable(41)) {}
                 else if (Database.IsRailAvailable(42))
                 {
                     // stuur tram naar 42
@@ -102,8 +99,6 @@ namespace TVS.UI
             {
                 int lijn = Database.GetLine(tram.Id);
             }
-
-        
         }
     }
 }
