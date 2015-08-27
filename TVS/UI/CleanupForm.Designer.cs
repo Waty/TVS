@@ -33,7 +33,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbCleanupTasks = new System.Windows.Forms.ListBox();
-            this.btnRefreshCleanupList = new System.Windows.Forms.Button();
             this.dtpCleanupDate = new System.Windows.Forms.DateTimePicker();
             this.btnRegisterCleanup = new System.Windows.Forms.Button();
             this.lCleanupDate = new System.Windows.Forms.Label();
@@ -51,21 +50,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCleanupTasks.FormattingEnabled = true;
-            this.lbCleanupTasks.Location = new System.Drawing.Point(12, 12);
+            this.lbCleanupTasks.Location = new System.Drawing.Point(12, 15);
             this.lbCleanupTasks.Name = "lbCleanupTasks";
-            this.lbCleanupTasks.Size = new System.Drawing.Size(250, 368);
+            this.lbCleanupTasks.Size = new System.Drawing.Size(282, 368);
             this.lbCleanupTasks.TabIndex = 1;
-            // 
-            // btnRefreshCleanupList
-            // 
-            this.btnRefreshCleanupList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefreshCleanupList.Location = new System.Drawing.Point(423, 120);
-            this.btnRefreshCleanupList.Name = "btnRefreshCleanupList";
-            this.btnRefreshCleanupList.Size = new System.Drawing.Size(200, 23);
-            this.btnRefreshCleanupList.TabIndex = 2;
-            this.btnRefreshCleanupList.Text = "Update de TODO list";
-            this.btnRefreshCleanupList.UseVisualStyleBackColor = true;
-            this.btnRefreshCleanupList.Click += new System.EventHandler(this.LoadCleanupData);
             // 
             // dtpCleanupDate
             // 
@@ -148,9 +136,9 @@
             // lbGeschiedenis
             // 
             this.lbGeschiedenis.FormattingEnabled = true;
-            this.lbGeschiedenis.Location = new System.Drawing.Point(281, 155);
+            this.lbGeschiedenis.Location = new System.Drawing.Point(300, 132);
             this.lbGeschiedenis.Name = "lbGeschiedenis";
-            this.lbGeschiedenis.Size = new System.Drawing.Size(341, 225);
+            this.lbGeschiedenis.Size = new System.Drawing.Size(322, 251);
             this.lbGeschiedenis.TabIndex = 11;
             // 
             // CleanupForm
@@ -166,7 +154,6 @@
             this.Controls.Add(this.lCleanupDate);
             this.Controls.Add(this.btnRegisterCleanup);
             this.Controls.Add(this.dtpCleanupDate);
-            this.Controls.Add(this.btnRefreshCleanupList);
             this.Controls.Add(this.lbCleanupTasks);
             this.Name = "CleanupForm";
             this.Text = "Schoonmaak";
@@ -178,7 +165,6 @@
 
         #endregion
         private System.Windows.Forms.ListBox lbCleanupTasks;
-        private System.Windows.Forms.Button btnRefreshCleanupList;
         private System.Windows.Forms.DateTimePicker dtpCleanupDate;
         private System.Windows.Forms.Button btnRegisterCleanup;
         private System.Windows.Forms.Label lCleanupDate;
