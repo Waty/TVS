@@ -320,8 +320,8 @@ namespace TVS.Models
         /// </summary>
         public static int CreateSector(int spoor, int tram)
         {
-            string query = "Select MAX(\"Nummer\") FROM Sector WHERE \"Spoor_ID\" = " + spoor;
-            int nummer = ExecuteReader(query, reader => Convert.ToInt32(reader["Nummer"])).First();
+            string query = "Select COUNT(*) AS Nummer FROM Sector WHERE \"Spoor_ID\" = " + spoor;
+            int nummer = ExecuteReader(query, reader => Convert.ToInt32(reader["Nummer"])).First() + 1;
             query =
                 "INSERT INTO Sector( \"ID\", \"Spoor_ID\", \"Tram_ID\", \"Nummer\", \"Beschikbaar\", \"Blokkade\") " +
                 $"values(null, {spoor}, {tram}, {nummer}, 0, 0 )";
