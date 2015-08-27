@@ -335,13 +335,15 @@ namespace TVS.Models
         /// <returns></returns>
         public static IEnumerable<Spoor> GetAllTracks()
         {
-            return ExecuteReader("SELECT * FROM tram", reader => new Spoor
+            return ExecuteReader("SELECT * FROM Spoor", reader => new Spoor
             {
                 Id = Convert.ToInt32(reader["ID"]),
-                Remise_Id = Convert.ToInt32(reader["Remise_ID_Standplaats"]),
+                Remise_Id = Convert.ToInt32(reader["Remise_ID"]),
                 Nummer = Convert.ToInt32(reader["Nummer"]),
                 Lengte = Convert.ToInt32(reader["Lengte"]),
-                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"])
+                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
+                InUitRijspoor = Convert.ToBoolean(reader["InUitRijspoor"]),
+                Geblokkeerd = Convert.ToBoolean(reader["Geblokkeerd"])
             });
         }
     }

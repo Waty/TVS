@@ -52,5 +52,11 @@
         ///     Is the track meant for driving in and out or not.
         /// </summary>
         public bool InUitRijspoor { get; set; }
+
+        /// <summary>
+        ///     Is the track blocked or not.
+        /// </summary>
+        public bool Geblokkeerd { get; set; }
+
     }
 }
