@@ -291,5 +291,16 @@ namespace TVS.Models
                 Tram = trams.FirstOrDefault(t => t.Id == Convert.ToInt32(reader["Tramid"]))
             });
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool IsInRemise(int id)
+        {
+            string query = "SELECT \"ID\" FROM Sector Where \"Tram_ID\" = " + id;
+            return ExecuteReader(query, reader => reader).Any();
+        }
     }
 }

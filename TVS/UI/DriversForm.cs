@@ -10,12 +10,22 @@ namespace TVS.UI
     /// </summary>
     public partial class DriversForm : Form
     {
-        
         /// <summary>
         /// </summary>
         public DriversForm()
         {
             InitializeComponent();
+
+
+            List<Tram> tramList = Database.GetAllTrams().ToList();
+            var r = new Random();
+            int tramId = r.Next(1, tramList.Count);
+            while (Database.IsInRemise(tramId))
+            {
+                tramId = r.Next(1, tramList.Count);
+            }
+            lbTramNummer.Text = tramList.First(t => t.Id == tramId).Nummer.ToString();
+            tbTramNummer.Text = tramList.First(t => t.Id == tramId).Nummer.ToString();
         }
 
         private void btnVerzend_Click(object sender, EventArgs e)

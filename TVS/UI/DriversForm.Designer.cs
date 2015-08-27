@@ -48,7 +48,7 @@
             this.lbTramNummer.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lbTramNummer.Location = new System.Drawing.Point(5, 52);
             this.lbTramNummer.Name = "lbTramNummer";
-            this.lbTramNummer.Size = new System.Drawing.Size(163, 139);
+            this.lbTramNummer.Size = new System.Drawing.Size(205, 139);
             this.lbTramNummer.TabIndex = 17;
             this.lbTramNummer.Text = "806";
             this.lbTramNummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 488);
+            this.ClientSize = new System.Drawing.Size(581, 412);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbSector);
             this.Controls.Add(this.label1);
