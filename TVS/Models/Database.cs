@@ -267,10 +267,10 @@ namespace TVS.Models
             var trams = GetAllTrams().ToList();
             return ExecuteReader(query, reader => new Maintenance
             {
-                Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Id"])),              
+                Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Medewerkerid"])),              
                 Type = (Maintenance.MaintenanceType) Convert.ToInt32(reader["Type"]),         
                 Date = Convert.ToDateTime(reader["Datum"]),
-                Tram = trams.FirstOrDefault(t => t.Id == Convert.ToInt32(reader["Id"]))
+                Tram = trams.FirstOrDefault(t => t.Id == Convert.ToInt32(reader["Tramid"]))
             });
         }
     }

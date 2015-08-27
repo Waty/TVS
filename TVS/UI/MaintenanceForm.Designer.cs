@@ -39,6 +39,7 @@
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.ddbEmployees = new System.Windows.Forms.ComboBox();
             this.lbStatus = new System.Windows.Forms.Label();
+            this.lbGeschiedenis = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbDefectTrams
@@ -49,14 +50,14 @@
             this.lbDefectTrams.FormattingEnabled = true;
             this.lbDefectTrams.Location = new System.Drawing.Point(12, 12);
             this.lbDefectTrams.Name = "lbDefectTrams";
-            this.lbDefectTrams.Size = new System.Drawing.Size(210, 290);
+            this.lbDefectTrams.Size = new System.Drawing.Size(228, 342);
             this.lbDefectTrams.TabIndex = 0;
             // 
             // lbTechnicus
             // 
             this.lbTechnicus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTechnicus.AutoSize = true;
-            this.lbTechnicus.Location = new System.Drawing.Point(225, 40);
+            this.lbTechnicus.Location = new System.Drawing.Point(290, 40);
             this.lbTechnicus.Name = "lbTechnicus";
             this.lbTechnicus.Size = new System.Drawing.Size(63, 13);
             this.lbTechnicus.TabIndex = 12;
@@ -66,7 +67,7 @@
             // 
             this.lbDatum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDatum.AutoSize = true;
-            this.lbDatum.Location = new System.Drawing.Point(225, 15);
+            this.lbDatum.Location = new System.Drawing.Point(290, 15);
             this.lbDatum.Name = "lbDatum";
             this.lbDatum.Size = new System.Drawing.Size(52, 13);
             this.lbDatum.TabIndex = 11;
@@ -75,7 +76,7 @@
             // btnOnderhoud
             // 
             this.btnOnderhoud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOnderhoud.Location = new System.Drawing.Point(306, 91);
+            this.btnOnderhoud.Location = new System.Drawing.Point(371, 91);
             this.btnOnderhoud.Name = "btnOnderhoud";
             this.btnOnderhoud.Size = new System.Drawing.Size(200, 23);
             this.btnOnderhoud.TabIndex = 9;
@@ -86,7 +87,7 @@
             // dtpOnderhoud
             // 
             this.dtpOnderhoud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpOnderhoud.Location = new System.Drawing.Point(306, 12);
+            this.dtpOnderhoud.Location = new System.Drawing.Point(371, 12);
             this.dtpOnderhoud.Name = "dtpOnderhoud";
             this.dtpOnderhoud.Size = new System.Drawing.Size(200, 20);
             this.dtpOnderhoud.TabIndex = 8;
@@ -99,34 +100,49 @@
             this.cbStatus.Items.AddRange(new object[] {
             "Schoonmaak",
             "Beschikbaar"});
-            this.cbStatus.Location = new System.Drawing.Point(306, 64);
+            this.cbStatus.Location = new System.Drawing.Point(371, 64);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(200, 21);
             this.cbStatus.TabIndex = 16;
             // 
             // ddbEmployees
             // 
+            this.ddbEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ddbEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddbEmployees.FormattingEnabled = true;
-            this.ddbEmployees.Location = new System.Drawing.Point(306, 37);
+            this.ddbEmployees.Location = new System.Drawing.Point(371, 37);
             this.ddbEmployees.Name = "ddbEmployees";
             this.ddbEmployees.Size = new System.Drawing.Size(200, 21);
             this.ddbEmployees.TabIndex = 17;
             // 
             // lbStatus
             // 
+            this.lbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(225, 67);
+            this.lbStatus.Location = new System.Drawing.Point(293, 67);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(40, 13);
             this.lbStatus.TabIndex = 18;
             this.lbStatus.Text = "Status:";
             // 
+            // lbGeschiedenis
+            // 
+            this.lbGeschiedenis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbGeschiedenis.FormattingEnabled = true;
+            this.lbGeschiedenis.Location = new System.Drawing.Point(260, 129);
+            this.lbGeschiedenis.Name = "lbGeschiedenis";
+            this.lbGeschiedenis.Size = new System.Drawing.Size(311, 225);
+            this.lbGeschiedenis.TabIndex = 19;
+            // 
             // MaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 312);
+            this.ClientSize = new System.Drawing.Size(583, 364);
+            this.Controls.Add(this.lbGeschiedenis);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.ddbEmployees);
             this.Controls.Add(this.cbStatus);
@@ -152,5 +168,6 @@
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.ComboBox ddbEmployees;
         private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.ListBox lbGeschiedenis;
     }
 }

@@ -15,6 +15,7 @@ namespace TVS.UI
             InitializeComponent();
             RefreshDatasource();
             cbStatus.DataSource = Enum.GetValues(typeof (Maintenance.MaintenanceType));
+
         }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace TVS.UI
             ddbEmployees.DataSource = Database.GetAllMedewerkers()
                 .Where(m => m.Functie == Medewerker.FunctieType.Technicus).
                 ToList();
+            lbGeschiedenis.DataSource = Database.GetMaintenanceHistory().ToList();
         }
 
         /// <summary>

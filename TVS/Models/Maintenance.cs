@@ -38,7 +38,7 @@ namespace TVS.Models
         /// </summary>
         public Maintenance()
         {
-            throw new NotImplementedException();
+            
         }
 
         /// <summary>
@@ -60,5 +60,16 @@ namespace TVS.Models
         ///     The resulting type of the maintenance
         /// </summary>
         public MaintenanceType Type { get; set; }
+
+        /// <summary>
+        ///     Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>
+        ///     A string that represents the current object.
+        /// </returns>
+        public override string ToString()
+        {
+            return Tram.Nummer + ", " + Medewerker.Naam+ ", " + Date + ", " + Type;
+        }
     }
 }
