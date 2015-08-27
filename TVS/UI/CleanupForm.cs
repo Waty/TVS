@@ -25,7 +25,14 @@ namespace TVS.UI
         /// </summary>
         private void LoadCleanupData(object sender, EventArgs e)
         {
+            int selectedIndex = lbCleanupTasks.SelectedIndex;
             lbCleanupTasks.DataSource = Database.GetAllTrams().Where(tram => tram.Vervuild).ToList();
+            if (selectedIndex >= lbCleanupTasks.Items.Count)
+            {
+                selectedIndex = -1;
+            }
+            lbCleanupTasks.SelectedIndex = selectedIndex;
+
             ddbEmployees.DataSource = Database.GetAllMedewerkers()
                 .Where(medewerker => medewerker.Functie == Medewerker.FunctieType.Schoonmaker)
                 .ToList();
