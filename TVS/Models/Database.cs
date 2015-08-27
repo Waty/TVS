@@ -387,7 +387,7 @@ namespace TVS.Models
         /// <returns>   Returns a line  </returns>
         public static int GetLine(int tram)
         {
-            string query = "SELECT \"Lijn_ID\" FROM TRAM_LIJN WHERE \"Tram_ID\" = " + tram;
+            string query = "SELECT MAX(\"Lijn_ID\") FROM TRAM_LIJN WHERE \"Tram_ID\" = " + tram;
             return ExecuteScalar<int>(query);
         }
     }
