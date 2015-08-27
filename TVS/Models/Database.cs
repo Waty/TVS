@@ -295,6 +295,7 @@ namespace TVS.Models
 
 
         /// <summary>
+        ///     Checks whether tram is in Remise
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -317,7 +318,14 @@ namespace TVS.Models
         /// <summary>
         ///     Creates a new sector
         /// </summary>
-        public static void CreateSector(int spoor, int tram) {}
+        public static int CreateSector(int spoor, int tram)
+        {
+            string query = "Select MAX(\"Nummer\") FROM Sector WHERE \"Spoor_ID\" = " + spoor;
+            int nummer = ExecuteReader(query, reader => Convert.ToInt32(reader["Nummer"])).First();
+            query = "INSERT INTO Sector( \"ID\", \"Spoor_ID\", \"Tram_ID\", \"Nummer\", \"Beschikbaar\", \"Blokkade\") " +
+                        $"values(null, {spoor}, {tram}, {nummer}, 0, 0 )";
+            return ExecuteNonQuery(query);
+        }
 
         /// <summary>
         ///     Counts the sectors on a track
