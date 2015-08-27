@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using TVS.Models;
@@ -35,8 +36,21 @@ namespace TVS.UI
                 geschikt = 1;
             }
 
-            admin.NewTram(Convert.ToInt32(tbRemiseId.Text), typeId, Convert.ToInt32(tbNummer.Text),
+            List<Tram> trams = Database.GetAllTrams().ToList();
+            bool nieuwetram = true;
+
+            foreach (Tram tram in trams.Where(tram => tram.Nummer == Convert.ToInt32(tbNummer.Text))) {
+                nieuwetram = false;
+            }
+            if (nieuwetram)
+            {
+                admin.NewTram(Convert.ToInt32(tbRemiseId.Text), typeId, Convert.ToInt32(tbNummer.Text),
                 Convert.ToInt32(tbLengte.Text), geschikt, beschikbaar);
+            }
+            else
+            {
+                MessageBox.Show("Tram nummer bestaat al");
+            }
         }
     }
 }

@@ -248,8 +248,8 @@ namespace TVS.Models
         /// </summary>
         public static void NewTram(int remiseid, int typeid, int nummer, int lengte, int geschikt, int beschikbaar)
         {
-            string query = "INSERT INTO Tram values ('0', " + remiseid + ", " + typeid + ", " + nummer + ", " + lengte +
-                           ",null,'0','0'," + geschikt + "," + beschikbaar + ")";
+            string query = "INSERT INTO Tram values ('null', " + remiseid + ", " + typeid + ", " + nummer + ", " + lengte +
+                           ",'0','0'," + geschikt + "," + beschikbaar + ")";
 
             ExecuteNonQuery(query);
         }
