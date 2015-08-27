@@ -36,6 +36,8 @@ namespace TVS.UI
             ddbEmployees.DataSource = Database.GetAllMedewerkers()
                 .Where(medewerker => medewerker.Functie == Medewerker.FunctieType.Schoonmaker)
                 .ToList();
+
+            lbGeschiedenis.DataSource = Database.GetCleaningHistory().ToList();
         }
 
         /// <summary>

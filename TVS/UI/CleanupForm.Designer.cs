@@ -42,6 +42,7 @@
             this.lType = new System.Windows.Forms.Label();
             this.ddbCleanupType = new System.Windows.Forms.ComboBox();
             this.tRefreshData = new System.Windows.Forms.Timer(this.components);
+            this.lbGeschiedenis = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbCleanupTasks
@@ -52,15 +53,15 @@
             this.lbCleanupTasks.FormattingEnabled = true;
             this.lbCleanupTasks.Location = new System.Drawing.Point(12, 12);
             this.lbCleanupTasks.Name = "lbCleanupTasks";
-            this.lbCleanupTasks.Size = new System.Drawing.Size(320, 290);
+            this.lbCleanupTasks.Size = new System.Drawing.Size(250, 368);
             this.lbCleanupTasks.TabIndex = 1;
             // 
             // btnRefreshCleanupList
             // 
             this.btnRefreshCleanupList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefreshCleanupList.Location = new System.Drawing.Point(485, 279);
+            this.btnRefreshCleanupList.Location = new System.Drawing.Point(423, 120);
             this.btnRefreshCleanupList.Name = "btnRefreshCleanupList";
-            this.btnRefreshCleanupList.Size = new System.Drawing.Size(134, 23);
+            this.btnRefreshCleanupList.Size = new System.Drawing.Size(200, 23);
             this.btnRefreshCleanupList.TabIndex = 2;
             this.btnRefreshCleanupList.Text = "Update de TODO list";
             this.btnRefreshCleanupList.UseVisualStyleBackColor = true;
@@ -69,7 +70,7 @@
             // dtpCleanupDate
             // 
             this.dtpCleanupDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpCleanupDate.Location = new System.Drawing.Point(419, 12);
+            this.dtpCleanupDate.Location = new System.Drawing.Point(422, 12);
             this.dtpCleanupDate.Name = "dtpCleanupDate";
             this.dtpCleanupDate.Size = new System.Drawing.Size(200, 20);
             this.dtpCleanupDate.TabIndex = 3;
@@ -77,7 +78,7 @@
             // btnRegisterCleanup
             // 
             this.btnRegisterCleanup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegisterCleanup.Location = new System.Drawing.Point(419, 91);
+            this.btnRegisterCleanup.Location = new System.Drawing.Point(422, 91);
             this.btnRegisterCleanup.Name = "btnRegisterCleanup";
             this.btnRegisterCleanup.Size = new System.Drawing.Size(200, 23);
             this.btnRegisterCleanup.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             this.lCleanupDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lCleanupDate.AutoSize = true;
-            this.lCleanupDate.Location = new System.Drawing.Point(338, 15);
+            this.lCleanupDate.Location = new System.Drawing.Point(341, 15);
             this.lCleanupDate.Name = "lCleanupDate";
             this.lCleanupDate.Size = new System.Drawing.Size(75, 13);
             this.lCleanupDate.TabIndex = 6;
@@ -99,7 +100,7 @@
             // 
             this.lEmployeeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lEmployeeName.AutoSize = true;
-            this.lEmployeeName.Location = new System.Drawing.Point(338, 40);
+            this.lEmployeeName.Location = new System.Drawing.Point(341, 40);
             this.lEmployeeName.Name = "lEmployeeName";
             this.lEmployeeName.Size = new System.Drawing.Size(76, 13);
             this.lEmployeeName.TabIndex = 7;
@@ -107,17 +108,21 @@
             // 
             // ddbEmployees
             // 
+            this.ddbEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ddbEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddbEmployees.FormattingEnabled = true;
-            this.ddbEmployees.Location = new System.Drawing.Point(419, 37);
+            this.ddbEmployees.Location = new System.Drawing.Point(423, 37);
             this.ddbEmployees.Name = "ddbEmployees";
             this.ddbEmployees.Size = new System.Drawing.Size(200, 21);
             this.ddbEmployees.TabIndex = 8;
             // 
             // lType
             // 
+            this.lType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lType.AutoSize = true;
-            this.lType.Location = new System.Drawing.Point(338, 67);
+            this.lType.Location = new System.Drawing.Point(342, 67);
             this.lType.Name = "lType";
             this.lType.Size = new System.Drawing.Size(34, 13);
             this.lType.TabIndex = 9;
@@ -125,9 +130,11 @@
             // 
             // ddbCleanupType
             // 
+            this.ddbCleanupType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ddbCleanupType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddbCleanupType.FormattingEnabled = true;
-            this.ddbCleanupType.Location = new System.Drawing.Point(419, 64);
+            this.ddbCleanupType.Location = new System.Drawing.Point(423, 64);
             this.ddbCleanupType.Name = "ddbCleanupType";
             this.ddbCleanupType.Size = new System.Drawing.Size(200, 21);
             this.ddbCleanupType.TabIndex = 10;
@@ -138,11 +145,20 @@
             this.tRefreshData.Interval = 2500;
             this.tRefreshData.Tick += new System.EventHandler(this.LoadCleanupData);
             // 
+            // lbGeschiedenis
+            // 
+            this.lbGeschiedenis.FormattingEnabled = true;
+            this.lbGeschiedenis.Location = new System.Drawing.Point(281, 155);
+            this.lbGeschiedenis.Name = "lbGeschiedenis";
+            this.lbGeschiedenis.Size = new System.Drawing.Size(341, 225);
+            this.lbGeschiedenis.TabIndex = 11;
+            // 
             // CleanupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 312);
+            this.ClientSize = new System.Drawing.Size(634, 395);
+            this.Controls.Add(this.lbGeschiedenis);
             this.Controls.Add(this.ddbCleanupType);
             this.Controls.Add(this.lType);
             this.Controls.Add(this.ddbEmployees);
@@ -171,5 +187,6 @@
         private System.Windows.Forms.Label lType;
         private System.Windows.Forms.ComboBox ddbCleanupType;
         private System.Windows.Forms.Timer tRefreshData;
+        private System.Windows.Forms.ListBox lbGeschiedenis;
     }
 }
