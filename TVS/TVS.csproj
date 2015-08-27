@@ -109,6 +109,12 @@
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Tram.cs" />
     <Compile Include="Models\TramType.cs" />
+    <Compile Include="UI\Track.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Track.Designer.cs">
+      <DependentUpon>Track.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\DriversForm.resx">
       <DependentUpon>DriversForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="UI\MaintenanceForm.resx">
       <DependentUpon>MaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Track.resx">
+      <DependentUpon>Track.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
