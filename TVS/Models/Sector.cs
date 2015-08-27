@@ -46,5 +46,10 @@
         ///     Checks of the sector is blocked
         /// </summary>
         public bool Blokkade { get; set; }
+
+        /// <summary>
+        ///     The unique identifier
+        /// </summary>
+        public int Id { get; set; }
     }
 }
