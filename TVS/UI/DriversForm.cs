@@ -49,41 +49,41 @@ namespace TVS.UI
 
                 else if (Database.IsRailAvailable(42))
                 {
-                    // stuur tram naar 42
+                    Database.CreateSector(42, tram.Id);
                 }
                 else if (Database.IsRailAvailable(43))
                 {
-                    // stuur tram naar 43
+                    Database.CreateSector(43, tram.Id);
                 }
                 else if (Database.IsRailAvailable(44))
                 {
-                    // stuur tram naar 44
+                    Database.CreateSector(44, tram.Id);
                 }
             }
             if (tram.Defect)
             {
                 if (Database.IsRailAvailable(74))
                 {
-                    // stuur tram naar 74
+                    Database.CreateSector(74, tram.Id);
                 }
                 else if (Database.IsRailAvailable(75))
                 {
-                    // stuur tram naar 75
+                    Database.CreateSector(75, tram.Id);
                 }
                 else if (Database.IsRailAvailable(76))
                 {
-                    // stuur tram naar 76
+                    Database.CreateSector(76, tram.Id);
                 }
                 else if (Database.IsRailAvailable(77))
                 {
-                    // stuur tram naar 77
+                    Database.CreateSector(77, tram.Id);
                 }
             }
             if (tram.TramTypeId == 1)
             {
                 if (Database.IsRailAvailable(58))
                 {
-                    // stuur naar 58
+                    Database.CreateSector(58, tram.Id);
                 }
             }
             else
