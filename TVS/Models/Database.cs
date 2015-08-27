@@ -256,5 +256,22 @@ namespace TVS.Models
 
             return ExecuteNonQuery(query);
         }
+        /// <summary>
+        ///     Retrieves the cleaning history
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<Maintenance> GetMaintenanceHistory()
+        {
+            string query = "SELECT * FROM Maintenance";
+            var mederwerkers = GetAllMedewerkers().ToList();
+            var trams = GetAllTrams().ToList();
+            return ExecuteReader(query, reader => new Maintenance
+            {
+                Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Id"])),              
+                Type = (Maintenance.MaintenanceType) Convert.ToInt32(reader["Type"]),         
+                Date = Convert.ToDateTime(reader["Datum"]),
+                Tram = trams.FirstOrDefault(t => t.Id == Convert.ToInt32(reader["Id"]))
+            });
+        }
     }
 }
