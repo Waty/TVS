@@ -332,7 +332,7 @@ namespace TVS.Models
         /// <summary>
         ///     Retrieves all tracks
         /// </summary>
-        /// <returns></returns>
+        /// <returns>   Returns all tracks  </returns>
         public static IEnumerable<Spoor> GetAllTracks()
         {
             return ExecuteReader("SELECT * FROM Spoor", reader => new Spoor
@@ -345,6 +345,16 @@ namespace TVS.Models
                 InUitRijspoor = Convert.ToBoolean(reader["InUitRijspoor"]),
                 Geblokkeerd = Convert.ToBoolean(reader["Geblokkeerd"])
             });
+        }
+
+        /// <summary>
+        ///     Retrieves the line a tram is on.
+        /// </summary>
+        /// <returns>   Returns a line  </returns>
+        public static int GetLine(int tram)
+        {
+            string query = "SELECT \"Lijn_ID\" FROM TRAM_LIJN WHERE \"Tram_ID\" = " + tram;
+            return ExecuteReader(query, reader => Convert.ToInt32(reader["TL_ID"])).SingleOrDefault();
         }
     }
 }

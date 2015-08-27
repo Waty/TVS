@@ -92,6 +92,17 @@ namespace TVS.UI
                     // stuur tram naar 77
                 }
             }
+            if (tram.TramTypeId == 1)
+            {
+                if (Database.IsRailAvailable(58))
+                {
+                    // stuur naar 58
+                }
+            }
+            else
+            {
+                int lijn = Database.GetLine(tram.Id);
+            }
 
         
         }
