@@ -139,7 +139,8 @@ DROP SEQUENCE "VERBINDING_FCSEQ";
   CREATE TABLE "MEDEWERKER" 
    (	"ID" NUMBER(10,0), 
 	"Functie_ID" NUMBER(10,0), 
-	"Naam" NVARCHAR2(255)
+	"Naam" NVARCHAR2(255),
+	"Wachtwoord" NVARCHAR2(255)
    ) ;
 --------------------------------------------------------
 --  DDL for Table ONDERHOUD
@@ -313,11 +314,11 @@ Insert into LIJN (ID,"Remise_ID","Nummer","ConducteurRijdtMee") values (13,2,14,
 Insert into LIJN (ID,"Remise_ID","Nummer","ConducteurRijdtMee") values (14,2,25,0);
 REM INSERTING into MEDEWERKER
 SET DEFINE OFF;
-Insert into MEDEWERKER (ID,"Functie_ID","Naam") values (1,1,'Jan_Beheerder');
-Insert into MEDEWERKER (ID,"Functie_ID","Naam") values (2,2,'Piet_Wagenparkbeheerder');
-Insert into MEDEWERKER (ID,"Functie_ID","Naam") values (3,3,'Henk_Bestuurder');
-Insert into MEDEWERKER (ID,"Functie_ID","Naam") values (4,4,'Klaas_Technicus');
-Insert into MEDEWERKER (ID,"Functie_ID","Naam") values (5,5,'Sjaak_Schoonmaker');
+Insert into MEDEWERKER (ID,"Functie_ID","Naam","Wachtwoord") values (1,1,'Jan_Beheerder','TestTest1');
+Insert into MEDEWERKER (ID,"Functie_ID","Naam","Wachtwoord") values (2,2,'Piet_Wagenparkbeheerder','TestTest1');
+Insert into MEDEWERKER (ID,"Functie_ID","Naam","Wachtwoord") values (3,3,'Henk_Bestuurder','TestTest1');
+Insert into MEDEWERKER (ID,"Functie_ID","Naam","Wachtwoord") values (4,4,'Klaas_Technicus','TestTest1');
+Insert into MEDEWERKER (ID,"Functie_ID","Naam","Wachtwoord") values (5,5,'Sjaak_Schoonmaker','TestTest1');
 REM INSERTING into ONDERHOUD
 SET DEFINE OFF;
 Insert into ONDERHOUD ("GroteServiceBeurtenPerJaar","KleineServiceBeurtenPerJaar","GroteSchoonmaakBeurtenPerJaar","KleineSchoonmaakBeurtenPerJaar") values (2,4,4,12);
