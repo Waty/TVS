@@ -23,6 +23,7 @@ DROP TABLE "TRAM_LIJN" CASCADE CONSTRAINTS;
 DROP TABLE "TRAM_ONDERHOUD" CASCADE CONSTRAINTS;
 DROP TABLE "TRANSFER" CASCADE CONSTRAINTS;
 DROP TABLE "VERBINDING" CASCADE CONSTRAINTS;
+DROP TABLE Schoonmaak CASCADE CONSTRAINTS;
 
 DROP SEQUENCE "FUNCTIE_FCSEQ";
 DROP SEQUENCE "LIJN_FCSEQ";
@@ -37,6 +38,7 @@ DROP SEQUENCE "TRAM_FCSEQ";
 DROP SEQUENCE "TRAM_LIJN_FCSEQ";
 DROP SEQUENCE "TRAM_ONDERHOUD_FCSEQ";
 DROP SEQUENCE "VERBINDING_FCSEQ";
+DROP SEQUEnce "SCHOONMAAK_FCSEQ";
 
 --------------------------------------------------------
 --  File created - donderdag-oktober-23-2014   
@@ -116,12 +118,14 @@ DROP SEQUENCE "VERBINDING_FCSEQ";
    ) ;
 --------------------------------------------------------
 --  DDL for Table FUNCTIE_RECHT
+--  DDL for Sequence SCHOONMAAK_FCSEQ
 --------------------------------------------------------
 
   CREATE TABLE "FUNCTIE_RECHT" 
    (	"Functie_ID" NUMBER(10,0), 
 	"Recht_ID" NUMBER(10,0)
    ) ;
+   CREATE SEQUENCE  "SCHOONMAAK_FCSEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table LIJN
 --------------------------------------------------------
@@ -1324,6 +1328,7 @@ FOR EACH ROW
 END;
 /
 ALTER TRIGGER "TRAM_ONDERHOUD_FCTG_BI" ENABLE;
+
 --------------------------------------------------------
 --  DDL for Trigger VERBINDING_FCTG_BI
 --------------------------------------------------------
@@ -1334,4 +1339,26 @@ FOR EACH ROW
   SELECT VERBINDING_FCSEQ.NEXTVAL INTO :new."ID" FROM dual;
 END;
 /
-ALTER TRIGGER "VERBINDING_FCTG_BI" ENABLE;
+ALTER TRIGGER "VERBINDING_FCTG_BI" ENABLE;ALTER TRIGGER "VERBINDING_FCTG_BI" ENABLE;
+
+CREATE TABLE Schoonmaak (
+  Id           number(10) NOT NULL, 
+  Datum        DATE NOT NULL,
+  TYPE         NUMBER(10) NOT NULL,
+  TramId       number(10) NOT NULL, 
+  MedewerkerId number(10) NOT NULL, 
+  PRIMARY KEY (Id));
+ALTER TABLE Schoonmaak ADD CONSTRAINT FKSchoonmaak768598 FOREIGN KEY (TramId) REFERENCES Tram (Id);
+ALTER TABLE Schoonmaak ADD CONSTRAINT FKSchoonmaak903252 FOREIGN KEY (MedewerkerId) REFERENCES Medewerker (Id);
+
+--------------------------------------------------------
+--  DDL for Trigger SCHOONMAAK_FCTG_BI
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "SCHOONMAAK_FCTG_BI" BEFORE INSERT ON "SCHOONMAAK"
+FOR EACH ROW
+ WHEN (new."ID" IS NULL) BEGIN
+  SELECT SCHOONMAAK_FCSEQ.NEXTVAL INTO :new."ID" FROM dual;
+END;
+/
+ALTER TRIGGER "SCHOONMAAK_FCTG_BI" ENABLE;
