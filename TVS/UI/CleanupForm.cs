@@ -10,8 +10,6 @@ namespace TVS.UI
     /// </summary>
     public partial class CleanupForm : Form
     {
-        private Administration admin = new Administration();
-
         /// <summary>
         ///     Constructs the default CleanupForm
         /// </summary>
@@ -19,6 +17,7 @@ namespace TVS.UI
         {
             InitializeComponent();
             ddbCleanupType.DataSource = Enum.GetValues(typeof (Schoonmaak.SchoonmaakType));
+            FormClosed += (sender, args) => tRefreshData.Enabled = false;
         }
 
 
@@ -64,40 +63,20 @@ namespace TVS.UI
             }
 
             var type = (Schoonmaak.SchoonmaakType) ddbCleanupType.SelectedItem;
+            DateTime date = dtpCleanupDate.Value;
+            int max = type == Schoonmaak.SchoonmaakType.KleineBeurt ? 3 : 2;
 
-            var services = 0;
-
-
-            switch (type)
+            if (Database.CountCleaningService(date, type) < max)
             {
-                case Schoonmaak.SchoonmaakType.GroteBeurt:
-                    services = Database.CountCleaningService(dtpCleanupDate.Value, Schoonmaak.SchoonmaakType.GroteBeurt);
-                    if (services < 3)
-                    {
-                        var schoonmaak = new Schoonmaak(medewerker, dtpCleanupDate.Value, tram, type);
+                var schoonmaak = new Schoonmaak(medewerker, date, tram, type);
 
-                        Database.SaveCleanup(schoonmaak);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Er kan geen grote service beurt meer gepland worden op die dag.");
-                    }
-                    break;
-                case Schoonmaak.SchoonmaakType.KleineBeurt:
-                    services = Database.CountCleaningService(dtpCleanupDate.Value, Schoonmaak.SchoonmaakType.KleineBeurt);
-                    if (services < 4)
-                    {
-                        var schoonmaak = new Schoonmaak(medewerker, dtpCleanupDate.Value, tram, type);
-
-                        Database.SaveCleanup(schoonmaak);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Er kan geen kleine service beurt meer gepland worden op die dag.");
-                    }
-                    break;
+                Database.SaveCleanup(schoonmaak);
             }
-
+            else
+            {
+                MessageBox.Show($"Er kan geen {type} meer gepland worden op die dag.");
+                return;
+            }
 
             LoadCleanupData(sender, e);
         }
