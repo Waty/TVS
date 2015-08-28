@@ -94,5 +94,14 @@ namespace TVS.Tests
             Assert.AreEqual(1, tramtype.Id);
             Assert.AreEqual("Combino", tramtype.Omschrijving);
         }
+
+        [TestMethod]
+        public void GetMaintenaceHistoryTest()
+        {
+            List<Maintenance> allMaintenances = Database.GetMaintenanceHistory().ToList();
+
+            Maintenance main = allMaintenances[0];
+            Assert.AreEqual("Klaas_Technicus", main.Medewerker.ToString());
+        }
     }
 }
