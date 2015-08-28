@@ -334,10 +334,10 @@ namespace TVS.Models
         /// <summary>
         ///     Retrieves whether chosen railway is available
         /// </summary>
-        /// <param name="number"></param>
-        public static bool IsRailAvailable(int number)
+        /// <param name="id"></param>
+        public static bool IsRailAvailable(int id)
         {
-            string query = "SELECT \"Beschikbaar\" FROM Spoor Where \"Nummer\" = " + number;
+            string query = "SELECT \"Beschikbaar\" FROM Spoor Where \"ID\" = " + id;
             return Convert.ToBoolean(ExecuteScalar(query));
         }
 

@@ -126,7 +126,7 @@
             this.lbSpoorNummer.Name = "lbSpoorNummer";
             this.lbSpoorNummer.Size = new System.Drawing.Size(163, 139);
             this.lbSpoorNummer.TabIndex = 26;
-            this.lbSpoorNummer.Text = "14";
+            this.lbSpoorNummer.Text = "0";
             this.lbSpoorNummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbSector
@@ -147,7 +147,6 @@
             this.lbSectorNummer.Name = "lbSectorNummer";
             this.lbSectorNummer.Size = new System.Drawing.Size(163, 139);
             this.lbSectorNummer.TabIndex = 28;
-            this.lbSectorNummer.Text = "4";
             this.lbSectorNummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DriversForm

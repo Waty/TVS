@@ -43,6 +43,7 @@ namespace TVS.UI
             _admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
             Sector s = _admin.GetSector(_tramId);
             lbSectorNummer.Text = s.Nummer.ToString();
+            lbSpoorNummer.Text = _admin.GetTracks(s.SpoorId).ToString();
         }
     }
 }

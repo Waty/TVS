@@ -67,17 +67,17 @@ namespace TVS
 
             if (tram.Vervuild)
             {
-                for (var i = 41; i <= 44; i++)
+                for (var i = 21; i <= 24; i++)
                 {
-                    if (Database.IsRailAvailable(41))
+                    if (Database.IsRailAvailable(i))
                     {
-                        Database.CreateSector(41, tram.Id);
+                        Database.CreateSector(i, tram.Id);
                     }
                 }
             }
             else if (tram.Defect)
             {
-                for (var i = 74; i <= 77; i++)
+                for (var i = 38; i <= 41; i++)
                 {
                     if (Database.IsRailAvailable(i))
                     {
@@ -89,9 +89,9 @@ namespace TVS
             // Combino heeft een speciaal spoor nodig.
             else if (tram.TramTypeId == 1)
             {
-                if (Database.IsRailAvailable(58))
+                if (Database.IsRailAvailable(33))
                 {
-                    Database.CreateSector(58, tram.Id);
+                    Database.CreateSector(33, tram.Id);
                     return;
                 }
             }
@@ -117,6 +117,16 @@ namespace TVS
         {
             Sector s = Database.GetSector(tramId);
             return s;
+        }
+
+        /// <summary>
+        ///     Gets wanted Track according to ID
+        /// </summary>
+        /// <param name="spoorId"></param>
+        /// <returns></returns>
+        public int GetTracks(int spoorId)
+        {
+            return Database.GetAllTracks().Single(spoor => spoor.Id == spoorId).Nummer;
         }
     }
 }
