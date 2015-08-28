@@ -307,10 +307,10 @@ namespace TVS.Models
         /// <returns></returns>
         public static IEnumerable<Schoonmaak> GetCleaningHistory()
         {
-            var query = "SELECT * FROM Schoonmaak";
             List<Medewerker> mederwerkers = GetAllMedewerkers().ToList();
             List<Tram> trams = GetAllTrams().ToList();
-            return ExecuteReader(query, reader => new Schoonmaak
+
+            return ExecuteReader("SELECT * FROM Schoonmaak", reader => new Schoonmaak
             {
                 Medewerker = mederwerkers.FirstOrDefault(m => m.Id == Convert.ToInt32(reader["Medewerkerid"])),
                 Type = (Schoonmaak.SchoonmaakType) Convert.ToInt32(reader["Type"]),

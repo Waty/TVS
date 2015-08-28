@@ -25,14 +25,16 @@ namespace TVS.UI
         /// </summary>
         private void LoadCleanupData(object sender, EventArgs e)
         {
+            // Store selectedIndex
             int selectedIndex = lbCleanupTasks.SelectedIndex;
-            lbCleanupTasks.DataSource = Database.GetAllTrams().Where(tram => tram.Vervuild).ToList();
-            if (selectedIndex >= lbCleanupTasks.Items.Count)
-            {
-                selectedIndex = -1;
-            }
-            lbCleanupTasks.SelectedIndex = selectedIndex;
 
+            // get new data
+            lbCleanupTasks.DataSource = Database.GetAllTrams().Where(tram => tram.Vervuild).ToList();
+
+            // Restore selectedIndex
+            lbCleanupTasks.SelectedIndex = selectedIndex >= lbCleanupTasks.Items.Count ? -1 : selectedIndex;
+
+            // Get all 'schoonmakers'
             ddbEmployees.DataSource = Database.GetAllMedewerkers()
                 .Where(medewerker => medewerker.Functie == Medewerker.FunctieType.Schoonmaker)
                 .ToList();
@@ -45,24 +47,24 @@ namespace TVS.UI
         /// </summary>
         private void btnRegisterCleanup_Click(object sender, EventArgs e)
         {
-            if (!(ddbEmployees.SelectedItem is Medewerker))
+            var medewerker = ddbEmployees.SelectedItem as Medewerker;
+            if (medewerker == null)
             {
                 MessageBox.Show("Please select a valid employee!");
                 return;
             }
 
-            if (!(lbCleanupTasks.SelectedItem is Tram))
+            var tram = lbCleanupTasks.SelectedItem as Tram;
+            if (tram == null)
             {
                 MessageBox.Show("Please select a valid Tram!");
                 return;
             }
 
-            var c = new Schoonmaak((Medewerker) ddbEmployees.SelectedItem,
-                dtpCleanupDate.Value,
-                (Tram) lbCleanupTasks.SelectedItem,
-                (Schoonmaak.SchoonmaakType) ddbCleanupType.SelectedItem);
+            var type = (Schoonmaak.SchoonmaakType) ddbCleanupType.SelectedItem;
+            var schoonmaak = new Schoonmaak(medewerker, dtpCleanupDate.Value, tram, type);
 
-            Database.SaveCleanup(c);
+            Database.SaveCleanup(schoonmaak);
 
             LoadCleanupData(sender, e);
         }
