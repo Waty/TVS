@@ -95,6 +95,7 @@ namespace TVS.Tests
             Assert.AreEqual("Combino", tramtype.Omschrijving);
         }
 
+<<<<<<< HEAD
         [TestMethod]
         public void NewTramTest()
         {
@@ -104,5 +105,7 @@ namespace TVS.Tests
             Assert.AreEqual(24, tram.Nummer);
             Assert.AreEqual(4, tram.Lengte);
         }
+=======
+>>>>>>> test removed
     }
 }
