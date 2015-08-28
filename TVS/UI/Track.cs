@@ -14,7 +14,7 @@ namespace TVS.UI
         private int _length;
         private int _number;
         private int _sectorHeight = 20;
-        private IReadOnlyCollection<Sector> _sectors = new List<Sector>();
+        private IReadOnlyList<Sector> _sectors = new List<Sector>();
 
         /// <summary>
         ///     Initializes a new Track
@@ -28,7 +28,7 @@ namespace TVS.UI
         ///     The sectors for the current track
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public IReadOnlyCollection<Sector> Sectors
+        public IReadOnlyList<Sector> Sectors
         {
             get { return _sectors; }
             set
