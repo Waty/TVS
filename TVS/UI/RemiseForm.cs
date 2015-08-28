@@ -84,7 +84,6 @@ namespace TVS.UI
                     Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
                     break;
             }
-
         }
     }
 }

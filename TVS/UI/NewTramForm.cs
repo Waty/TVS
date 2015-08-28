@@ -31,7 +31,8 @@ namespace TVS.UI
             int geschikt = cbConducteur.Checked ? 1 : 0;
 
 
-            _admin.NewTram(Convert.ToInt32(tbRemiseId.Text), typeId, Convert.ToInt32(tbNummer.Text), Convert.ToInt32(tbLengte.Text), geschikt, beschikbaar);
+            _admin.NewTram(Convert.ToInt32(tbRemiseId.Text), typeId, Convert.ToInt32(tbNummer.Text),
+                Convert.ToInt32(tbLengte.Text), geschikt, beschikbaar);
             MessageBox.Show("De Tram is aangemaakt!");
             DialogResult = DialogResult.OK;
         }
