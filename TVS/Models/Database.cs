@@ -372,5 +372,23 @@ namespace TVS.Models
                            "WHERE (SELECT count(*) FROM sector WHERE  sector.\"Spoor_ID\" = spoor.ID)= " + number;
             return ExecuteReader(query, reader => new Spoor(reader));
         }
+
+        /// <summary>
+        ///     Retrieves sector for chosen tram
+        /// </summary>
+        /// <param name="tramId"></param>
+        /// <returns></returns>
+        public static Sector GetSector(int tramId)
+        {
+            string query = "SELECT * FROM Sector WHERE \"Tram_ID\" = " + tramId;
+            return ExecuteReader(query, reader => new Sector
+            { 
+                    SpoorId = Convert.ToInt32(reader["Spoor_ID"]),
+                    TramId = Convert.ToInt32(reader["Tram_ID"]),
+                    Nummer = Convert.ToInt32(reader["Nummer"]),
+                    Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
+                    Blokkade = Convert.ToBoolean(reader["Blokkade"])
+            }).First();
+        }
     }
 }

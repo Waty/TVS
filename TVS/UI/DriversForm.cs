@@ -10,8 +10,8 @@ namespace TVS.UI
     /// </summary>
     public partial class DriversForm : Form
     {
-        private readonly Administration admin = new Administration();
-
+        private readonly Administration _admin = new Administration();
+        private readonly int _tramId;
         /// <summary>
         /// </summary>
         public DriversForm()
@@ -21,12 +21,12 @@ namespace TVS.UI
 
             List<Tram> tramList = Database.GetAllTrams().ToList();
             var r = new Random();
-            int tramId = r.Next(1, tramList.Count);
-            while (Database.IsInRemise(tramId))
+            _tramId = r.Next(1, tramList.Count);
+            while (Database.IsInRemise(_tramId))
             {
-                tramId = r.Next(1, tramList.Count);
+                _tramId = r.Next(1, tramList.Count);
             }
-            tbTramNummer.Text = lbTramNummer.Text = tramList.First(t => t.Id == tramId).Nummer.ToString();
+            tbTramNummer.Text = lbTramNummer.Text = tramList.First(t => t.Id == _tramId).Nummer.ToString();
         }
 
         private void btnVerzend_Click(object sender, EventArgs e)
@@ -40,7 +40,9 @@ namespace TVS.UI
                 Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
             }
 
-            admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
+            _admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
+            Sector s = _admin.GetSector(_tramId);
+            lbSectorNummer.Text = s.Nummer.ToString();
         }
     }
 }

@@ -108,6 +108,15 @@ namespace TVS
                 }
             }
         }
+
+        /// <summary>
+        ///     retrieve Sector from Database
+        /// </summary>
+        /// <param name="tramId"></param>
+        public Sector GetSector(int tramId)
+        {
+            Sector s = Database.GetSector(tramId);
+            return s;
+        }
     }
 }
-
