@@ -51,5 +51,19 @@ namespace TVS.UI
         {
             admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
         }
+
+        private void RemiseForm_Load(object sender, EventArgs e)
+        {
+            List<Spoor> tracks = Database.GetAllTracks().ToList();
+            foreach (Track track in Tracks)
+            {
+                Spoor result = tracks.FirstOrDefault(t => t.Nummer == track.Number);
+                if (result != null)
+                {
+                    track.Length = result.Lengte;
+                    track.Enabled = result.Beschikbaar;
+                }
+            }
+        }
     }
 }
