@@ -94,18 +94,5 @@ namespace TVS.Tests
             Assert.AreEqual(1, tramtype.Id);
             Assert.AreEqual("Combino", tramtype.Omschrijving);
         }
-
-<<<<<<< HEAD
-        [TestMethod]
-        public void NewTramTest()
-        {
-            Assert.AreEqual(1, Database.NewTram(1, 1, 24, 4, 1, 1));
-
-            Tram tram = Database.GetAllTrams().First(t => t.Nummer == 24);
-            Assert.AreEqual(24, tram.Nummer);
-            Assert.AreEqual(4, tram.Lengte);
-        }
-=======
->>>>>>> test removed
     }
 }
