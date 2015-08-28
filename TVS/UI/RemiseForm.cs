@@ -11,7 +11,7 @@ namespace TVS.UI
     /// </summary>
     public partial class RemiseForm : Form
     {
-        private readonly Administration admin = new Administration();
+        private readonly Administration _admin = new Administration();
 
         /// <summary>
         ///     Constructor
@@ -50,12 +50,14 @@ namespace TVS.UI
 
         private void btnInvoer_Click(object sender, EventArgs e)
         {
-            admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
+            _admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
         }
 
         private void LoadAllTracks(object sender, EventArgs e)
         {
             List<Spoor> tracks = Database.GetAllTracks().ToList();
+            List<Sector> sectors = Database.GetAllSectors().ToList();
+
             foreach (Track track in Tracks)
             {
                 Spoor result = tracks.FirstOrDefault(t => t.Nummer == track.Number);
@@ -63,6 +65,7 @@ namespace TVS.UI
                 {
                     track.Length = result.Lengte;
                     track.Enabled = result.Beschikbaar;
+                    track.Sectors = sectors.Where(s => s.SpoorId == result.Id).ToList();
                 }
             }
         }

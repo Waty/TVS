@@ -92,6 +92,11 @@ namespace TVS.UI
         {
             for (var i = 1; i <= Length; i++)
             {
+                Pen pen = Pens.Black;
+                if (i <= Sectors.Count)
+                {
+                    pen = Pens.Red;
+                }
                 var rect = new Rectangle
                 {
                     X = 0,
@@ -99,7 +104,7 @@ namespace TVS.UI
                     Height = SectorHeight,
                     Width = e.ClipRectangle.Width - 1
                 };
-                e.Graphics.DrawRectangle(Pens.Black, rect);
+                e.Graphics.DrawRectangle(pen, rect);
             }
         }
     }
