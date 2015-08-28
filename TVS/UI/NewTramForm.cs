@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using TVS.Models;
@@ -37,15 +38,18 @@ namespace TVS.UI
             }
 
             List<Tram> trams = Database.GetAllTrams().ToList();
-            bool nieuwetram = true;
+            var nieuwetram = true;
 
-            foreach (Tram tram in trams.Where(tram => tram.Nummer == Convert.ToInt32(tbNummer.Text))) {
+            foreach (Tram tram in trams.Where(tram => tram.Nummer == Convert.ToInt32(tbNummer.Text)))
+            {
                 nieuwetram = false;
             }
             if (nieuwetram)
             {
                 admin.NewTram(Convert.ToInt32(tbRemiseId.Text), typeId, Convert.ToInt32(tbNummer.Text),
-                Convert.ToInt32(tbLengte.Text), geschikt, beschikbaar);
+                    Convert.ToInt32(tbLengte.Text), geschikt, beschikbaar);
+                MessageBox.Show("De Tram is aangemaakt!");
+                DialogResult = DialogResult.OK;
             }
             else
             {
