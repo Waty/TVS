@@ -19,6 +19,7 @@ namespace TVS.UI
         public RemiseForm()
         {
             InitializeComponent();
+            ddStatus.DataSource = Enum.GetValues(typeof (Maintenance.MaintenanceType));
         }
 
         private IEnumerable<Track> Tracks => Controls.OfType<Track>();
@@ -64,6 +65,23 @@ namespace TVS.UI
                     track.Enabled = result.Beschikbaar;
                 }
             }
+        }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+            var mode = (Maintenance.MaintenanceType) ddStatus.SelectedItem;
+
+            switch (mode)
+            {
+                case Maintenance.MaintenanceType.Vervuild:
+                    Database.SetVervuild(Convert.ToInt32(tbTramNummer.Text));
+                    break;
+
+                case Maintenance.MaintenanceType.Onderhouden:
+                    Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
+                    break;
+            }
+
         }
     }
 }

@@ -80,6 +80,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNieuw = new System.Windows.Forms.Button();
+            this.ddStatus = new System.Windows.Forms.ComboBox();
             track41 = new TVS.UI.Track();
             track40 = new TVS.UI.Track();
             track39 = new TVS.UI.Track();
@@ -124,110 +125,6 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tbTramNummer
-            // 
-            this.tbTramNummer.Location = new System.Drawing.Point(84, 12);
-            this.tbTramNummer.Name = "tbTramNummer";
-            this.tbTramNummer.Size = new System.Drawing.Size(111, 20);
-            this.tbTramNummer.TabIndex = 83;
-            // 
-            // lbNummer
-            // 
-            this.lbNummer.AutoSize = true;
-            this.lbNummer.Location = new System.Drawing.Point(3, 15);
-            this.lbNummer.Name = "lbNummer";
-            this.lbNummer.Size = new System.Drawing.Size(77, 13);
-            this.lbNummer.TabIndex = 84;
-            this.lbNummer.Text = "Tram nummer: ";
-            // 
-            // btnStatus
-            // 
-            this.btnStatus.Location = new System.Drawing.Point(84, 38);
-            this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(111, 23);
-            this.btnStatus.TabIndex = 85;
-            this.btnStatus.Text = "Pas status aan";
-            this.btnStatus.UseVisualStyleBackColor = true;
-            // 
-            // btnInvoer
-            // 
-            this.btnInvoer.Location = new System.Drawing.Point(84, 67);
-            this.btnInvoer.Name = "btnInvoer";
-            this.btnInvoer.Size = new System.Drawing.Size(111, 23);
-            this.btnInvoer.TabIndex = 86;
-            this.btnInvoer.Text = "Invoeren";
-            this.btnInvoer.UseVisualStyleBackColor = true;
-            this.btnInvoer.Click += new System.EventHandler(this.btnInvoer_Click);
-            // 
-            // btnSchoonmaak
-            // 
-            this.btnSchoonmaak.Location = new System.Drawing.Point(84, 96);
-            this.btnSchoonmaak.Name = "btnSchoonmaak";
-            this.btnSchoonmaak.Size = new System.Drawing.Size(111, 23);
-            this.btnSchoonmaak.TabIndex = 87;
-            this.btnSchoonmaak.Text = "Naar schoonmaak";
-            this.btnSchoonmaak.UseVisualStyleBackColor = true;
-            this.btnSchoonmaak.Click += new System.EventHandler(this.btnSchoonmaak_Click);
-            // 
-            // tbSpoorNr
-            // 
-            this.tbSpoorNr.Location = new System.Drawing.Point(50, 15);
-            this.tbSpoorNr.Name = "tbSpoorNr";
-            this.tbSpoorNr.Size = new System.Drawing.Size(127, 20);
-            this.tbSpoorNr.TabIndex = 88;
-            // 
-            // lbSpoor
-            // 
-            this.lbSpoor.AutoSize = true;
-            this.lbSpoor.Location = new System.Drawing.Point(6, 18);
-            this.lbSpoor.Name = "lbSpoor";
-            this.lbSpoor.Size = new System.Drawing.Size(38, 13);
-            this.lbSpoor.TabIndex = 89;
-            this.lbSpoor.Text = "Spoor:";
-            // 
-            // btnBlokkeer
-            // 
-            this.btnBlokkeer.Location = new System.Drawing.Point(50, 41);
-            this.btnBlokkeer.Name = "btnBlokkeer";
-            this.btnBlokkeer.Size = new System.Drawing.Size(127, 23);
-            this.btnBlokkeer.TabIndex = 90;
-            this.btnBlokkeer.Text = "Blokkeer/Deblokkeer";
-            this.btnBlokkeer.UseVisualStyleBackColor = true;
-            this.btnBlokkeer.Click += new System.EventHandler(this.btnBlokkeer_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbSpoor);
-            this.panel1.Controls.Add(this.btnBlokkeer);
-            this.panel1.Controls.Add(this.tbSpoorNr);
-            this.panel1.Location = new System.Drawing.Point(1015, 715);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 83);
-            this.panel1.TabIndex = 91;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnNieuw);
-            this.panel2.Controls.Add(this.lbNummer);
-            this.panel2.Controls.Add(this.tbTramNummer);
-            this.panel2.Controls.Add(this.btnSchoonmaak);
-            this.panel2.Controls.Add(this.btnStatus);
-            this.panel2.Controls.Add(this.btnInvoer);
-            this.panel2.Location = new System.Drawing.Point(1015, 532);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 168);
-            this.panel2.TabIndex = 92;
-            // 
-            // btnNieuw
-            // 
-            this.btnNieuw.Location = new System.Drawing.Point(84, 126);
-            this.btnNieuw.Name = "btnNieuw";
-            this.btnNieuw.Size = new System.Drawing.Size(111, 23);
-            this.btnNieuw.TabIndex = 88;
-            this.btnNieuw.Text = "Nieuwe Tram";
-            this.btnNieuw.UseVisualStyleBackColor = true;
-            this.btnNieuw.Click += new System.EventHandler(this.btnNieuw_Click);
             // 
             // track41
             // 
@@ -680,6 +577,120 @@
             track1.Size = new System.Drawing.Size(60, 495);
             track1.TabIndex = 93;
             // 
+            // tbTramNummer
+            // 
+            this.tbTramNummer.Location = new System.Drawing.Point(117, 12);
+            this.tbTramNummer.Name = "tbTramNummer";
+            this.tbTramNummer.Size = new System.Drawing.Size(111, 20);
+            this.tbTramNummer.TabIndex = 83;
+            // 
+            // lbNummer
+            // 
+            this.lbNummer.AutoSize = true;
+            this.lbNummer.Location = new System.Drawing.Point(24, 15);
+            this.lbNummer.Name = "lbNummer";
+            this.lbNummer.Size = new System.Drawing.Size(77, 13);
+            this.lbNummer.TabIndex = 84;
+            this.lbNummer.Text = "Tram nummer: ";
+            // 
+            // btnStatus
+            // 
+            this.btnStatus.Location = new System.Drawing.Point(117, 38);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(111, 23);
+            this.btnStatus.TabIndex = 85;
+            this.btnStatus.Text = "Pas status aan";
+            this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
+            // 
+            // btnInvoer
+            // 
+            this.btnInvoer.Location = new System.Drawing.Point(117, 67);
+            this.btnInvoer.Name = "btnInvoer";
+            this.btnInvoer.Size = new System.Drawing.Size(111, 23);
+            this.btnInvoer.TabIndex = 86;
+            this.btnInvoer.Text = "Invoeren";
+            this.btnInvoer.UseVisualStyleBackColor = true;
+            this.btnInvoer.Click += new System.EventHandler(this.btnInvoer_Click);
+            // 
+            // btnSchoonmaak
+            // 
+            this.btnSchoonmaak.Location = new System.Drawing.Point(117, 97);
+            this.btnSchoonmaak.Name = "btnSchoonmaak";
+            this.btnSchoonmaak.Size = new System.Drawing.Size(111, 23);
+            this.btnSchoonmaak.TabIndex = 87;
+            this.btnSchoonmaak.Text = "Naar schoonmaak";
+            this.btnSchoonmaak.UseVisualStyleBackColor = true;
+            this.btnSchoonmaak.Click += new System.EventHandler(this.btnSchoonmaak_Click);
+            // 
+            // tbSpoorNr
+            // 
+            this.tbSpoorNr.Location = new System.Drawing.Point(50, 15);
+            this.tbSpoorNr.Name = "tbSpoorNr";
+            this.tbSpoorNr.Size = new System.Drawing.Size(127, 20);
+            this.tbSpoorNr.TabIndex = 88;
+            // 
+            // lbSpoor
+            // 
+            this.lbSpoor.AutoSize = true;
+            this.lbSpoor.Location = new System.Drawing.Point(6, 18);
+            this.lbSpoor.Name = "lbSpoor";
+            this.lbSpoor.Size = new System.Drawing.Size(38, 13);
+            this.lbSpoor.TabIndex = 89;
+            this.lbSpoor.Text = "Spoor:";
+            // 
+            // btnBlokkeer
+            // 
+            this.btnBlokkeer.Location = new System.Drawing.Point(50, 41);
+            this.btnBlokkeer.Name = "btnBlokkeer";
+            this.btnBlokkeer.Size = new System.Drawing.Size(127, 23);
+            this.btnBlokkeer.TabIndex = 90;
+            this.btnBlokkeer.Text = "Blokkeer/Deblokkeer";
+            this.btnBlokkeer.UseVisualStyleBackColor = true;
+            this.btnBlokkeer.Click += new System.EventHandler(this.btnBlokkeer_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbSpoor);
+            this.panel1.Controls.Add(this.btnBlokkeer);
+            this.panel1.Controls.Add(this.tbSpoorNr);
+            this.panel1.Location = new System.Drawing.Point(983, 715);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(232, 83);
+            this.panel1.TabIndex = 91;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.ddStatus);
+            this.panel2.Controls.Add(this.btnNieuw);
+            this.panel2.Controls.Add(this.lbNummer);
+            this.panel2.Controls.Add(this.tbTramNummer);
+            this.panel2.Controls.Add(this.btnSchoonmaak);
+            this.panel2.Controls.Add(this.btnStatus);
+            this.panel2.Controls.Add(this.btnInvoer);
+            this.panel2.Location = new System.Drawing.Point(977, 532);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(238, 168);
+            this.panel2.TabIndex = 92;
+            // 
+            // btnNieuw
+            // 
+            this.btnNieuw.Location = new System.Drawing.Point(117, 126);
+            this.btnNieuw.Name = "btnNieuw";
+            this.btnNieuw.Size = new System.Drawing.Size(111, 23);
+            this.btnNieuw.TabIndex = 88;
+            this.btnNieuw.Text = "Nieuwe Tram";
+            this.btnNieuw.UseVisualStyleBackColor = true;
+            this.btnNieuw.Click += new System.EventHandler(this.btnNieuw_Click);
+            // 
+            // ddStatus
+            // 
+            this.ddStatus.FormattingEnabled = true;
+            this.ddStatus.Location = new System.Drawing.Point(15, 40);
+            this.ddStatus.Name = "ddStatus";
+            this.ddStatus.Size = new System.Drawing.Size(96, 21);
+            this.ddStatus.TabIndex = 89;
+            // 
             // RemiseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -751,6 +762,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnNieuw;
+        private System.Windows.Forms.ComboBox ddStatus;
     }
 }
 
