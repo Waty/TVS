@@ -44,5 +44,29 @@ namespace TVS.Tests
             Tram tram = Database.GetAllTrams().First(t => t.Nummer == 2001);
             Assert.AreEqual(true, tram.Vervuild);
         }
+
+        [TestMethod]
+        public void DefectTest()
+        {
+            Assert.AreEqual(1, Database.SetBroken(2001));
+
+            Tram tram = Database.GetAllTrams().First(t => t.Nummer == 2001);
+            Assert.AreEqual(true, tram.Defect);
+        }
+
+        [TestMethod]
+        public void GetAllMedewerkersTest()
+        {
+            List<Medewerker> allMedewerkers = Database.GetAllMedewerkers().ToList();
+
+            Assert.AreEqual(5, allMedewerkers.Count);
+
+            Medewerker medewerker = allMedewerkers[0];
+            Assert.AreEqual(1, medewerker.Id);
+            Assert.AreEqual("Jan_Beheerder", medewerker.Naam);
+        }
+
+        
+    
     }
 }

@@ -190,10 +190,10 @@ namespace TVS.Models
         ///     Sets "Defect" to true
         /// </summary>
         /// <param name="number"></param>
-        public static void SetBroken(int number)
+        public static int SetBroken(int number)
         {
             string query = "UPDATE Tram SET \"Defect\" = 1 WHERE \"Nummer\" = " + number;
-            ExecuteNonQuery(query);
+            return ExecuteNonQuery(query);
         }
 
         /// <summary>
