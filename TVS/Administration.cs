@@ -9,6 +9,9 @@ namespace TVS
     /// </summary>
     public class Administration
     {
+        private readonly int[] _cleaningTracks = Enumerable.Range(21, 4).ToArray();
+        private readonly int[] _maintenanceTracks = Enumerable.Range(38, 4).ToArray();
+
         /// <summary>
         ///     Gets all the tramtypes
         /// </summary>
@@ -33,23 +36,18 @@ namespace TVS
         {
             if (tram.Vervuild)
             {
-                for (var i = 21; i <= 24; i++)
+                foreach (int track in _cleaningTracks.Where(Database.IsRailAvailable))
                 {
-                    if (Database.IsRailAvailable(i))
-                    {
-                        Database.CreateSector(i, tram.Id);
-                    }
+                    Database.CreateSector(track, tram.Id);
+                    return;
                 }
             }
             else if (tram.Defect)
             {
-                for (var i = 38; i <= 41; i++)
+                foreach (int track in _maintenanceTracks.Where(Database.IsRailAvailable))
                 {
-                    if (Database.IsRailAvailable(i))
-                    {
-                        Database.CreateSector(i, tram.Id);
-                        break;
-                    }
+                    Database.CreateSector(track, tram.Id);
+                    return;
                 }
             }
             // Combino heeft een speciaal spoor nodig.
@@ -65,7 +63,11 @@ namespace TVS
 
             for (var i = 0; i < 1337; i++)
             {
-                List<Spoor> sporen = Database.GetSelectedTracks(i).ToList();
+                List<Spoor> sporen = Database.GetSelectedTracks(i)
+                    .Where(s => !_maintenanceTracks.Contains(s.Id))
+                    .Where(s => !_cleaningTracks.Contains(s.Id))
+                    .ToList();
+
                 if (sporen.Count != 0)
                 {
                     Spoor spoor = sporen.First();
@@ -81,8 +83,7 @@ namespace TVS
         /// <param name="tramId"></param>
         public Sector GetSector(int tramId)
         {
-            Sector s = Database.GetSector(tramId);
-            return s;
+            return Database.GetSector(tramId);
         }
 
         /// <summary>
