@@ -50,7 +50,6 @@
             this.lbTramNummer.Name = "lbTramNummer";
             this.lbTramNummer.Size = new System.Drawing.Size(205, 139);
             this.lbTramNummer.TabIndex = 17;
-            this.lbTramNummer.Text = "806";
             this.lbTramNummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbTram
@@ -126,7 +125,6 @@
             this.lbSpoorNummer.Name = "lbSpoorNummer";
             this.lbSpoorNummer.Size = new System.Drawing.Size(163, 139);
             this.lbSpoorNummer.TabIndex = 26;
-            this.lbSpoorNummer.Text = "0";
             this.lbSpoorNummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbSector
