@@ -398,14 +398,20 @@ namespace TVS.Models
         /// <returns>All sectors</returns>
         public static IEnumerable<Sector> GetAllSectors()
         {
-            return ExecuteReader("SELECT * FROM sector", reader => new Sector
+            List<Tram> trams = GetAllTrams().ToList();
+            return ExecuteReader("SELECT * FROM sector", reader =>
             {
-                Id = Convert.ToInt32(reader["Id"]),
-                SpoorId = Convert.ToInt32(reader["Spoor_ID"]),
-                TramId = Convert.ToInt32(reader["Tram_ID"]),
-                Nummer = Convert.ToInt32(reader["Nummer"]),
-                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
-                Blokkade = Convert.ToBoolean(reader["Blokkade"])
+                int id = Convert.ToInt32(reader["Tram_ID"]);
+                return new Sector
+                {
+                    Id = Convert.ToInt32(reader["Id"]),
+                    SpoorId = Convert.ToInt32(reader["Spoor_ID"]),
+                    TramId = id,
+                    Tram = trams.First(t => t.Id == id),
+                    Nummer = Convert.ToInt32(reader["Nummer"]),
+                    Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
+                    Blokkade = Convert.ToBoolean(reader["Blokkade"])
+                };
             });
         }
 

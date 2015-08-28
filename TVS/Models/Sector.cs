@@ -34,5 +34,10 @@
         ///     The unique identifier
         /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        ///     The tram that's placed on the sector
+        /// </summary>
+        public Tram Tram { get; set; }
     }
 }

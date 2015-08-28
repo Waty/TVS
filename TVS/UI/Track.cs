@@ -92,11 +92,6 @@ namespace TVS.UI
         {
             for (var i = 1; i <= Length; i++)
             {
-                Pen pen = Pens.Black;
-                if (i <= Sectors.Count)
-                {
-                    pen = Pens.Red;
-                }
                 var rect = new Rectangle
                 {
                     X = 0,
@@ -104,8 +99,41 @@ namespace TVS.UI
                     Height = SectorHeight,
                     Width = e.ClipRectangle.Width - 1
                 };
-                e.Graphics.DrawRectangle(pen, rect);
+                Sector s = i <= Sectors.Count ? Sectors[i - 1] : null;
+                e.Graphics.FillRectangle(GetBackgroundColor(s), rect);
+                e.Graphics.DrawRectangle(GetPen(s), rect);
+                if (s != null)
+                {
+                    e.Graphics.DrawString(s.Tram.Nummer.ToString(), SystemFonts.DefaultFont, GetBrush(s), 15, rect.Y + 10);
+                }
             }
+        }
+
+        private Brush GetBackgroundColor(Sector sector)
+        {
+            if (sector != null)
+            {
+                if (sector.Tram.Vervuild)
+                {
+                    return Brushes.SaddleBrown;
+                }
+                if (sector.Tram.Defect)
+                {
+                    return Brushes.Red;
+                }
+            }
+
+            return Brushes.AntiqueWhite;
+        }
+
+        private Brush GetBrush(Sector sector)
+        {
+            return Brushes.Black;
+        }
+
+        private Pen GetPen(Sector sector)
+        {
+            return Pens.Black;
         }
     }
 }
