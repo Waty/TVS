@@ -75,7 +75,7 @@ namespace TVS.UI
                     if (services < 3)
                     {
                         var schoonmaak = new Schoonmaak(medewerker, dtpCleanupDate.Value, tram, type);
-                        
+
                         Database.SaveCleanup(schoonmaak);
                     }
                     else
