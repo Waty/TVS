@@ -67,7 +67,6 @@
     <Compile Include="UI\LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Onderhoud.cs" />
     <Compile Include="Models\Maintenance.cs" />
     <Compile Include="UI\ManagerForm.cs">
       <SubType>Form</SubType>
