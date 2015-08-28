@@ -337,8 +337,9 @@ namespace TVS.Models
         /// <param name="id"></param>
         public static bool IsRailAvailable(int id)
         {
-            string query = "SELECT \"Beschikbaar\" FROM Spoor Where \"ID\" = " + id;
-            return Convert.ToBoolean(ExecuteScalar(query));
+            Spoor track = GetAllTracks().ToList().Single(t => t.Id == id);
+            List<Sector> sectors = GetAllSectors().Where(s => s.SpoorId == id).ToList();
+            return track.Lengte > sectors.Count;
         }
 
         /// <summary>
