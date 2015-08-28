@@ -339,7 +339,7 @@ namespace TVS.Models
         {
             Spoor track = GetAllTracks().ToList().Single(t => t.Id == id);
             List<Sector> sectors = GetAllSectors().Where(s => s.SpoorId == id).ToList();
-            return track.Lengte > sectors.Count;
+            return track.Lengte > sectors.Count && !track.Geblokkeerd;
         }
 
         /// <summary>
