@@ -382,13 +382,30 @@ namespace TVS.Models
         {
             string query = "SELECT * FROM Sector WHERE \"Tram_ID\" = " + tramId;
             return ExecuteReader(query, reader => new Sector
-            { 
-                    SpoorId = Convert.ToInt32(reader["Spoor_ID"]),
-                    TramId = Convert.ToInt32(reader["Tram_ID"]),
-                    Nummer = Convert.ToInt32(reader["Nummer"]),
-                    Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
-                    Blokkade = Convert.ToBoolean(reader["Blokkade"])
+            {
+                SpoorId = Convert.ToInt32(reader["Spoor_ID"]),
+                TramId = Convert.ToInt32(reader["Tram_ID"]),
+                Nummer = Convert.ToInt32(reader["Nummer"]),
+                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
+                Blokkade = Convert.ToBoolean(reader["Blokkade"])
             }).First();
+        }
+
+        /// <summary>
+        ///     Retrieves all sectors
+        /// </summary>
+        /// <returns>All sectors</returns>
+        public static IEnumerable<Sector> GetAllSectors()
+        {
+            return ExecuteReader("SELECT * FROM sector", reader => new Sector
+            {
+                Id = Convert.ToInt32(reader["Id"]),
+                SpoorId = Convert.ToInt32(reader["Spoor_ID"]),
+                TramId = Convert.ToInt32(reader["Tram_ID"]),
+                Nummer = Convert.ToInt32(reader["Nummer"]),
+                Beschikbaar = Convert.ToBoolean(reader["Beschikbaar"]),
+                Blokkade = Convert.ToBoolean(reader["Blokkade"])
+            });
         }
     }
 }
