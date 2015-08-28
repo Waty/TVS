@@ -103,5 +103,39 @@ namespace TVS.Tests
             Maintenance main = allMaintenances[0];
             Assert.AreEqual("Klaas_Technicus", main.Medewerker.ToString());
         }
+
+        [TestMethod]
+        public void GetCleaningHistoryTest()
+        {
+            List<Schoonmaak> allSchoonmaak = Database.GetCleaningHistory().ToList();
+
+            Schoonmaak schoon = allSchoonmaak[0];
+            Assert.AreEqual("Sjaak_Schoonmaker", schoon.Medewerker.ToString());
+        }
+
+        [TestMethod]
+        public void IsInRemiseTest()
+        {
+            Assert.AreEqual(true, Database.IsInRemise(1));
+        }
+
+        [TestMethod]
+        public void IsRailAvailable()
+        {
+            Assert.AreEqual(true, Database.IsRailAvailable(1));
+        }
+
+        [TestMethod]
+        public void GetAllTracksTest()
+        {
+            List<Spoor> allTracks = Database.GetAllTracks().ToList();
+
+            Assert.AreEqual(41, allTracks.Count);
+
+            Spoor spoor = allTracks[0];
+            Assert.AreEqual(1, spoor.Id);
+            Assert.AreEqual(1, spoor.Lengte);
+            Assert.AreEqual(false, spoor.InUitRijspoor);
+        }
     }
 }
