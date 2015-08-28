@@ -355,16 +355,6 @@ namespace TVS.Models
         }
 
         /// <summary>
-        ///     Counts the sectors on a track
-        /// </summary>
-        /// <returns></returns>
-        public static int CountSector(int number)
-        {
-            string query = "SELECT COUNT(*) FROM SECTOR WHERE \"Spoor_ID\" = " + number;
-            return Convert.ToInt32(ExecuteScalar(query));
-        }
-
-        /// <summary>
         ///     Retrieves all tracks
         /// </summary>
         /// <returns>   Returns all tracks  </returns>
@@ -374,22 +364,12 @@ namespace TVS.Models
         }
 
         /// <summary>
-        ///     Retrieves the line a tram is on.
-        /// </summary>
-        /// <returns>   Returns a line  </returns>
-        public static int GetLine(int tram)
-        {
-            string query = "SELECT MAX(\"Lijn_ID\") FROM TRAM_LIJN WHERE \"Tram_ID\" = " + tram;
-            return Convert.ToInt32(ExecuteScalar(query));
-        }
-
-        /// <summary>
         ///     Retrieves the empty tracks
         /// </summary>
         public static IEnumerable<Spoor> GetSelectedTracks(int number)
         {
             string query = "SELECT * FROM spoor " +
-                           "WHERE (SELECT count(*) FROM sector WHERE  sector\"Spoor_ID\" = spoor.ID)= " + number;
+                           "WHERE (SELECT count(*) FROM sector WHERE  sector.\"Spoor_ID\" = spoor.ID)= " + number;
             return ExecuteReader(query, reader => new Spoor(reader));
         }
     }
