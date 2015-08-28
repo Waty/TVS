@@ -327,8 +327,8 @@ namespace TVS.Models
         /// <returns></returns>
         public static bool IsInRemise(int id)
         {
-            string query = "SELECT \"ID\" FROM Sector Where \"Tram_ID\" = " + id;
-            return ExecuteReader(query, reader => reader).Any();
+            string query = "SELECT COUNT(*) FROM Sector Where \"Tram_ID\" = " + id;
+            return Convert.ToInt32(ExecuteScalar(query)) > 0;
         }
 
         /// <summary>
