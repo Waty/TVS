@@ -126,7 +126,6 @@
             this.lbSpoorNummer.Name = "lbSpoorNummer";
             this.lbSpoorNummer.Size = new System.Drawing.Size(163, 139);
             this.lbSpoorNummer.TabIndex = 26;
-            this.lbSpoorNummer.Text = "0";
             this.lbSpoorNummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbSector
