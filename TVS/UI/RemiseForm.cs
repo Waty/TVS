@@ -92,6 +92,7 @@ namespace TVS.UI
             List<Tram> trams = Database.GetAllTrams().ToList();
             int randomTramId = Database.GetRandomTramIdNotRemise(trams.Count);
             _admin.AssignSector(trams.Single(t => t.Id == randomTramId));
+            LoadAllTracks(sender, e);
         }
 
         private void btnSimulation_Click(object sender, EventArgs e)
