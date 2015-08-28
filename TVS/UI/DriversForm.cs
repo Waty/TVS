@@ -7,7 +7,7 @@ using TVS.Models;
 namespace TVS.UI
 {
     /// <summary>
-    /// Form for the driver
+    ///     Form for the driver
     /// </summary>
     public partial class DriversForm : Form
     {

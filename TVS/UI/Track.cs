@@ -104,7 +104,8 @@ namespace TVS.UI
                 e.Graphics.DrawRectangle(GetPen(s), rect);
                 if (s != null)
                 {
-                    e.Graphics.DrawString(s.Tram.Nummer.ToString(), SystemFonts.DefaultFont, GetBrush(s), 15, rect.Y + 10);
+                    e.Graphics.DrawString(s.Tram.Nummer.ToString(), SystemFonts.DefaultFont, GetBrush(s), 15,
+                        rect.Y + 10);
                 }
             }
         }
