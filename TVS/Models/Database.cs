@@ -19,7 +19,7 @@ namespace TVS.Models
         /// </returns>
         private static OracleConnection GetConnection()
         {
-            const string str = "User Id=dbi326436;Password=UR5Q9cjwLZ;Data Source=fhictora01.fhict.local:1521/fhictora";
+            const string str = "User Id=dbi326436;Password=LNXHtmVnAw;Data Source=fhictora01.fhict.local/fhictora";
             return new OracleConnection(str);
         }
 
