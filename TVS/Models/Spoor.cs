@@ -9,19 +9,6 @@ namespace TVS.Models
     public class Spoor
     {
         /// <summary>
-        ///     Constructor
-        /// </summary>
-        public Spoor(int id, int remise, int nummer, int lengte, bool beschikbaar, bool inuitrijspoor)
-        {
-            Id = id;
-            Remise_Id = remise;
-            Nummer = nummer;
-            Lengte = lengte;
-            Beschikbaar = beschikbaar;
-            InUitRijspoor = inuitrijspoor;
-        }
-
-        /// <summary>
         ///     Constructs from the datareader
         /// </summary>
         /// <param name="reader"></param>
@@ -35,11 +22,6 @@ namespace TVS.Models
             InUitRijspoor = Convert.ToBoolean(reader["InUitRijspoor"]);
             Geblokkeerd = Convert.ToBoolean(reader["Geblokkeerd"]);
         }
-
-        /// <summary>
-        ///     Empty constructor
-        /// </summary>
-        public Spoor() {}
 
         /// <summary>
         ///     ID of the track

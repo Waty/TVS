@@ -6,23 +6,6 @@
     public class Sector
     {
         /// <summary>
-        ///     Constructor
-        /// </summary>
-        public Sector(int spoorid, int tramid, int nummer, bool beschikbaar, bool blokkade)
-        {
-            SpoorId = spoorid;
-            TramId = tramid;
-            Nummer = nummer;
-            Beschikbaar = beschikbaar;
-            Blokkade = blokkade;
-        }
-
-        /// <summary>
-        ///     Empty constructor
-        /// </summary>
-        public Sector() {}
-
-        /// <summary>
         ///     ID of the track
         /// </summary>
         public int SpoorId { get; set; }

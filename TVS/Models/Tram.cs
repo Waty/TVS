@@ -6,29 +6,6 @@
     public class Tram
     {
         /// <summary>
-        ///     Constructor
-        /// </summary>
-        public Tram(int id, int nummer, int lengte, bool vervuild, bool defect, bool conducteurGeschikt,
-            bool beschikbaar,
-            int tramtypeid, int remiseid)
-        {
-            Id = id;
-            Nummer = nummer;
-            Lengte = lengte;
-            Vervuild = vervuild;
-            Defect = defect;
-            ConducteurGeschikt = conducteurGeschikt;
-            Beschikbaar = beschikbaar;
-            TramTypeId = tramtypeid;
-            RemiseId = remiseid;
-        }
-
-        /// <summary>
-        ///     Empty constructor
-        /// </summary>
-        public Tram() {}
-
-        /// <summary>
         ///     Tram ID
         /// </summary>
         public int Id { get; set; }

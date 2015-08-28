@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TVS.Models
 {
@@ -10,6 +11,7 @@ namespace TVS.Models
         /// <summary>
         ///     Types of cleaning availlable
         /// </summary>
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public enum SchoonmaakType
         {
             /// <summary>

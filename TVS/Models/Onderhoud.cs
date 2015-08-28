@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TVS.Models
 {
@@ -10,6 +11,7 @@ namespace TVS.Models
         /// <summary>
         ///     Enum for the type of maintenance
         /// </summary>
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public enum TypeOnderhoud
         {
             /// <summary>

@@ -68,7 +68,6 @@
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Onderhoud.cs" />
-    <Compile Include="Models\Remise.cs" />
     <Compile Include="Models\Maintenance.cs" />
     <Compile Include="UI\ManagerForm.cs">
       <SubType>Form</SubType>
@@ -106,7 +105,6 @@
     <Compile Include="Models\Schoonmaak.cs" />
     <Compile Include="Models\Sector.cs" />
     <Compile Include="Models\Spoor.cs" />
-    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Tram.cs" />
     <Compile Include="Models\TramType.cs" />
     <Compile Include="UI\Track.cs">

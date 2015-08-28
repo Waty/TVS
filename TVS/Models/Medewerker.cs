@@ -37,21 +37,6 @@ namespace TVS.Models
         }
 
         /// <summary>
-        ///     Constructor
-        /// </summary>
-        public Medewerker(int id, string naam, FunctieType functie)
-        {
-            Id = id;
-            Naam = naam;
-            Functie = functie;
-        }
-
-        /// <summary>
-        ///     Empty constructor
-        /// </summary>
-        public Medewerker() {}
-
-        /// <summary>
         ///     The unique identification number for <see cref="Medewerker" />s
         /// </summary>
         public int Id { get; set; }
