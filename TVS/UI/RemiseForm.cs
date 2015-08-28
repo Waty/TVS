@@ -50,7 +50,8 @@ namespace TVS.UI
 
         private void btnInvoer_Click(object sender, EventArgs e)
         {
-            _admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
+            int nr = int.Parse(tbTramNummer.Text);
+            _admin.AssignSector(Database.GetAllTrams().Single(t => t.Nummer == nr));
         }
 
         private void LoadAllTracks(object sender, EventArgs e)
@@ -84,6 +85,18 @@ namespace TVS.UI
                     Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
                     break;
             }
+        }
+
+        private void tSimulation_Tick(object sender, EventArgs e)
+        {
+            List<Tram> trams = Database.GetAllTrams().ToList();
+            int randomTramId = Database.GetRandomTramIdNotRemise(trams.Count);
+            _admin.AssignSector(trams.Single(t => t.Id == randomTramId));
+        }
+
+        private void btnSimulation_Click(object sender, EventArgs e)
+        {
+            tSimulation.Enabled = !tSimulation.Enabled;
         }
     }
 }

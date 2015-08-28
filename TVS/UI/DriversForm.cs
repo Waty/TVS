@@ -39,7 +39,8 @@ namespace TVS.UI
                 Database.SetBroken(Convert.ToInt32(tbTramNummer.Text));
             }
 
-            _admin.AssignSector(Convert.ToInt32(tbTramNummer.Text));
+            int nr = Convert.ToInt32(tbTramNummer.Text);
+            _admin.AssignSector(Database.GetAllTrams().Single(t => t.Nummer == nr));
             Sector s = _admin.GetSector(_tram.Id);
             lbSectorNummer.Text = s.Nummer.ToString();
             lbSpoorNummer.Text = _admin.GetTracks(s.SpoorId).ToString();

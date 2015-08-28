@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TVS.Models;
 
@@ -30,10 +29,8 @@ namespace TVS
         /// <summary>
         ///     Assigns the sector to the right track
         /// </summary>
-        public void AssignSector(int nummer)
+        public void AssignSector(Tram tram)
         {
-            Tram tram = Database.GetAllTrams().First(t => t.Nummer == Convert.ToInt32(nummer));
-
             if (tram.Vervuild)
             {
                 for (var i = 21; i <= 24; i++)

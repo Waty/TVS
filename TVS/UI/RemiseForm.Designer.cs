@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             TVS.UI.Track track41;
             TVS.UI.Track track40;
             TVS.UI.Track track39;
@@ -79,8 +80,10 @@
             this.btnBlokkeer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnNieuw = new System.Windows.Forms.Button();
             this.ddStatus = new System.Windows.Forms.ComboBox();
+            this.btnNieuw = new System.Windows.Forms.Button();
+            this.tSimulation = new System.Windows.Forms.Timer(this.components);
+            this.btnSimulation = new System.Windows.Forms.Button();
             track41 = new TVS.UI.Track();
             track40 = new TVS.UI.Track();
             track39 = new TVS.UI.Track();
@@ -673,6 +676,14 @@
             this.panel2.Size = new System.Drawing.Size(238, 168);
             this.panel2.TabIndex = 92;
             // 
+            // ddStatus
+            // 
+            this.ddStatus.FormattingEnabled = true;
+            this.ddStatus.Location = new System.Drawing.Point(15, 40);
+            this.ddStatus.Name = "ddStatus";
+            this.ddStatus.Size = new System.Drawing.Size(96, 21);
+            this.ddStatus.TabIndex = 89;
+            // 
             // btnNieuw
             // 
             this.btnNieuw.Location = new System.Drawing.Point(117, 126);
@@ -683,19 +694,27 @@
             this.btnNieuw.UseVisualStyleBackColor = true;
             this.btnNieuw.Click += new System.EventHandler(this.btnNieuw_Click);
             // 
-            // ddStatus
+            // tSimulation
             // 
-            this.ddStatus.FormattingEnabled = true;
-            this.ddStatus.Location = new System.Drawing.Point(15, 40);
-            this.ddStatus.Name = "ddStatus";
-            this.ddStatus.Size = new System.Drawing.Size(96, 21);
-            this.ddStatus.TabIndex = 89;
+            this.tSimulation.Interval = 1000;
+            this.tSimulation.Tick += new System.EventHandler(this.tSimulation_Tick);
+            // 
+            // btnSimulation
+            // 
+            this.btnSimulation.Location = new System.Drawing.Point(1033, 806);
+            this.btnSimulation.Name = "btnSimulation";
+            this.btnSimulation.Size = new System.Drawing.Size(75, 23);
+            this.btnSimulation.TabIndex = 134;
+            this.btnSimulation.Text = "Simulatie";
+            this.btnSimulation.UseVisualStyleBackColor = true;
+            this.btnSimulation.Click += new System.EventHandler(this.btnSimulation_Click);
             // 
             // RemiseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 841);
+            this.Controls.Add(this.btnSimulation);
             this.Controls.Add(track41);
             this.Controls.Add(track40);
             this.Controls.Add(track39);
@@ -763,6 +782,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnNieuw;
         private System.Windows.Forms.ComboBox ddStatus;
+        private System.Windows.Forms.Timer tSimulation;
+        private System.Windows.Forms.Button btnSimulation;
     }
 }
 
