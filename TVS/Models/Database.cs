@@ -407,5 +407,22 @@ namespace TVS.Models
                 Blokkade = Convert.ToBoolean(reader["Blokkade"])
             });
         }
+
+        /// <summary>
+        ///     Gets a random tram id that isn't from a tram in remise
+        /// </summary>
+        /// <param name="max">the max value</param>
+        /// <returns>The Id of the found tram</returns>
+        /// <remarks>Infinite loop when no trams are availlable anymore ;-)</remarks>
+        public static int GetRandomTramIdNotRemise(int max)
+        {
+            var r = new Random();
+            int id;
+            do
+            {
+                id = r.Next(1, max);
+            } while (IsInRemise(id));
+            return id;
+        }
     }
 }
