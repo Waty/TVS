@@ -17,7 +17,9 @@ namespace TVS.UI
             InitializeComponent();
             cbType.DataSource = _admin.GeTramTypes().ToList();
         }
-
+        /// <summary>
+        ///     Before creating a tram, check if the tram exists, if not create a new tram with he data input by the user.
+        /// </summary>
         private void btnNieuw_Click(object sender, EventArgs e)
         {
             if (Database.GetAllTrams().ToList().Any(tram => tram.Nummer == Convert.ToInt32(tbNummer.Text)))

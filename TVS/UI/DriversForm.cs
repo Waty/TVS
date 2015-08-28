@@ -7,6 +7,7 @@ using TVS.Models;
 namespace TVS.UI
 {
     /// <summary>
+    /// Form for the driver
     /// </summary>
     public partial class DriversForm : Form
     {
@@ -14,6 +15,7 @@ namespace TVS.UI
         private readonly Tram _tram;
 
         /// <summary>
+        ///     On launch we get pick a tram from the list which is the one being ridden by the driver.
         /// </summary>
         public DriversForm()
         {
@@ -27,7 +29,9 @@ namespace TVS.UI
             lbTramNummer.Text = _tram.Nummer.ToString();
         }
 
-
+        /// <summary>
+        ///     The driver reports the condition of the tram and the system returns a track and sector.
+        /// </summary>
         private void btnVerzend_Click(object sender, EventArgs e)
         {
             if (cbVervuild.Checked)
