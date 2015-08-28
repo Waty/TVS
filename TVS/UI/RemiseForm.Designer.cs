@@ -730,7 +730,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "RemiseForm";
             this.Text = "RemiseForm";
-            this.Load += new System.EventHandler(this.RemiseForm_Load);
+            this.Load += new System.EventHandler(this.LoadAllTracks);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
