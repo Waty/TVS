@@ -431,5 +431,13 @@ namespace TVS.Models
             } while (IsInRemise(id));
             return id;
         }
+        /// <summary>
+        ///     Counts the number of services performed on a given date
+        /// </summary>
+        /// <returns></returns>
+        public static int CountCleaningService(DateTime date, Schoonmaak.SchoonmaakType type)
+        {
+            return Database.GetCleaningHistory().Count(c => c.Date.Date == date.Date && c.Type == type);
+        }
     }
 }

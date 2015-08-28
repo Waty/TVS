@@ -10,6 +10,8 @@ namespace TVS.UI
     /// </summary>
     public partial class CleanupForm : Form
     {
+        private Administration admin = new Administration();
+
         /// <summary>
         ///     Constructs the default CleanupForm
         /// </summary>
@@ -62,9 +64,40 @@ namespace TVS.UI
             }
 
             var type = (Schoonmaak.SchoonmaakType) ddbCleanupType.SelectedItem;
-            var schoonmaak = new Schoonmaak(medewerker, dtpCleanupDate.Value, tram, type);
 
-            Database.SaveCleanup(schoonmaak);
+            var services = 0;
+
+
+            switch (type)
+            {
+                case Schoonmaak.SchoonmaakType.GroteBeurt:
+                    services = Database.CountCleaningService(dtpCleanupDate.Value, Schoonmaak.SchoonmaakType.GroteBeurt);
+                    if (services < 3)
+                    {
+                        var schoonmaak = new Schoonmaak(medewerker, dtpCleanupDate.Value, tram, type);
+                        
+                        Database.SaveCleanup(schoonmaak);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Er kan geen grote service beurt meer gepland worden op die dag.");
+                    }
+                    break;
+                case Schoonmaak.SchoonmaakType.KleineBeurt:
+                    services = Database.CountCleaningService(dtpCleanupDate.Value, Schoonmaak.SchoonmaakType.KleineBeurt);
+                    if (services < 4)
+                    {
+                        var schoonmaak = new Schoonmaak(medewerker, dtpCleanupDate.Value, tram, type);
+
+                        Database.SaveCleanup(schoonmaak);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Er kan geen kleine service beurt meer gepland worden op die dag.");
+                    }
+                    break;
+            }
+
 
             LoadCleanupData(sender, e);
         }
