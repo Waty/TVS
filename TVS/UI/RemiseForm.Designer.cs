@@ -74,7 +74,6 @@
             this.lbNummer = new System.Windows.Forms.Label();
             this.btnStatus = new System.Windows.Forms.Button();
             this.btnInvoer = new System.Windows.Forms.Button();
-            this.btnSchoonmaak = new System.Windows.Forms.Button();
             this.tbSpoorNr = new System.Windows.Forms.TextBox();
             this.lbSpoor = new System.Windows.Forms.Label();
             this.btnBlokkeer = new System.Windows.Forms.Button();
@@ -616,16 +615,6 @@
             this.btnInvoer.UseVisualStyleBackColor = true;
             this.btnInvoer.Click += new System.EventHandler(this.btnInvoer_Click);
             // 
-            // btnSchoonmaak
-            // 
-            this.btnSchoonmaak.Location = new System.Drawing.Point(117, 97);
-            this.btnSchoonmaak.Name = "btnSchoonmaak";
-            this.btnSchoonmaak.Size = new System.Drawing.Size(111, 23);
-            this.btnSchoonmaak.TabIndex = 87;
-            this.btnSchoonmaak.Text = "Naar schoonmaak";
-            this.btnSchoonmaak.UseVisualStyleBackColor = true;
-            this.btnSchoonmaak.Click += new System.EventHandler(this.btnSchoonmaak_Click);
-            // 
             // tbSpoorNr
             // 
             this.tbSpoorNr.Location = new System.Drawing.Point(50, 15);
@@ -668,12 +657,11 @@
             this.panel2.Controls.Add(this.btnNieuw);
             this.panel2.Controls.Add(this.lbNummer);
             this.panel2.Controls.Add(this.tbTramNummer);
-            this.panel2.Controls.Add(this.btnSchoonmaak);
             this.panel2.Controls.Add(this.btnStatus);
             this.panel2.Controls.Add(this.btnInvoer);
             this.panel2.Location = new System.Drawing.Point(977, 532);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(238, 168);
+            this.panel2.Size = new System.Drawing.Size(238, 129);
             this.panel2.TabIndex = 92;
             // 
             // ddStatus
@@ -686,7 +674,7 @@
             // 
             // btnNieuw
             // 
-            this.btnNieuw.Location = new System.Drawing.Point(117, 126);
+            this.btnNieuw.Location = new System.Drawing.Point(117, 96);
             this.btnNieuw.Name = "btnNieuw";
             this.btnNieuw.Size = new System.Drawing.Size(111, 23);
             this.btnNieuw.TabIndex = 88;
@@ -774,7 +762,6 @@
         private System.Windows.Forms.Label lbNummer;
         private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.Button btnInvoer;
-        private System.Windows.Forms.Button btnSchoonmaak;
         private System.Windows.Forms.TextBox tbSpoorNr;
         private System.Windows.Forms.Label lbSpoor;
         private System.Windows.Forms.Button btnBlokkeer;

@@ -25,11 +25,6 @@ namespace TVS.UI
         private IEnumerable<Track> Tracks => Controls.OfType<Track>();
 
 
-        private void btnSchoonmaak_Click(object sender, EventArgs e)
-        {
-            Database.SetVervuild(Convert.ToInt32(tbTramNummer.Text));
-        }
-
         private void btnBlokkeer_Click(object sender, EventArgs e)
         {
             int number = Convert.ToInt32(tbSpoorNr.Text);
