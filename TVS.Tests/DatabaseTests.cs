@@ -66,7 +66,44 @@ namespace TVS.Tests
             Assert.AreEqual("Jan_Beheerder", medewerker.Naam);
         }
 
-        
-    
+        [TestMethod]
+        public void ToggleRailBlockTest()
+        {
+            Assert.AreEqual(1, Database.ToggleRailBlock(12, true));
+
+            Spoor spoor = Database.GetAllTracks().First(s => s.Geblokkeerd);
+            Assert.AreEqual(true, spoor.Geblokkeerd);
+        }
+
+        [TestMethod]
+        public void IsRailBlockedTest()
+        {
+            Assert.AreEqual(1, Database.ToggleRailBlock(13, true));
+
+            Assert.AreEqual(true, Database.IsRailBlocked(13));
+        }
+
+        [TestMethod]
+        public void GetTramTypesTest()
+        {
+            List<TramType> allTramTypes = Database.GetTramtypes().ToList();
+
+            Assert.AreEqual(7, allTramTypes.Count);
+
+            TramType tramtype = allTramTypes[0];
+            Assert.AreEqual(1, tramtype.Id);
+            Assert.AreEqual("Combino", tramtype.Omschrijving);
+        }
+
+        [TestMethod]
+        public void NewTramTest()
+        {
+            Assert.AreEqual(1, Database.NewTram(1,1,24,4,1,1));
+
+            Tram tram = Database.GetAllTrams().First(t => t.Nummer == 24);
+            Assert.AreEqual(24, tram.Nummer);
+            Assert.AreEqual(4,tram.Lengte);
+            
+        }
     }
 }

@@ -246,13 +246,13 @@ namespace TVS.Models
         /// <summary>
         ///     Adds a new tram to the database
         /// </summary>
-        public static void NewTram(int remiseid, int typeid, int nummer, int lengte, int geschikt, int beschikbaar)
+        public static int NewTram(int remiseid, int typeid, int nummer, int lengte, int geschikt, int beschikbaar)
         {
-            string query = "INSERT INTO Tram values ('null', " + remiseid + ", " + typeid + ", " + nummer + ", " +
+            string query = "INSERT INTO Tram values (null, " + remiseid + ", " + typeid + ", " + nummer + ", " +
                            lengte +
                            ",'0','0'," + geschikt + "," + beschikbaar + ")";
 
-            ExecuteNonQuery(query);
+            return ExecuteNonQuery(query);
         }
 
         /// <summary>
