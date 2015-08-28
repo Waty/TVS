@@ -86,26 +86,28 @@ namespace TVS
                     }
                 }
             }
-            else if (tram.TramTypeId == 1) // ???
+            // Combino heeft een speciaal spoor nodig.
+            else if (tram.TramTypeId == 1)
             {
                 if (Database.IsRailAvailable(58))
                 {
                     Database.CreateSector(58, tram.Id);
+                    return;
                 }
             }
-            else
+
+
+            for (var i = 0; i < 1337; i++)
             {
-                for (var i = 0; i < 1337; i++)
+                List<Spoor> sporen = Database.GetSelectedTracks(i).ToList();
+                if (sporen.Count != 0)
                 {
-                    List<Spoor> sporen = Database.GetSelectedTracks(i).ToList();
-                    if (sporen.Count != 0)
-                    {
-                        Spoor spoor = sporen.First();
-                        Database.CreateSector(spoor.Id, tram.Id);
-                        break;
-                    }
+                    Spoor spoor = sporen.First();
+                    Database.CreateSector(spoor.Id, tram.Id);
+                    break;
                 }
             }
         }
     }
 }
+
