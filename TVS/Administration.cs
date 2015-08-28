@@ -67,44 +67,26 @@ namespace TVS
 
             if (tram.Vervuild)
             {
-                if (Database.IsRailAvailable(41))
+                for (var i = 41; i <= 44; i++)
                 {
-                    Database.CreateSector(41, tram.Id);
-                }
-
-                else if (Database.IsRailAvailable(42))
-                {
-                    Database.CreateSector(42, tram.Id);
-                }
-                else if (Database.IsRailAvailable(43))
-                {
-                    Database.CreateSector(43, tram.Id);
-                }
-                else if (Database.IsRailAvailable(44))
-                {
-                    Database.CreateSector(44, tram.Id);
+                    if (Database.IsRailAvailable(41))
+                    {
+                        Database.CreateSector(41, tram.Id);
+                    }
                 }
             }
-            if (tram.Defect)
+            else if (tram.Defect)
             {
-                if (Database.IsRailAvailable(74))
+                for (var i = 74; i <= 77; i++)
                 {
-                    Database.CreateSector(74, tram.Id);
-                }
-                else if (Database.IsRailAvailable(75))
-                {
-                    Database.CreateSector(75, tram.Id);
-                }
-                else if (Database.IsRailAvailable(76))
-                {
-                    Database.CreateSector(76, tram.Id);
-                }
-                else if (Database.IsRailAvailable(77))
-                {
-                    Database.CreateSector(77, tram.Id);
+                    if (Database.IsRailAvailable(i))
+                    {
+                        Database.CreateSector(i, tram.Id);
+                        break;
+                    }
                 }
             }
-            if (tram.TramTypeId == 1)
+            else if (tram.TramTypeId == 1) // ???
             {
                 if (Database.IsRailAvailable(58))
                 {
@@ -126,4 +108,4 @@ namespace TVS
             }
         }
     }
-    }
+}
