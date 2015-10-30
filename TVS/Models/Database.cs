@@ -23,6 +23,7 @@ namespace TVS.Models
             return new OracleConnection(str);
         }
 
+
         /// <summary>
         ///     Executes an query and parses the resul table with a custom function
         /// </summary>
